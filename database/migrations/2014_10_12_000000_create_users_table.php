@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->integer('ministry_id')->nullable()->default(DB::raw('NULL'));
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('email')->unique();
+            $table->string('username')->unique();
             $table->string('password', 60);
             //$table->rememberToken();
             $table->timestamps();

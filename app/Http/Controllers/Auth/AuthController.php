@@ -6,6 +6,12 @@ use KyokaiAccSys\User;
 use Validator;
 use KyokaiAccSys\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
+use KyokaiAccSys\Services\Validation\AuthValidator;
+use Illuminate\Routing\Redirector;
+use Illuminate\Auth\AuthManager;
+use Illuminate\Session\SessionManager;
 
 class AuthController extends Controller
 {
@@ -20,6 +26,31 @@ class AuthController extends Controller
     |
     */
 
+    /**
+     * @var Request
+     */
+    protected $request;
+
+    /**
+     * @var Redirector
+     */
+    protected $redirect;
+
+    /**
+     * @var AuthValidator
+     */
+    protected $validator;
+
+    /**
+     * @var AuthManager
+     */
+    protected $auth;
+
+    /**
+     * @var SessionManager
+     */
+    protected $session;
+
     use AuthenticatesAndRegistersUsers;
 
     /**
@@ -27,10 +58,66 @@ class AuthController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest', ['except' => 'getLogout']);
+    public function __construct(
+        AuthValidator $validator,
+        AuthManager $auth,
+        Request $request,
+        Redirector $redirect,
+        SessionManager $session
+    ){
+        //$this->middleware('guest', ['except' => 'getLogout']);
+
+        $this->validator = $validator;
+        $this->request = $request;
+        $this->redirect = $redirect;
+        $this->auth = $auth;
+        $this->session = $session;
     }
+
+
+    /**
+     * Show the login form
+     *
+     * @return mixed
+     */
+    public function getIndex()
+    {
+        if ($this->request->ajax()) {
+            $this->session->forget('url.intended');
+        }
+
+        return View::make('auth.login');
+    }
+
+
+    /**
+     * Show the login form
+     *
+     * @return mixed
+     */
+    public function postIndex()
+    {
+        // Pick up the honeypot field to stop bots, return to the login screen, no message
+        if ($this->request->get('potter')) {
+            return $this->redirect->to('auth/login')->withInput();
+        }
+
+        if (!$this->validator->with($this->request->all())->passes()) {
+            return $this->redirect->to('auth/login')->withErrors($this->validator->errors());
+        }
+
+        if ($this->auth->attempt([
+            'username' => $this->request->get('username'),
+            'password' => $this->request->get('password')
+        ])
+        ) {
+            return $this->redirect->intended('/');
+        }
+
+        $this->session->flash('failed', trans('auth.incorrect_username_or_password'));
+        return $this->redirect->to('auth/login')->withInput();
+    }
+
 
     /**
      * Get a validator for an incoming registration request.
@@ -41,9 +128,8 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
         ]);
     }
 
@@ -56,9 +142,8 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'firstname' => $data['name'],
+            'lastname' => $data['email'],
         ]);
     }
 
