@@ -61,4 +61,15 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Log the user out
+     *
+     * @return mixed
+     */
+    public function getLogout()
+    {
+        $this->auth->logout();
+        return View::make('auth.logout');
+    }
 }
