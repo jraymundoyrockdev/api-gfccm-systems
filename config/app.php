@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', 's72Uhh60iRv9xVgudSP8NMoLKcdn7YHl'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -140,9 +140,27 @@ return [
         /*
          * Application Service Providers...
          */
-        KyokaiAccSys\Providers\AppServiceProvider::class,
-        KyokaiAccSys\Providers\EventServiceProvider::class,
-        KyokaiAccSys\Providers\RouteServiceProvider::class,
+        ApiGfccm\Providers\AppServiceProvider::class,
+        ApiGfccm\Providers\EventServiceProvider::class,
+        ApiGfccm\Providers\RouteServiceProvider::class,
+
+
+
+        /*
+         * Other Service Providers...
+         */
+        ApiGfccm\Providers\RepositoryServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
+
+        /*
+         * JWT
+         */
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+
+        /*
+         * CORS
+         */
+        Barryvdh\Cors\ServiceProvider::class
 
     ],
 
@@ -191,7 +209,10 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-
+        'Form'      => Illuminate\Html\FormFacade::class, 
+        'HTML'      => Illuminate\Html\HtmlFacade::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class
     ],
 
 ];

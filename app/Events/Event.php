@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Events;
+namespace ApiGfccm\Events;
 
 abstract class Event
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Console\Commands;
+namespace ApiGfccm\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

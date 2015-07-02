@@ -4,10 +4,33 @@ Route::get('/', function () {
 });
 
 //Route::controller('login', 'Auth\AuthController');
-Route::get('logout', 'Auth\AuthController@getLogout');
 
-Route::group(['namespace' => 'Api', 'prefix' => 'api', 'middleware' => 'resource'],
+Route::get('auth/login', 'Auth\AuthController@getIndex');
+Route::post('auth/login', 'Auth\AuthController@postIndex');
+
+Route::group(
+    ['namespace' => 'Api', 'prefix' => 'api', 'middleware' => 'cors'],
     function () {
-        Route::resource('customers', 'CustomersController');
+
+        /**
+         * Authentication
+         */
+        Route::post('api-token-auth', 'AuthenticationController@authorize');
+        Route::post('api-token-refresh', [
+            'middleware' => 'jwt.refresh',
+            'uses' => 'AuthenticationController@refreshToken'
+        ]);
+
+        /**
+         * Authenticated API Resources
+         */
+        Route::group(['middleware' => ['resource', 'kyokai.auth']], function () {
+            Route::resource('users', 'UsersController');
+            Route::resource('user-roles', 'UserRolesController');
+            Route::resource('ministry', 'MinistryController');
+            Route::resource('denominations', 'DenominationsController');
+            Route::resource('services', 'ServicesController');
+            Route::resource('members', 'MembersController');
+        });
     }
 );

@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => KyokaiAccSys\User::class,
+        'model'  => ApiGfccm\Models\User::class,
         'key'    => '',
         'secret' => '',
     ],

@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Http\Middleware;
+namespace ApiGfccm\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

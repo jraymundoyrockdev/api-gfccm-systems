@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Http\Middleware;
+namespace ApiGfccm\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -15,10 +15,7 @@ class RedirectIfAuthenticated
     protected $auth;
 
     /**
-     * Create a new filter instance.
-     *
-     * @param  Guard  $auth
-     * @return void
+     * @param Guard $auth
      */
     public function __construct(Guard $auth)
     {

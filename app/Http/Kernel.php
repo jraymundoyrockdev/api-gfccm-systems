@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Http;
+namespace ApiGfccm\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -13,11 +13,11 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \KyokaiAccSys\Http\Middleware\EncryptCookies::class,
+        \ApiGfccm\Http\Middleware\EncryptCookies::class,
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \KyokaiAccSys\Http\Middleware\VerifyCsrfToken::class,
+        \ApiGfccm\Http\Middleware\VerifyCsrfToken::class,
     ];
 
     /**
@@ -26,9 +26,13 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \KyokaiAccSys\Http\Middleware\Authenticate::class,
+        'auth' => \ApiGfccm\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \KyokaiAccSys\Http\Middleware\RedirectIfAuthenticated::class,
-        'resource' => \KyokaiAccSys\Http\Middleware\RespondWithResource::class
+        'guest' => \ApiGfccm\Http\Middleware\RedirectIfAuthenticated::class,
+        'resource' => \ApiGfccm\Http\Middleware\RespondWithResource::class,
+        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+        'jwt.refresh' => \ApiGfccm\Http\Middleware\RefreshToken::class,
+        'jwt.validate' => \ApiGfccm\Http\Middleware\ValidateToken::class,
+        'kyokai.auth' => \ApiGfccm\Http\Middleware\KyokaiAccSysAuth::class
     ];
 }
