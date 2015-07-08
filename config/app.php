@@ -144,6 +144,12 @@ return [
         KyokaiAccSys\Providers\EventServiceProvider::class,
         KyokaiAccSys\Providers\RouteServiceProvider::class,
 
+
+
+        /*
+         * Other Service Providers...
+         */
+        KyokaiAccSys\Providers\RepositoryServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
 
     ],
