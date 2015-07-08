@@ -31,22 +31,27 @@ class RespondWithResource
             return $response;
         }
 
-        if ($response->original instanceof Paginator) {
+        if($response->original instanceof \Illuminate\Database\Eloquent\Collection){
             return $this->collectionResponse($response);
         }
+
         return $this->itemResponse($response);
     }
 
     private function collectionResponse(Response $response)
     {
-        $type = str_replace('KyokaiAccSys\\', '', get_class($response->original->getCollection()->first()));
+        $type = str_replace('KyokaiAccSys\\', '', get_class($response->original->first()));
         $transformer = 'KyokaiAccSys\Http\Controllers\Api\Transformers\\' . $type . 'Transformer';
         $resource = new Collection(
             $response->original,
             new $transformer,
             Str::plural($type)
         );
-        $resource->setPaginator(new IlluminatePaginatorAdapter($response->original));
+
+        if ($response->original instanceof Paginator) {
+            $resource->setPaginator(new IlluminatePaginatorAdapter($response->original));
+        }
+
         $response->setContent($this->fractal->createData($resource)->toJson());
 
         return $response;
@@ -55,13 +60,14 @@ class RespondWithResource
     private function itemResponse(Response $response)
     {
         $type = str_replace('KyokaiAccSys\\', '', get_class($response->original));
-        $transformer = 'KyokaiAccSys\Http\Controllers\Api\Transformers\\' . $type . 'Transformer';
+        $transformer = '\KyokaiAccSys\Http\Controllers\Api\Transformers\\' . $type . 'Transformer';
         $resource = new Item(
             $response->original,
             new $transformer,
             $type
         );
         $response->setContent($this->fractal->createData($resource)->toJson());
+
         return $response;
     }
 }

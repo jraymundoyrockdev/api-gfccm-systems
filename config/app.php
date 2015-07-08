@@ -152,6 +152,16 @@ return [
         KyokaiAccSys\Providers\RepositoryServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
 
+        /*
+         * JWT
+         */
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+
+        /*
+         * CORS
+         */
+        Barryvdh\Cors\ServiceProvider::class
+
     ],
 
     /*
@@ -200,8 +210,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Illuminate\Html\FormFacade::class, 
-        'HTML'      => Illuminate\Html\HtmlFacade::class
-
+        'HTML'      => Illuminate\Html\HtmlFacade::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class
     ],
 
 ];

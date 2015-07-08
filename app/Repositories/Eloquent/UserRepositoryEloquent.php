@@ -18,11 +18,22 @@ class UserRepositoryEloquent implements UserRepositoryInterface
     /**
      * Returns all Users
      *
-     * @return Collection|null
+     * @return User|null
      */
     public function getAllUsers()
     {
         return $this->user->all();
+    }
+
+    /**
+     * Get a certain user
+     *
+     * @return User|null
+     */
+    public function getById($id)
+    {
+        return $this->user->where('id', $id)->first();
+
     }
 
 }

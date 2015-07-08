@@ -7,12 +7,22 @@ Route::get('/', function () {
 
 Route::get('auth/login', 'Auth\AuthController@getIndex');
 Route::post('auth/login', 'Auth\AuthController@postIndex');
-//Route::post('auth/login', 'Auth\AuthController@postLogin');
 
-//Route::get('logout', 'Auth\AuthController@getLogout');
-
-Route::group(['namespace' => 'Api', 'prefix' => 'api', 'middleware' => 'resource'],
+Route::group(
+    ['namespace' => 'Api', 'prefix' => 'api', 'middleware' => 'cors'],
     function () {
-        Route::resource('customers', 'CustomersController');
+
+        /**
+         * Authentication
+         */
+        Route::post('api-token-auth', 'AuthenticationController@authorize');
+        Route::post('api-token-refresh', 'AuthenticationController@refreshToken');
+
+        /**
+         * Authenticated API Resources
+         */
+        Route::group(['middleware' => ['resource', 'jwt.auth']], function () {
+            Route::resource('users', 'UsersController');
+        });
     }
 );

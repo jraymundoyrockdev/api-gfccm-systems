@@ -9,4 +9,11 @@ interface UserRepositoryInterface
      */
     public function getAllUsers();
 
+    /**
+    * Get a certain user
+    *
+    * @return Collection|null
+    */
+    public function getById($id);
+
 }

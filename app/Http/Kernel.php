@@ -29,6 +29,8 @@ class Kernel extends HttpKernel
         'auth' => \KyokaiAccSys\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \KyokaiAccSys\Http\Middleware\RedirectIfAuthenticated::class,
-        'resource' => \KyokaiAccSys\Http\Middleware\RespondWithResource::class
+        'resource' => \KyokaiAccSys\Http\Middleware\RespondWithResource::class,
+        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
     ];
 }
