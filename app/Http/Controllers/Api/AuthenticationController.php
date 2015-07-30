@@ -35,6 +35,7 @@ class AuthenticationController extends Controller
     public function authorize(ResponseFactory $response)
     {
         $credentials = $this->request->only(['username', 'password']);
+
         $token = $this->authenticator->attempt($credentials);
         if (!$token) {
             return $response->make('Invalid credentials', 401);
