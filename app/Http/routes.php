@@ -16,7 +16,8 @@ Route::group(
          * Authentication
          */
         Route::post('api-token-auth', 'AuthenticationController@authorize');
-        Route::post('api-token-refresh', 'AuthenticationController@refreshToken');
+        Route::post('api-token-refresh', ['middleware' => 'jwt.refresh', 'uses' => 'AuthenticationController@refreshToken']);
+
 
         /**
          * Authenticated API Resources
