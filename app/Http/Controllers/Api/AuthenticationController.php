@@ -21,14 +21,19 @@ class AuthenticationController extends Controller
     protected $request;
 
     public function __construct(Authenticator $authenticator, Request $request)
-    {die;
+    {
         $this->authenticator = $authenticator;
         $this->request = $request;
     }
 
-    public function authorize()
+    /**
+     * Authorize the user
+     *
+     * @param ResponseFactory $response
+     * @return array|\Illuminate\Http\Response
+     */
+    public function authorize(ResponseFactory $response)
     {
-        die;
         $credentials = $this->request->only(['username', 'password']);
         $token = $this->authenticator->attempt($credentials);
         if (!$token) {
