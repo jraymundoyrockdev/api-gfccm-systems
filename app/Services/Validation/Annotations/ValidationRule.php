@@ -1,4 +1,4 @@
-<?php namespace KyokaiAccSys\Services\Validation\Annotations;
+<?php namespace ApiGfccm\Services\Validation\Annotations;
 
 use Illuminate\Validation\Factory;
 use ReflectionMethod;

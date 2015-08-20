@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Jobs;
+namespace ApiGfccm\Jobs;
 
 use Illuminate\Bus\Queueable;
 

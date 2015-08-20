@@ -1,9 +1,9 @@
-<?php namespace KyokaiAccSys\Services\Validation;
+<?php namespace ApiGfccm\Services\Validation;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Illuminate\Validation\Factory;
-use KyokaiAccSys\Services\Validation\Annotations\ValidationCondition;
-use KyokaiAccSys\Services\Validation\Annotations\ValidationRule;
+use ApiGfccm\Services\Validation\Annotations\ValidationCondition;
+use ApiGfccm\Services\Validation\Annotations\ValidationRule;
 use ReflectionObject;
 
 abstract class AbstractValidator
@@ -92,7 +92,7 @@ abstract class AbstractValidator
     {
         $annotation = $this->annotationReader->getMethodAnnotation(
             $method,
-            'KyokaiAccSys\Services\Validation\Annotations\ValidationRule'
+            'ApiGfccm\Services\Validation\Annotations\ValidationRule'
         );
         if ($annotation instanceof ValidationRule) {
             $annotation->mount($this->validator, $method);

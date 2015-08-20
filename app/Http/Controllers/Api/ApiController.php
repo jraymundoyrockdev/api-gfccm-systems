@@ -1,8 +1,8 @@
 <?php
 
-namespace KyokaiAccSys\Http\Controllers\Api;
+namespace ApiGfccm\Http\Controllers\Api;
 
-use KyokaiAccSys\Http\Controllers\Controller;
+use ApiGfccm\Http\Controllers\Controller;
 
 class ApiController extends Controller
 {

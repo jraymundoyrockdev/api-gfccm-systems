@@ -1,11 +1,11 @@
 <?php
 
-namespace KyokaiAccSys\Http\Controllers\Api;
+namespace ApiGfccm\Http\Controllers\Api;
 
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
-use KyokaiAccSys\Http\Requests;
-use KyokaiAccSys\Http\Controllers\Controller;
+use ApiGfccm\Http\Requests;
+use ApiGfccm\Http\Controllers\Controller;
 use Tymon\JWTAuth\JWTAuth as Authenticator;
 
 class AuthenticationController extends Controller
@@ -40,7 +40,7 @@ class AuthenticationController extends Controller
         if (!$token) {
             return $response->make('Invalid credentials', 401);
         }
-        return ['token' => $token];
+        return ['token' => $token, 'username' =>$this->request->input('username')];
     }
 
    /**

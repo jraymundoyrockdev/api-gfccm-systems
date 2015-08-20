@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: KyokaiAccSys
-        psr4_prefix: KyokaiAccSys
+        namespace: ApiGfccm
+        psr4_prefix: ApiGfccm
         src_path: app

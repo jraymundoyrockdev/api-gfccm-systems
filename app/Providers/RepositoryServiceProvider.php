@@ -1,4 +1,4 @@
-<?php namespace KyokaiAccSys\Providers;
+<?php namespace ApiGfccm\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,8 +13,8 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            'KyokaiAccSys\Repositories\Interfaces\UserRepositoryInterface',
-            'KyokaiAccSys\Repositories\Eloquent\UserRepositoryEloquent'
+            'ApiGfccm\Repositories\Interfaces\UserRepositoryInterface',
+            'ApiGfccm\Repositories\Eloquent\UserRepositoryEloquent'
         );
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Http\Requests;
+namespace ApiGfccm\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

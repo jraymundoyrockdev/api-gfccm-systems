@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    KyokaiAccSys\Http\Kernel::class
+    ApiGfccm\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    KyokaiAccSys\Console\Kernel::class
+    ApiGfccm\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    KyokaiAccSys\Exceptions\Handler::class
+    ApiGfccm\Exceptions\Handler::class
 );
 
 /*

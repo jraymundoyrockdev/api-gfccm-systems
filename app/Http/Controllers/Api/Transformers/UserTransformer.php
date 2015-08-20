@@ -1,7 +1,7 @@
-<?php namespace KyokaiAccSys\Http\Controllers\Api\Transformers;
+<?php namespace ApiGfccm\Http\Controllers\Api\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use KyokaiAccSys\User;
+use ApiGfccm\User;
 
 class UserTransformer extends TransformerAbstract
 {

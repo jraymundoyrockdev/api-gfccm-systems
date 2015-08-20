@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Exceptions;
+namespace ApiGfccm\Exceptions;
 
 use Exception;
 use Symfony\Component\HttpKernel\Exception\HttpException;

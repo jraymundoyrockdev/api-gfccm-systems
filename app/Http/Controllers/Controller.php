@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Http\Controllers;
+namespace ApiGfccm\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

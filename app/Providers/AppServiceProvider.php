@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Providers;
+namespace ApiGfccm\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

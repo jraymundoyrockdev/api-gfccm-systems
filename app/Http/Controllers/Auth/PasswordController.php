@@ -1,8 +1,8 @@
 <?php
 
-namespace KyokaiAccSys\Http\Controllers\Auth;
+namespace ApiGfccm\Http\Controllers\Auth;
 
-use KyokaiAccSys\Http\Controllers\Controller;
+use ApiGfccm\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller

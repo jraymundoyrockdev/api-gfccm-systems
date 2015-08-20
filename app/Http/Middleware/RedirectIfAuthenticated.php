@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Http\Middleware;
+namespace ApiGfccm\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

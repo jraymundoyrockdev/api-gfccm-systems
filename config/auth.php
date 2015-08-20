@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => KyokaiAccSys\User::class,
+    'model' => ApiGfccm\User::class,
 
     /*
     |--------------------------------------------------------------------------

@@ -1,14 +1,14 @@
 <?php
 
-namespace KyokaiAccSys\Http\Controllers\Auth;
+namespace ApiGfccm\Http\Controllers\Auth;
 
-use KyokaiAccSys\User;
+use ApiGfccm\User;
 use Validator;
-use KyokaiAccSys\Http\Controllers\Controller;
+use ApiGfccm\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-use KyokaiAccSys\Services\Validation\AuthValidator;
+use ApiGfccm\Services\Validation\AuthValidator;
 use Illuminate\Routing\Redirector;
 use Illuminate\Auth\AuthManager;
 use Illuminate\Session\SessionManager;

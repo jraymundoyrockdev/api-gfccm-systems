@@ -140,16 +140,16 @@ return [
         /*
          * Application Service Providers...
          */
-        KyokaiAccSys\Providers\AppServiceProvider::class,
-        KyokaiAccSys\Providers\EventServiceProvider::class,
-        KyokaiAccSys\Providers\RouteServiceProvider::class,
+        ApiGfccm\Providers\AppServiceProvider::class,
+        ApiGfccm\Providers\EventServiceProvider::class,
+        ApiGfccm\Providers\RouteServiceProvider::class,
 
 
 
         /*
          * Other Service Providers...
          */
-        KyokaiAccSys\Providers\RepositoryServiceProvider::class,
+        ApiGfccm\Providers\RepositoryServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
 
         /*

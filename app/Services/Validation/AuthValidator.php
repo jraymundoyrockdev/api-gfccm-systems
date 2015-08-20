@@ -1,4 +1,4 @@
-<?php namespace KyokaiAccSys\Services\Validation;
+<?php namespace ApiGfccm\Services\Validation;
 
 class AuthValidator extends AbstractValidator
 {

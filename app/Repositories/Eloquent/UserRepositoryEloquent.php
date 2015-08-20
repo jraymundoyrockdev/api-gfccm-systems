@@ -1,7 +1,7 @@
-<?php namespace KyokaiAccSys\Repositories\Eloquent;
+<?php namespace ApiGfccm\Repositories\Eloquent;
 
-use KyokaiAccSys\Repositories\Interfaces\UserRepositoryInterface;
-use KyokaiAccSys\User;
+use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
+use ApiGfccm\User;
 
 class UserRepositoryEloquent implements UserRepositoryInterface
 {

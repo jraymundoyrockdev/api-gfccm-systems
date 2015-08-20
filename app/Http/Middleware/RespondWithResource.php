@@ -1,4 +1,4 @@
-<?php namespace KyokaiAccSys\Http\Middleware;
+<?php namespace ApiGfccm\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Pagination\Paginator;
@@ -40,8 +40,8 @@ class RespondWithResource
 
     private function collectionResponse(Response $response)
     {
-        $type = str_replace('KyokaiAccSys\\', '', get_class($response->original->first()));
-        $transformer = 'KyokaiAccSys\Http\Controllers\Api\Transformers\\' . $type . 'Transformer';
+        $type = str_replace('ApiGfccm\\', '', get_class($response->original->first()));
+        $transformer = 'ApiGfccm\Http\Controllers\Api\Transformers\\' . $type . 'Transformer';
         $resource = new Collection(
             $response->original,
             new $transformer,
@@ -59,8 +59,8 @@ class RespondWithResource
 
     private function itemResponse(Response $response)
     {
-        $type = str_replace('KyokaiAccSys\\', '', get_class($response->original));
-        $transformer = '\KyokaiAccSys\Http\Controllers\Api\Transformers\\' . $type . 'Transformer';
+        $type = str_replace('ApiGfccm\\', '', get_class($response->original));
+        $transformer = '\ApiGfccm\Http\Controllers\Api\Transformers\\' . $type . 'Transformer';
         $resource = new Item(
             $response->original,
             new $transformer,

@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(KyokaiAccSys\User::class, function ($faker) {
+$factory->define(ApiGfccm\User::class, function ($faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,

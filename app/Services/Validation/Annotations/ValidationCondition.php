@@ -1,7 +1,7 @@
-<?php namespace KyokaiAccSys\Services\Validation\Annotations;
+<?php namespace ApiGfccm\Services\Validation\Annotations;
 
 use Illuminate\Validation\Validator;
-use KyokaiAccSys\Services\Validation\AbstractValidator;
+use ApiGfccm\Services\Validation\AbstractValidator;
 use ReflectionMethod;
 
 /**

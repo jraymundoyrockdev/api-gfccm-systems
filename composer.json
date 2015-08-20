@@ -28,7 +28,7 @@
             "database"
         ],
         "psr-4": {
-            "KyokaiAccSys\\": "app/"
+            "ApiGfccm\\": "app/"
         }
     },
     "autoload-dev": {

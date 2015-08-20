@@ -1,6 +1,6 @@
 <?php
 
-namespace KyokaiAccSys\Http\Controllers\Api;
+namespace ApiGfccm\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use League\Fractal\Manager;
@@ -8,9 +8,9 @@ use League\Fractal\Pagination\IlluminatePaginatorAdapter;
 use League\Fractal\Resource\Collection;
 use League\Fractal\Resource\Item;
 use League\Fractal\Serializer\JsonApiSerializer;
-use KyokaiAccSys\Http\Controllers\Api\Transformers\UserTransformer;
-use KyokaiAccSys\Http\Requests;
-use KyokaiAccSys\Repositories\Interfaces\UserRepositoryInterface;
+use ApiGfccm\Http\Controllers\Api\Transformers\UserTransformer;
+use ApiGfccm\Http\Requests;
+use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
 
 class UsersController extends ApiController
 {

@@ -1,4 +1,4 @@
-<?php namespace KyokaiAccSys\Repositories\Interfaces;
+<?php namespace ApiGfccm\Repositories\Interfaces;
 
 interface UserRepositoryInterface
 {
