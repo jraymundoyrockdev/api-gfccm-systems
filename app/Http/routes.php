@@ -16,7 +16,15 @@ Route::group(
          * Authentication
          */
         Route::post('api-token-auth', 'AuthenticationController@authorize');
-        Route::post('api-token-refresh', ['middleware' => 'jwt.refresh', 'uses' => 'AuthenticationController@refreshToken']);
+        Route::post('api-token-refresh', [
+            'middleware' => 'jwt.refresh', 
+            'uses' => 'AuthenticationController@refreshToken'
+        ]);
+
+        Route::get('api-token-validate', [
+            'middleware' => 'jwt.validate', 
+            'uses' => 'AuthenticationController@validateToken'
+        ]);
 
 
         /**

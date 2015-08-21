@@ -65,6 +65,19 @@ class AuthenticationController extends Controller
         return;
     }
 
+    /**
+     * Validate Token
+     *
+     * @return void
+     */
+    public function validateToken()
+    {
+         //$credentials = $this->request->only('token');
+
+        echo $user = $this->jwt->parseToken()->authenticate();
+    }
+
+
     protected function getUserToken($user){
         return $this->jwt->fromUser($user, $this->createClaims($user));
     }
@@ -72,7 +85,7 @@ class AuthenticationController extends Controller
     protected function createClaims($user){
         return [
             'username' => $user->username,
-            'role' => $user->role_id
+            'pabebe' => $user->role_id
         ];
     }
 
