@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Controllers\Controller;
 use Tymon\JWTAuth\JWTAuth as JWT;
+use Tymon\JWTAuth\Exceptions\TokenExpiredException as TokenExpiredException;
 
 class AuthenticationController extends Controller
 {
@@ -72,6 +73,29 @@ class AuthenticationController extends Controller
      */
     public function validateToken()
     {
+        try {
+
+        if (! $user = $this->jwt->parseToken()->authenticate()) {
+            return response()->json(['user_not_found'], 404);
+        }
+
+    } catch (TokenExpiredException $e) {
+
+        return response()->json(['token_expired'], $e->getStatusCode());
+
+    } catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
+
+        return response()->json(['token_invalid'], $e->getStatusCode());
+
+    } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
+
+        return response()->json(['token_absent'], $e->getStatusCode());
+
+    }
+
+    // the token is valid and we have found the user via the sub claim
+    return response()->json(compact('user'));
+
          //$credentials = $this->request->only('token');
 
         echo $user = $this->jwt->parseToken()->authenticate();
