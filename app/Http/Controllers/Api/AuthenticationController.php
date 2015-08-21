@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Controllers\Controller;
 use Tymon\JWTAuth\JWTAuth as JWT;
-use Crypt;
 
 class AuthenticationController extends Controller
 {
@@ -42,14 +41,17 @@ class AuthenticationController extends Controller
      */
     public function authorize(ResponseFactory $response)
     {
-        
         $credentials = $this->request->only(['username', 'password']);
 
         if(! $this->auth->once($credentials)){
-            return $response->make('Invalid credentisls', 401);
+            return $response->make('Invalid credentials', 401);
         }
 
-        return ['token' => $this->getUserToken($this->auth->user())];
+        return [
+            'token' => $this->getUserToken($this->auth->user()),
+            //'role' =>  $this->createSalt().$this->auth->user()->role_id.$this->createPepper()
+            'role' =>  $this->auth->user()->role_id
+        ];
     }
 
    /**
@@ -70,15 +72,15 @@ class AuthenticationController extends Controller
     protected function createClaims($user){
         return [
             'username' => $user->username,
-            'role' => Crypt::encrypt($this->createSalt().$user->username.$this->createPepper()),
+            'role' => $user->role_id
         ];
     }
 
     protected function createSalt(){
-        return Crypt::encrypt('JEMPOOGI');
+        return md5('JEMPOOGI');
     }
 
     protected function createPepper(){
-        return Crypt::encrypt('123');
+        return md5('123');
     }
 }
