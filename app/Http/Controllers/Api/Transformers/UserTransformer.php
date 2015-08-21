@@ -9,8 +9,6 @@ class UserTransformer extends TransformerAbstract
     {
         return [
             'username' => $user->username,
-            'firstname' => $user->firstname,
-            'lastname' => $user->lastname
         ];
     }
 }

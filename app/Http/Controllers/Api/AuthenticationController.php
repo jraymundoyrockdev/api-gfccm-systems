@@ -2,27 +2,35 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Controllers\Controller;
-use Tymon\JWTAuth\JWTAuth as Authenticator;
+use Tymon\JWTAuth\JWTAuth as JWT;
+use Crypt;
 
 class AuthenticationController extends Controller
 {
     /**
-     * @var Authenticator
+     * @var JWT
      */
-    protected $authenticator;
+    protected $jwt;
+
+    /**
+     * @var Guard
+     */
+    protected $auth;
 
     /**
      * @var Request
      */
     protected $request;
 
-    public function __construct(Authenticator $authenticator, Request $request)
+    public function __construct(JWT $jwt, Guard $auth, Request $request)
     {
-        $this->authenticator = $authenticator;
+        $this->auth = $auth;
+        $this->jwt = $jwt;
         $this->request = $request;
     }
 
@@ -34,13 +42,14 @@ class AuthenticationController extends Controller
      */
     public function authorize(ResponseFactory $response)
     {
+        
         $credentials = $this->request->only(['username', 'password']);
 
-        $token = $this->authenticator->attempt($credentials);
-        if (!$token) {
-            return $response->make('Invalid credentials', 401);
+        if(! $this->auth->once($credentials)){
+            return $response->make('Invalid credentisls', 401);
         }
-        return ['token' => $token, 'username' =>$this->request->input('username')];
+
+        return ['token' => $this->getUserToken($this->auth->user())];
     }
 
    /**
@@ -52,5 +61,24 @@ class AuthenticationController extends Controller
     public function refreshToken()
     {
         return;
+    }
+
+    protected function getUserToken($user){
+        return $this->jwt->fromUser($user, $this->createClaims($user));
+    }
+
+    protected function createClaims($user){
+        return [
+            'username' => $user->username,
+            'role' => Crypt::encrypt($this->createSalt().$user->username.$this->createPepper()),
+        ];
+    }
+
+    protected function createSalt(){
+        return Crypt::encrypt('JEMPOOGI');
+    }
+
+    protected function createPepper(){
+        return Crypt::encrypt('123');
     }
 }
