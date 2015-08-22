@@ -32,6 +32,7 @@ class Kernel extends HttpKernel
         'resource' => \ApiGfccm\Http\Middleware\RespondWithResource::class,
         'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
         'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
-        'jwt.validate' => \ApiGfccm\Http\Middleware\ValidateToken::class
+        'jwt.validate' => \ApiGfccm\Http\Middleware\ValidateToken::class,
+        'kyokai.auth' => \ApiGfccm\Http\Middleware\KyokaiAccSysAuth::class
     ];
 }

@@ -17,20 +17,14 @@ Route::group(
          */
         Route::post('api-token-auth', 'AuthenticationController@authorize');
         Route::post('api-token-refresh', [
-            'middleware' => 'jwt.refresh', 
+            'middleware' => 'jwt.refresh',
             'uses' => 'AuthenticationController@refreshToken'
         ]);
-
-        Route::get('api-token-validate', [
-            'middleware' => 'jwt.validate', 
-            'uses' => 'AuthenticationController@validateToken'
-        ]);
-
 
         /**
          * Authenticated API Resources
          */
-        Route::group(['middleware' => ['resource', 'jwt.auth']], function () {
+        Route::group(['middleware' => ['resource',  'kyokai.auth']], function () {
             Route::resource('users', 'UsersController');
         });
     }
