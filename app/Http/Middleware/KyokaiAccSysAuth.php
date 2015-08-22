@@ -30,7 +30,7 @@ class KyokaiAccSysAuth
         $validatedTokenResult = $this->validateJWT->validate();
         $validatedToken = $validatedTokenResult->getData(1);
 
-        print_r($validatedToken); die;
+        $validatedToken['message']);
         if (! array_key_exists('user', $validatedToken)) {
             return $validatedToken;
         }

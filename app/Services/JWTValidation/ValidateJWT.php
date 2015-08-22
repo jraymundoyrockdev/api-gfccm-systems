@@ -19,6 +19,9 @@ class ValidateJWT
      */
     protected $jwt;
 
+    /**
+     * @param JWT $jwt
+     */
     public function __construct(JWT $jwt)
     {
         $this->jwt = $jwt;
@@ -33,21 +36,72 @@ class ValidateJWT
     {
         try {
             if (!$user = $this->jwt->parseToken()->authenticate()) {
-                return $this->returnResponse('user_not_found', 404);
+                return $this->returnUnauthenticatedUserResponse();
             }
-        } catch (TokenExpiredException $e) {
-            return $this->returnResponse('token_expired', $e->getStatusCode());
-        } catch (TokenInvalidException $e) {
-            return $this->returnResponse('token_invalid', $e->getStatusCode());
-        } catch (JWTException $e) {
-            return $this->returnResponse('token_absent', $e->getStatusCode());
+        } catch (TokenExpiredException $exception) {
+            return $this->returnTokenExceptionResponse('token_expired', $exception->getStatusCode());
+        } catch (TokenInvalidException $exception) {
+            return $this->returnTokenExceptionResponse('token_invalid', $exception->getStatusCode());
+        } catch (JWTException $exception) {
+            return $this->returnTokenExceptionResponse('token_absent', $exception->getStatusCode());
         }
 
-        return response()->json(compact('user'));
+        return $this->returnAuthenticatedUserResponse(compact('user'));
+
     }
 
-    protected function returnResponse($responseType, $statusCode)
+    /**
+     * Return a response from Token and JWT Exception
+     *
+     * @param $message
+     * @param int $statusCode
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function returnTokenExceptionResponse($message, $statusCode)
     {
-        return response()->json($responseType, $statusCode);
+        return response()->json(
+            $this->buildResponse($message), $statusCode
+        );
     }
+
+    /**
+     * Return Unauthenticated User Response
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function returnUnauthenticatedUserResponse()
+    {
+        return response()->json('Unauthorized user', 404);
+    }
+
+    /**
+     * Return Authenticated User Response
+     *
+     * @param array $authenticatedUser
+     * @return \Illuminate\Http\JsonResponse
+     */
+    protected function returnAuthenticatedUserResponse($authenticatedUser = [])
+    {
+        return response()->json($this->buildResponse('token_valid', $authenticatedUser), 200);
+    }
+
+    /**
+     * Build a response
+     *
+     * @param string $message
+     * @param array $authenticatedUser
+     * @return array
+     */
+    protected function buildResponse($message, $authenticatedUser = [])
+    {
+        if (empty($authenticatedUser)) {
+            return ['message' => $message];
+        }
+
+        return [
+            'message' => $message,
+            'authenticatedUser' => $authenticatedUser
+        ];
+    }
+
 }
