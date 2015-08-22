@@ -60,9 +60,7 @@ class ValidateJWT
      */
     protected function returnTokenExceptionResponse($message, $statusCode)
     {
-        return response()->json(
-            $this->buildResponse($message), $statusCode
-        );
+        return response()->json($this->buildResponse($message), $statusCode);
     }
 
     /**
