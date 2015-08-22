@@ -6,9 +6,10 @@ use Tymon\JWTAuth\Exceptions\TokenInvalidException as TokenInvalidException;
 use Tymon\JWTAuth\Exceptions\JWTException as JWTException;
 
 /**
- * A wrapper class to validate JWT token
+ * A service class to validate JWT token
+ * Returns token result message and authenticated user dataa
  *
- * Class Paginator
+ * @author jraymundo.yrockdev@gmail.com
  * @package Nrns\Services
  */
 class ValidateJWT
@@ -100,7 +101,7 @@ class ValidateJWT
 
         return [
             'message' => $message,
-            'authenticatedUser' => $authenticatedUser
+            'authenticated' => $authenticatedUser
         ];
     }
 

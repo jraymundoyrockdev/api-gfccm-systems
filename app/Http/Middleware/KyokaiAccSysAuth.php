@@ -4,7 +4,6 @@ namespace ApiGfccm\Http\Middleware;
 
 use Closure;
 use ApiGfccm\Services\JWTValidation\ValidateJWT;
-use Illuminate\Http\JsonResponse as JsonResponse;
 
 class KyokaiAccSysAuth
 {
@@ -27,19 +26,19 @@ class KyokaiAccSysAuth
      */
     public function handle($request, Closure $next)
     {
-        $validatedTokenResult = $this->validateJWT->validate();
-        $validatedToken = $validatedTokenResult->getData(1);
+        $validatedJWTResult = $this->validateJWT->validate();
+        $validatedJWTResult = $validatedJWTResult->getData();
 
-        $validatedToken['message']);
-        if (! array_key_exists('user', $validatedToken)) {
-            return $validatedToken;
+        if ($validatedJWTResult->message != 'token_valid') {
+            return $validatedJWTResult->message;
         }
 
-        return $this->validateUserRole($validatedToken);
+        if ($validatedJWTResult->authenticated->user->role_id != 3) {
+            return 'Unauthenticated user';
+        }
+
+        return $next($request);
     }
 
-    protected function validateUserRole($validatedToken)
-    {
-        return $validatedToken['user']['role_id'];
-    }
+
 }
