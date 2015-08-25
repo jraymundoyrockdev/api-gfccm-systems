@@ -34,7 +34,7 @@ class KyokaiAccSysAuth
         }
 
         if ($validatedJWTResult->authenticated->user->role_id != 3) {
-            return 'Unauthenticated user';
+            return 'user_unathenticated';
         }
 
         return $next($request);

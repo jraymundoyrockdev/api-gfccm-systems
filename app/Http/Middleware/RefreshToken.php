@@ -1,4 +1,4 @@
-<?php namespace Nrns\Http\Middleware;
+<?php namespace ApiGfccm\Http\Middleware;
 
 use Closure;
 use Tymon\JWTAuth\Middleware\RefreshToken as BaseRefreshToken;

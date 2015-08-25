@@ -51,7 +51,7 @@ class AuthenticationController extends Controller
         return [
             'token' => $this->getUserToken($this->auth->user()),
             //'role' =>  $this->createSalt().$this->auth->user()->role_id.$this->createPepper()
-            //'role' => $this->auth->user()->role_id
+            //'jem_message' => 'i miss you!!!'
         ];
     }
 
