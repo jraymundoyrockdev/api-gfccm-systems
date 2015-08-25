@@ -1,13 +1,7 @@
 <?php namespace ApiGfccm\Http\Middleware;
 
 use Closure;
-use Illuminate\Contracts\Pagination\Paginator;
-use Illuminate\Http\Response;
-use Illuminate\Support\Str;
 use League\Fractal\Manager;
-use League\Fractal\Pagination\IlluminatePaginatorAdapter;
-use League\Fractal\Resource\Collection;
-use League\Fractal\Resource\Item;
 use League\Fractal\Serializer\JsonApiSerializer;
 
 class RespondWithResource
@@ -30,43 +24,10 @@ class RespondWithResource
         if (!isset($response->original)) {
             return $response;
         }
-
-        if($response->original instanceof \Illuminate\Database\Eloquent\Collection){
-            return $this->collectionResponse($response);
+        if (!is_callable($response)) {
+            return $response;
         }
-
-        return $this->itemResponse($response);
-    }
-
-    private function collectionResponse(Response $response)
-    {
-        $type = str_replace('ApiGfccm\\', '', get_class($response->original->first()));
-        $transformer = 'ApiGfccm\Http\Controllers\Api\Transformers\\' . $type . 'Transformer';
-        $resource = new Collection(
-            $response->original,
-            new $transformer,
-            Str::plural($type)
-        );
-
-        if ($response->original instanceof Paginator) {
-            $resource->setPaginator(new IlluminatePaginatorAdapter($response->original));
-        }
-
-        $response->setContent($this->fractal->createData($resource)->toJson());
-
-        return $response;
-    }
-
-    private function itemResponse(Response $response)
-    {
-        $type = str_replace('ApiGfccm\\', '', get_class($response->original));
-        $transformer = '\ApiGfccm\Http\Controllers\Api\Transformers\\' . $type . 'Transformer';
-        $resource = new Item(
-            $response->original,
-            new $transformer,
-            $type
-        );
-        $response->setContent($this->fractal->createData($resource)->toJson());
+        $response->setContent($this->fractal->createData($response())->toJson());
 
         return $response;
     }

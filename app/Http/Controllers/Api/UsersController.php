@@ -2,15 +2,10 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
-use League\Fractal\Manager;
-use League\Fractal\Pagination\IlluminatePaginatorAdapter;
-use League\Fractal\Resource\Collection;
-use League\Fractal\Resource\Item;
-use League\Fractal\Serializer\JsonApiSerializer;
-use ApiGfccm\Http\Controllers\Api\Transformers\UserTransformer;
 use ApiGfccm\Http\Requests;
 use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
+use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Http\Responses\CollectionResponse;
 
 class UsersController extends ApiController
 {
@@ -29,22 +24,26 @@ class UsersController extends ApiController
     }
 
     /**
-     *  Get all Users
+     * Get all Users
+     *
+     * @return CollectionResponse
      */
+
     public function index()
     {
-        return $this->user->getAllUsers();
+        return (new CollectionResponse($this->user->getAllUsers()))->asType('User');
     }
 
     /**
-     *  Get specific User
+     * Get a Single User Information
      *
-     * @param int $id
-     *
-     * @return Object|null
+     * @param $id
+     * @return ItemResponse
      */
+
     public function show($id)
     {
-        return $this->user->getById($id);
+
+        return new ItemResponse($this->user->getById($id));
     }
 }
