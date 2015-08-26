@@ -70,7 +70,7 @@ class ValidateJWT
      */
     protected function returnUnauthenticatedUserResponse()
     {
-        return response()->json('Unauthorized user', 404);
+        return response()->json($this->buildResponse('user_unauthorized'), 404);
     }
 
     /**

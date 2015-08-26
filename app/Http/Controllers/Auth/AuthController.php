@@ -2,7 +2,7 @@
 
 namespace ApiGfccm\Http\Controllers\Auth;
 
-use ApiGfccm\User;
+use ApiGfccm\Models\User;
 use Validator;
 use ApiGfccm\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -54,9 +54,11 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers;
 
     /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
+     * @param AuthValidator $validator
+     * @param AuthManager $auth
+     * @param Request $request
+     * @param Redirector $redirect
+     * @param SessionManager $session
      */
     public function __construct(
         AuthValidator $validator,

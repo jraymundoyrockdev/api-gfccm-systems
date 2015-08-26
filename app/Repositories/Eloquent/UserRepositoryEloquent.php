@@ -1,7 +1,7 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
-use ApiGfccm\User;
+use ApiGfccm\Models\User;
 
 class UserRepositoryEloquent implements UserRepositoryInterface
 {
@@ -22,7 +22,7 @@ class UserRepositoryEloquent implements UserRepositoryInterface
      */
     public function getAllUsers()
     {
-        return $this->user->all();
+        return $this->user->with('ministry')->get();
     }
 
     /**

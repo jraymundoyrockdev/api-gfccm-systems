@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => ApiGfccm\User::class,
+        'model'  => ApiGfccm\Models\User::class,
         'key'    => '',
         'secret' => '',
     ],

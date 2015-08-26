@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiGfccm;
+namespace ApiGfccm\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -32,4 +32,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password'];
+
+
+    /**
+     * A User has one main ministry
+     */
+    public function ministry()
+    {
+        return $this->hasOne('ApiGfccm\Models\Ministry', 'id', 'ministry_id');
+    }
 }
