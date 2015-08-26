@@ -23,7 +23,7 @@ class UserTransformer extends TransformerAbstract
     {
         return [
             'username' => $user->username,
-            'with_ministry' => $this->ministry->transform($user->ministry)
+            'ministry' => $this->ministry->transform($user->ministry)
         ];
     }
 }
