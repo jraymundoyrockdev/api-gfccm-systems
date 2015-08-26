@@ -22,7 +22,7 @@ class UserRepositoryEloquent implements UserRepositoryInterface
      */
     public function getAllUsers()
     {
-        return $this->user->with('ministry')->get();
+        return $this->user->with(['ministry', 'member'])->get();
     }
 
     /**

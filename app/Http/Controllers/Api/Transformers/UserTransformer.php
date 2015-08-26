@@ -8,11 +8,12 @@ class UserTransformer extends TransformerAbstract
 {
 
     protected $ministry;
-
+    protected $member;
 
     public function __construct()
     {
         $this->ministry = new MinistryTransformer();
+        $this->member = new MemberTransformer();
     }
 
     /**
@@ -23,7 +24,8 @@ class UserTransformer extends TransformerAbstract
     {
         return [
             'username' => $user->username,
-            'ministry' => $this->ministry->transform($user->ministry)
+            'ministry' => $this->ministry->transform($user->ministry),
+            'member' => $this->member->transform($user->member)
         ];
     }
 }

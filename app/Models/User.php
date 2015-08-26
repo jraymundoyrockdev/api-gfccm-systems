@@ -41,4 +41,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasOne('ApiGfccm\Models\Ministry', 'id', 'ministry_id');
     }
+
+    /**
+     * A User is always a member
+     */
+    public function member()
+    {
+        return $this->hasOne('ApiGfccm\Models\Member', 'id', 'member_id');
+    }
 }
