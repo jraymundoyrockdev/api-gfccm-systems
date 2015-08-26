@@ -10,7 +10,7 @@ class ItemResponse extends AbstractApiResponse
      */
     protected function getTypeName()
     {
-        return $this->type ?: str_replace('ApiGfccm\\', '', get_class($this->original));
+        return $this->type ?: str_replace('ApiGfccm\Models\\', '', get_class($this->original));
     }
 
     /**

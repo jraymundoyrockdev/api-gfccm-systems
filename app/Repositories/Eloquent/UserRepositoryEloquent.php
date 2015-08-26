@@ -32,7 +32,7 @@ class UserRepositoryEloquent implements UserRepositoryInterface
      */
     public function getById($id)
     {
-        return $this->user->where('id', $id)->first();
+        return $this->user->with(['ministry', 'member'])->where('id', $id)->first();
 
     }
 

@@ -49,4 +49,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasOne('ApiGfccm\Models\Member', 'id', 'member_id');
     }
+
+    /**
+     * A User has one role
+     */
+    public function role()
+    {
+        return $this->hasOne('ApiGfccm\Models\UserRole', 'id', 'role_id');
+    }
 }
