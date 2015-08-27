@@ -35,4 +35,9 @@ class MinistryRepositoryEloquent implements MinistryRepositoryInterface
         return $this->ministry->where('id', $id)->first();
     }
 
+    public function createNewMinistry($payload)
+    {
+        return $this->ministry->create($payload);
+    }
+
 }
