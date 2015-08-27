@@ -43,7 +43,6 @@ class UsersController extends ApiController
 
     public function show($id)
     {
-
         return new ItemResponse($this->user->getById($id));
     }
 }

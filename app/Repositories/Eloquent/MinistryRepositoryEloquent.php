@@ -18,7 +18,7 @@ class MinistryRepositoryEloquent implements MinistryRepositoryInterface
     /**
      * Returns all Ministry
      *
-     * @return User|null
+     * @return Ministry|null
      */
     public function getAllMinistry()
     {
@@ -28,16 +28,33 @@ class MinistryRepositoryEloquent implements MinistryRepositoryInterface
     /**
      * Get a certain ministry
      *
-     * @return User|null
+     * @return Ministry|null
      */
     public function getById($id)
     {
-        return $this->ministry->where('id', $id)->first();
+        return $this->ministry->find($id);
     }
 
+    /**
+     * @param $payload
+     * @return static
+     */
     public function createNewMinistry($payload)
     {
         return $this->ministry->create($payload);
+    }
+
+    /**
+     * @param $id
+     * @param $payload
+     * @return Ministry|null
+     */
+    public function updateMinistry($id, $payload)
+    {
+        $ministry = $this->getById($id);
+        $ministry->fill($payload)->save();
+
+        return $ministry;
     }
 
 }
