@@ -30,7 +30,7 @@ class KyokaiAccSysAuth
         $validatedJWTResult = $validatedJWTResult->getData();
 
         if ($validatedJWTResult->message != 'token_valid') {
-            return $validatedJWTResult->message;
+            return $validatedJWTResult;
         }
 
         if ($validatedJWTResult->authenticated->user->role_id != 3) {

@@ -27,6 +27,7 @@ Route::group(
         Route::group(['middleware' => ['resource', 'kyokai.auth']], function () {
             Route::resource('users', 'UsersController');
             Route::resource('user-roles', 'UserRolesController');
+            Route::resource('ministry', 'MinistryController');
         });
     }
 );

@@ -2,7 +2,6 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
 use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Controllers\Controller;
 use ApiGfccm\Repositories\Interfaces\UserRoleRepositoryInterface;
