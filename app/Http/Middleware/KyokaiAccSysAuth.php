@@ -30,14 +30,21 @@ class KyokaiAccSysAuth
         $validatedJWTResult = $validatedJWTResult->getData();
 
         if ($validatedJWTResult->message != 'token_valid') {
-            return $validatedJWTResult;
+            return response()->json($this->buildErrorResponse($validatedJWTResult->message), 200);
         }
 
         if ($validatedJWTResult->authenticated->user->role_id != 3) {
-            return 'user_unauthorized';
+            return 'token_unautorised';
         }
 
         return $next($request);
+    }
+
+    protected function buildErrorResponse($errorMessage)
+    {
+        return [
+            'error' => $errorMessage
+        ];
     }
 
 
