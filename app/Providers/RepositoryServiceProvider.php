@@ -1,6 +1,10 @@
 <?php namespace ApiGfccm\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
+use ApiGfccm\Repositories\Eloquent\UserRepositoryEloquent;
+use ApiGfccm\Repositories\Interfaces\UserRoleRepositoryInterface;
+use ApiGfccm\Repositories\Eloquent\UserRoleRepositoryEloquent;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -12,9 +16,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(
-            'ApiGfccm\Repositories\Interfaces\UserRepositoryInterface',
-            'ApiGfccm\Repositories\Eloquent\UserRepositoryEloquent'
-        );
+        $this->app->bind(UserRepositoryInterface::class, UserRepositoryEloquent::class);
+        $this->app->bind(UserRoleRepositoryInterface::class, UserRoleRepositoryEloquent::class);
     }
 }
