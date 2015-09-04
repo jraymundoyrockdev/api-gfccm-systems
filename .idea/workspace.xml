@@ -2,47 +2,85 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="442b32c5-a457-45e6-a8f8-0c463e2d7c51" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\0471b2a5dd4d2fba5849dabb2d3ae0f0689acafa" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\0603fb25f12596b3e1b3149dfbbf9f411adf38dc" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\09cced57e4c999bff29f51ba3158f461572670aa" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\0c406045597610a9bf2ebce7ffb1a5029c0d7d2c" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\0e40527b107b9c49d6a9b55e0fb62fadebe25384" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\11b5a318e899fc6070dab98cf19dc960c7bd985d" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\18c4421e5cf28993ae88f9584d1f23bef6deed19" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\1dd412911bf65e80842cf9c4d57e629481a96d95" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\2bb620cd017198f09afd173a94049f628ac8b995" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\3d5e0bc870615e6b46520e5e7a16bf08d808ee3c" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\3f1f8d9a17bb59f49a9c94381b0aa4dc5e365b81" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\43dce42d7d8a46cc92b534ae6d55109b71842b4a" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\526dcab0b7902bbdd21fc63a87c1657b26139842" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\53041fcb35317e94e6760db666a44e45ef30db57" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\59b0637e1a73353895e13dd35a9638f2240676a2" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\6fd65d8794863403ec4b96c82c23b41ec5915f6f" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\78384ca2b35794dc1d7ea7e881ef9e304e22f344" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\84e7078e95150960c9ce6b50be8596780032adf5" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\906955673ba46735a40f82303694339d5860aa5b" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\9616bbf09dba905bcbecc410abbe85e7778b8b11" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\a2b5e44e133f197d3220b0703ae395972e765647" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\a381a72eb9c72022368e771a7d90d58e466cd7c2" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\ab2a81caf07df32fe872e3c0fd98d4bae9c03626" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\abecd26e1880d8b579a580a9246fe009b8dfe32a" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\ade464ff67bc662c69cbbccbedc6657d90c33a96" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\b84b21627706c31751819d9c4072d344170ab7e6" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\c327dfa1ed2b825a79734748510ae9242f3a0191" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\c37a95612cc0cb3ff80ece07dbdcb49a5ca00ff2" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\e21b56977451ed4a9f95b697f504b64fcfe989a9" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\f0d3e6ef5fbe7b06c46ae4d71010793ba85cfc82" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\f0feaa68fa756ef19e52b0ea10cc4257e859bf18" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\f4249a5c5cf1c87cfcc3f94db24370285d328e9c" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\f833be8bec0b8fe81a0e11b9174c6d8a373ef987" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\fd78258d6535004e62863a151f139b1a869311f9" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\fe3d54f4f337e3e8f61a0188f921c0a2dea303f3" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gfccm\api-gfccm-systems\storage\framework\sessions\fe4e8777438d81b853c52631e0156d6e4b0095cf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/sessions/7436ec62666b3c66c89015bd037216523407ed41" afterPath="$PROJECT_DIR$/storage/framework/sessions/7436ec62666b3c66c89015bd037216523407ed41" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/MinistryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/MinistryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Eloquent/MinistryRepositoryEloquent.php" afterPath="$PROJECT_DIR$/app/Repositories/Eloquent/MinistryRepositoryEloquent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UsersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UsersController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/Eloquent/DenominationRepositoryEloquent.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/DenominationRepositoryInterface.php" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\02ba3fbb035b06fe330f7d322e13e8eb75d3f0e5" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\0468f48dafa7b80d559667766e61ebd302cea075" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\0d6c4abc2bd3082ebdc82d47e4dffa7cef3af18d" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\109d5cf3466886ed0d0d8432905422716ac19dba" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\1db5343b6773de16ff1efcaa3da5c15597d7978c" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\201c5a697d0d877bed98fb8ea15f143c30d537c6" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\22c7ae39adc0709e93fd34609c63008f7b68ea87" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\234b6ceee3a81a5c1d6d17917f5833a03ded6188" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\23ed851fbcc78beecb2d7f1a3fc5387d48c8dad3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\27396807c652ae28c9729751e0cc8a826ea2f43b" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\28c303cfb9a38929bec26c8d59722a9ae23f02d0" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\31c9b707f94c6e96fe6b7d3dd5daa2f9085d22da" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\3ac9ce9e0e92516cfad0bb6b5d690d17e28eeedd" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\4535415a96b0814da53b9400304869dc66c77dac" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\460de3a04a97b6319e7986e3835140173b6ac5cd" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\483d38482bfa7b3507ac37417f030d565fd25827" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\4c8f86bf25581ea4d2690c0b2d3fc158e271ba62" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\5420718c7eb10e9c511c293bf0318e0a62eb7606" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\565c1e8d9a87b7e2fcc281bf485fea3b5d2d28d1" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\569cabe2e42450e5f77aaa2c5acdd162fa5e3d19" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\57e0ddd366722c74f90077fff09ec53b1d05a7a7" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\5a8d97cf5a2378ef7be16f26094721b602a7cf26" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\5cbb185a79b825595fd8262817f52dde71db97d6" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\5f3e1d00160238a7621392d2c792d91b94569036" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\6125a5a2b4c49341adcc53dd3f2bf35328344552" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\6a89e4c4cdae754ceed7cfe45c810069f9565206" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\6b21428b48aa981ceafbff881c7ab8203dd2aa42" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\6f0d80473980c334a5718d2e85ea7d0663ff79bb" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\7049e50a6838a5bf0fa1f512fd02c72045c1e6a0" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\7436ec62666b3c66c89015bd037216523407ed41" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\7d0123d0f0548f85eb3d476f03cc036f0b28ba21" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\7d1287d8a920420311beff186e7d69e7092bb717" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\7fcee06e59ac18491c7ae60a0a13cd6a146c5996" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\80cb0312daaa9a112cd5751247c487f4def883ed" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\85a729b879707579999cf0c827b3e49bbfdc8f05" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\879889c3ed12d1896d0af6862ea692ddfa6a2a9f" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\880b85e1edaa0158832da5fe19db9a7f31c4deeb" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\8f93bf75d3872d28b27a82c8a4b88e14da6765fb" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\920d955ccf67c9693e59e905800eb52b5e195d6d" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\951368db29313575375a31c083c1026e91774fe1" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\9603a0368627257497cfec363b17aa4c18cf95b5" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\9f562895f5b9d884e7949572b58ea45d1c03e98e" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\9fcdd11f0e7dafec05151a99b1d3722aa92aa54a" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\a1cfe86011764fb6f04b41daea5c43ebd2204193" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\a73a58bab86a712e4e6fad0a5eb0e76589771e47" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\aa565dca637fc331826197914563b9196de04058" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\af00d77ea721e187d917e35552e7f4a4f9760149" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\b353a4b6ad2ee73a9209063342b63aaebae2fe02" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\b5dd91ecc5c26c185316c3b4c1cdf71e1c2a49e7" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\b6ebd34c4d243232ac6ddb2a328c3ba5385344d8" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\b99cd7434746984267e7a828d999193bfe9d8b4f" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\be28e282959eefefa3741a7add9817068cc3bd67" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\becea2d8da53e5fc2583ccc08fabffd871f5e815" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\bed41310387003c41a4623fda94f0376118607c9" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\c1bc347d592abf628d855590566adf7d8ce1b761" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\c6417daef2266e1530d4337f124d36a310ee908b" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\c700bf74b3daedaa831c20db035793b45a98c25a" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\c70df5bd5b55c5e29f63e73d63c79403cfc93551" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\c737e0755ce4bc737e96218ea6504c153d22cb07" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\d73f56e4b66266181b3f24274369195f9ac29ee3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\d8d7884e882690a54617159ecfaa314d1f6253e6" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\dd26eb565e80ccdec477493c6c4fafbf89d56e83" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\de101e56006f782026f7dbeaa259d44b573fe4b3" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\e01b93af69391d62bed4ba74ea36f2108dc81e23" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\e3564940094d0819c99477a8ed94f6f01e5a35a5" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\e4d4f837a7cd2b725db037d9e302e51c40b2aa7d" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\e5159485c4bdc9466e7d356354277902d778bcee" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\e7fca36e5fc117bc336cd4f130fe6519461c22a6" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\e860e08b087e3bf0420589e1bec0ccb9179bcfce" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\ef6cbbeeb714b193d43487ebf2feb23aabe238ab" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\f0f200dfb7cee50d2b8095c677371ecbfdce0ad0" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\f1532a169f47e3c9edd53da7fb68b9a997899f50" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\f1f777b9ef942d31db2b9fe6f7f337f0f6785a9f" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\f51da8ec43eeb8caff048c7c666df34a0efc45d5" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\f8cb3607d9aa19d93f1b188e1abd1737b62a58e1" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\fdbf0939f0751ac103e05a9061c8731d5900f01f" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="api-gfccm-systems.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,36 +102,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ValidateJWT.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Services/JWTValidation/ValidateJWT.php">
+      <file leaf-file-name="DenominationRepositoryEloquent.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/DenominationRepositoryEloquent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.2692308">
-              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="68" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RedirectIfAuthenticated.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
+      <file leaf-file-name="DenominationRepositoryInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/DenominationRepositoryInterface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.9230769">
-              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="8" selection-end-column="1" />
-              <folding>
-                <marker date="1440681781711" expanded="true" signature="359:509" placeholder=" Handle an incoming request. ..." />
-              </folding>
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MinistryController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MinistryController.php">
+      <file leaf-file-name="MinistryRepositoryInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/MinistryRepositoryInterface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.153846">
-              <caret line="73" column="100" selection-start-line="0" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-              <folding>
-                <element signature="e#49#77#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-10.461538">
+              <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepositoryInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/UserRepositoryInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.423077">
+              <caret line="19" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRoleRepositoryInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/UserRoleRepositoryInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="11" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepositoryEloquent.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/UserRepositoryEloquent.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,20 +165,8 @@
       <file leaf-file-name="MinistryRepositoryEloquent.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/MinistryRepositoryEloquent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08777969">
-              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-              <folding>
-                <element signature="e#49#114#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65384614">
-              <caret line="547" column="12" selection-start-line="547" selection-start-column="12" selection-end-line="547" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.36129755">
+              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -168,6 +220,9 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/MinistryController.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Eloquent/MinistryRepositoryEloquent.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DenominationController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Denomination.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Eloquent/DenominationRepositoryEloquent.php" />
       </list>
     </option>
   </component>
@@ -187,8 +242,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -263,6 +318,10 @@
               <option name="myItemId" value="Repositories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Interfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -304,54 +363,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-gfccm-systems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-gfccm-systems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-gfccm-systems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-gfccm-systems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -375,7 +386,14 @@
       <TestRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -399,11 +417,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21522693" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21510416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -431,27 +449,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/tymon/jwt-auth/src/Middleware/RefreshToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39932886">
-          <caret line="21" column="83" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/tymon/jwt-auth/src/JWTAuth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34228188">
-          <caret line="190" column="20" selection-start-line="190" selection-start-column="20" selection-end-line="190" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6655481">
-          <caret line="35" column="74" selection-start-line="35" selection-start-column="74" selection-end-line="35" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/Manager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5514541">
@@ -484,9 +481,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8199105">
           <caret line="260" column="23" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
-          <folding>
-            <element signature="e#7#240#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -497,25 +491,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthenticationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20134228">
-          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Member.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.576923">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -544,9 +523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32185885">
           <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="e#61#100#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -554,7 +530,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.730769">
           <caret line="21" column="5" selection-start-line="8" selection-start-column="3" selection-end-line="21" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -562,7 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154">
           <caret line="9" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -570,9 +544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-38.576923">
           <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-          <folding>
-            <element signature="e#35#71#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -580,7 +551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5384617">
           <caret line="11" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -595,7 +565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34767643">
           <caret line="209" column="27" selection-start-line="209" selection-start-column="27" selection-end-line="209" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -611,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="68" column="58" selection-start-line="68" selection-start-column="58" selection-end-line="68" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -619,7 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -627,7 +594,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -635,7 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.056013178">
           <caret line="2" column="40" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -647,21 +612,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/UserRepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55593807">
-          <caret line="19" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Transformers/UserTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.538462">
           <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-          <folding>
-            <element signature="e#61#100#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -669,25 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1923075">
           <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding>
-            <element signature="e#61#100#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/MinistryRepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05851979">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/UserRoleRepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32185885">
-          <caret line="11" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -695,9 +630,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49741825">
           <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding>
-            <element signature="e#37#76#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -705,19 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding>
-            <element signature="e#49#114#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/UserRepositoryEloquent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.25817555">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding>
-            <element signature="e#49#110#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -735,7 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64716005">
           <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -743,7 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.34595525">
           <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -751,7 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52667814">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -759,15 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23924269">
           <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../soniasgrill/public/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22405271">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -775,7 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.056013178">
           <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,15 +689,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23924269">
           <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
-          <folding>
-            <element signature="e#44#56#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/JWTValidation/ValidateJWT.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.2692308">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
           <folding />
         </state>
@@ -805,49 +708,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.9230769">
-          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="8" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.2771739">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="547" column="12" selection-start-line="547" selection-start-column="12" selection-end-line="547" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthenticationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
-            <marker date="1440681781711" expanded="true" signature="359:509" placeholder=" Handle an incoming request. ..." />
+            <element signature="e#49#85#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MinistryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.153846">
-          <caret line="73" column="100" selection-start-line="0" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding>
-            <element signature="e#49#77#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2771739">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.15212528">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="10" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DenominationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65384614">
-          <caret line="547" column="12" selection-start-line="547" selection-start-column="12" selection-end-line="547" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.07606264">
+          <caret line="8" column="68" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Member.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3232662">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Denomination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11409396">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/DenominationRepositoryEloquent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="68" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/DenominationRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/UserRepositoryEloquent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/UserRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="19" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/UserRoleRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="11" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/MinistryRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538">
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/MinistryRepositoryEloquent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08777969">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-          <folding>
-            <element signature="e#49#114#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.36129755">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
