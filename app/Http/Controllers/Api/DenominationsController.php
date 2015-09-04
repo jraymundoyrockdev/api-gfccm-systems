@@ -10,8 +10,22 @@ use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
 
-class DenominationController extends Controller
+class DenominationsController extends Controller
 {
+
+    /**
+     * @var DenominationRepositoryInterface
+     */
+    protected $denomination;
+
+    /**
+     * @param DenominationRepositoryInterface $denomination
+     */
+    public function __construct(DenominationRepositoryInterface $denomination)
+    {
+        $this->denomination = $denomination;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +33,7 @@ class DenominationController extends Controller
      */
     public function index()
     {
-        //
+        return (new CollectionResponse($this->denomination->getAllDenomination()))->asType('Denomination');
     }
 
     /**
@@ -35,29 +49,31 @@ class DenominationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param  Request $request
      * @return Response
      */
     public function store(Request $request)
     {
-        //
+        $input = array_filter($request->request->all());
+
+        return (new ItemResponse($this->denomination->createNewDenomination($input)))->asType('Denomination');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function show($id)
     {
-        //
+        return new ItemResponse($this->denomination->getById($id));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function edit($id)
@@ -68,19 +84,21 @@ class DenominationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  int  $id
+     * @param  Request $request
+     * @param  int $id
      * @return Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = array_filter($request->request->all());
+
+        return (new ItemResponse($this->denomination->updateDenomination($id, $input)))->asType('Denomination');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
     public function destroy($id)

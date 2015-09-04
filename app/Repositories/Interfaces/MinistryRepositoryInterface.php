@@ -16,4 +16,17 @@ interface MinistryRepositoryInterface
      */
     public function getById($id);
 
+    /**
+     * @param $payload
+     * @return static
+     */
+    public function createNewMinistry($payload);
+
+    /**
+     * @param $id
+     * @param $payload
+     * @return Ministry|null
+     */
+    public function updateMinistry($id, $payload);
+
 }

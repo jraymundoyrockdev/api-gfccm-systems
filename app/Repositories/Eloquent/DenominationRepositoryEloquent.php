@@ -22,7 +22,7 @@ class DenominationRepositoryEloquent implements DenominationRepositoryInterface
      */
     public function getAllDenomination()
     {
-        return $this->denomination->all();
+        return $this->denomination->orderBy('amount')->get();
     }
 
     /**

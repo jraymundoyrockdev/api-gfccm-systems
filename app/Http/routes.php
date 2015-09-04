@@ -28,6 +28,7 @@ Route::group(
             Route::resource('users', 'UsersController');
             Route::resource('user-roles', 'UserRolesController');
             Route::resource('ministry', 'MinistryController');
+            Route::resource('denominations', 'DenominationsController');
         });
     }
 );
