@@ -29,6 +29,7 @@ Route::group(
             Route::resource('user-roles', 'UserRolesController');
             Route::resource('ministry', 'MinistryController');
             Route::resource('denominations', 'DenominationsController');
+            Route::resource('services', 'ServicesController');
         });
     }
 );

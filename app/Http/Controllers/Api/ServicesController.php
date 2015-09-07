@@ -6,9 +6,26 @@ use Illuminate\Http\Request;
 
 use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Controllers\Controller;
+use ApiGfccm\Repositories\Interfaces\ServiceRepositoryInterface;
+use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Http\Responses\CollectionResponse;
 
 class ServicesController extends Controller
 {
+
+    /**
+     * @var ServiceRepositoryInterface
+     */
+    protected $service;
+
+    /**
+     * @param ServiceRepositoryInterface $service
+     */
+    public function __construct(ServiceRepositoryInterface $service)
+    {
+        $this->service = $service;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +33,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        //
+        return (new CollectionResponse($this->service->getAllServices()))->asType('Service');
     }
 
     /**
