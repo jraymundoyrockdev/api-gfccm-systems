@@ -5,3 +5,4 @@ Homestead.yaml
 composer.lock
 /storage/framework/sessions
 .idea/workspace.xml
+.idea

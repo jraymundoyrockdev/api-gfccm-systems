@@ -2,96 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="442b32c5-a457-45e6-a8f8-0c463e2d7c51" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_09_04_012330_create_table_denominations.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Transformers/DenominationTransformer.php" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\02ec8017fd472219b677b73519add5493db58d66" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\059ea65e042a0081574583a4534e60330da780f3" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\1169b00585efc4a2fea8cac4b9daeeb96a8c5902" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\15fb8d5c4449f841e57c5175231392eb8c3c6e23" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\162d8439c03e56bf1edd0f4cd9b40e0245b23666" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\1791eb72e7ec6f462e2b21e73fe843ced8db1a0b" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\18d8559b4ba0fad03ced3c954c49c316d030b4a1" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\1a11c06b7f376ed084ae7dff92e1907ec7da738e" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\1b81ac135dd8f82677edc7fc7bb2337cf0294956" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\1b9d2006dcecdc559723f8ea19ad43b70af0b903" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\237b5d3ce370de0b5a07adfa796ed2bf088b0d25" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\24b4d1a5d533a46eb23dcb13969469c9e0556c78" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\29d9d6440eaa03129dc382f5a3a04623e380f75b" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\2a4c2c27f32f911c32b83e6e68521e26d323a051" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\2fa394becfb8bc465bf7699d9a88becb4d1025d4" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\30d6606d8ea0aa4f8dfe4681e1e1d71dfc9cebb2" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\3761597bfe4f7b20e4663747e5a89164a64ba156" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\384f3507a81de580d89b82cbc31b32792d789108" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\393829018276c3ab8f7924083678d86251cce33f" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\41679f3a2a0a80fe44fe825df435a1eab773a9da" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\42478bcfa9e6ce78b2c009c9d33d0958b5ee6597" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\437f7fbfeca506b72f3c72e11c9aff4892a6341c" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\44a4235af2f32def068d2df785569acd04899dff" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\44ee4755a00ce2644028804ec30b69543fefae82" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\47002807ec710ae3e942656b91c223190a8e68ed" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\4aac8d532dd272d572e9484a06050f2c3e7d08f7" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\4b7af3d15cce165966e1ec094975b6d99a96213f" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\4bbd3528d476e7b7f6606470ab4df4d87c6a4f7b" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\4cbab8f4787c191cf6b5e8b3073ae76d7b3098e6" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\4f5bc4d8814c4430d1875b86d34396c0e5401937" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\4fc163d23dd42ec96c9f471950f2343e1b686fe3" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\5253d2725338a39989d749e2c23e7115657d8d7d" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\53cc0301f416a6c4a9098d455bdf11fad463ad1f" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\568a0c2892dc9c2c9354e85c66ff30b70948a8b2" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\568ca7a331de1fe9c6d3c2029a4d51a9ba371899" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\57de3bf05b16203f45235e34ca04ab039b544a29" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\5b0a6b520f773d19f2288c762b1994220feb0098" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\5f7b40588cbe6a68a81ff9081e0e5c5e68b66f4a" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\60da1b6f1a61e2f9cd0ef1d505d2f568fb2d713d" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\6143801cba26a0fb4bf8dc8bef971def247701dd" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\727151fda1f0577f49153b9d7f54c870f3f6962c" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\771ff64001c0dc0abcf7b50a7184ac16ea8e0752" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\774e063d717a71eb5fcfc284449c5e13ff2e3b93" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\7c1ad27086a3a981b74715297f96d36b518130d0" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\7ed2aa377951c23ea8937349419d19de54b6c045" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\87ea676ed588eadcb3843a69755502d94dc82346" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\90cf8975397836f90713ecdd05334b3b44d7a5fe" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\9199735015cc26a0ea9f591a084e54293f13a070" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\930ec7842a4c99c1f802dbb6d62d3d00e8d7429c" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\95e0a03d526ab752c01a1bb8486f5137db67270f" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\98ff2c592586fceb88141e9719ec7f7c470ace20" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\9b9e976b97e96fe7833153aa827d45099ae30bf9" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\9d36cbfd0cfa5bec76295f6eea3fbb1d67bd6f92" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\9e8555a090f09dff8144530d84baa55a29e9803e" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\a44686cca332b940fec6b7404b4a74471e1df36e" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\a81b044de766fed15cac3ca24c36a07d7c870b24" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\a845f1e2bebbcad5a92c49325a40f00d8068d7f9" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\b530a91bce425d7149924f26bd21629d034faf34" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\b55bac6956b89abb763897976d8140ef5967efc9" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\b5650fc682fa7ce59ef11c5144c7cc1a38186996" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\b8545b1ddf6c08c1691707060f9803a6a08f4185" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\b91a060f137e4dfc0c8626e9bd8e1e48d18e2f18" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\c0e81b4feefe95e44aa31a3792bed530983f5f69" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\c726b68dd8a51dcab2f0be89dc296034087e112e" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\cc3d19728cf6c7c588ee2b8ab361a69b82272214" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\d1ff700164979c85dcf95dfcf4a7d71c667adfdc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\d2373344187fe8919dc73fbeb7d7b4120cbc2cdd" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\d30ee239ed5f953cf5d3e57cc8bd7507553a441e" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\d52c865b6500bde497c4cc012a59a06311664399" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\d95a52d992709048b706fc990b894efe9efafc36" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\d97cbfc02ed22115877c1bf53fb3e1eb4aef5001" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\ddb22f924e3d39a4a78af8add68b0890d6d607b2" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\ded345c5b9077cafc95d327a550a94cca698b409" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\df36f59262a653183c6cadd35edb3df81b7d897e" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\e2785f02e24e4f92d6ed24cc0750286c581668e2" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\e4e9c6310a0511a075a6d6ab9ae0fc590efa82bd" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\e65531e0969bc721638851792a1c87078781231e" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\f70b11f67dd714f5303ed1b6a74d496648fca931" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\storage\framework\sessions\fb6e0b05f28b3377a87f9ab8a23deb0410fa44cd" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\NRNS\Code\gfccm\api-gfccm-systems\app\Http\Controllers\Api\DenominationController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/DenominationsController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_09_07_074846_create_table_services.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/Eloquent/ServiceRepositoryEloquent.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/ServiceRepositoryInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ServicesController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Models/Denomination.php" afterPath="$PROJECT_DIR$/app/Models/Denomination.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Eloquent/DenominationRepositoryEloquent.php" afterPath="$PROJECT_DIR$/app/Repositories/Eloquent/DenominationRepositoryEloquent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Interfaces/DenominationRepositoryInterface.php" afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/DenominationRepositoryInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/Interfaces/MinistryRepositoryInterface.php" afterPath="$PROJECT_DIR$/app/Repositories/Interfaces/MinistryRepositoryInterface.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/sessions/ff3dde41a2b399b123aa3270839518673602ba44" afterPath="$PROJECT_DIR$/storage/framework/sessions/ff3dde41a2b399b123aa3270839518673602ba44" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="api-gfccm-systems.iws" />
@@ -114,13 +30,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DenominationRepositoryEloquent.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/DenominationRepositoryEloquent.php">
+      <file leaf-file-name="2015_09_07_074846_create_table_services.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2015_09_07_074846_create_table_services.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.576923">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
               <folding>
-                <element signature="e#49#118#0#PHP" expanded="true" />
+                <element signature="e#7#48#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,18 +45,18 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11422172">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.13325869">
+              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MinistryController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MinistryController.php">
+      <file leaf-file-name="ServicesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ServicesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="100" selection-start-line="71" selection-start-column="7" selection-end-line="73" selection-end-column="100" />
+            <state vertical-scroll-proportion="-16.346153">
+              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
               <folding>
                 <element signature="e#49#77#0#PHP" expanded="true" />
               </folding>
@@ -148,63 +64,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DenominationsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DenominationsController.php">
+      <file leaf-file-name="MinistryController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MinistryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DenominationTransformer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Transformers/DenominationTransformer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+            <state vertical-scroll-proportion="-11.192307">
+              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
               <folding>
-                <element signature="e#61#100#0#PHP" expanded="true" />
+                <element signature="e#49#77#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Denomination.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Denomination.php">
+      <file leaf-file-name="MinistryRepositoryEloquent.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/MinistryRepositoryEloquent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-              <folding />
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+              <folding>
+                <element signature="e#49#114#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2015_09_04_012330_create_table_denominations.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2015_09_04_012330_create_table_denominations.php">
+      <file leaf-file-name="ServiceRepositoryEloquent.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/ServiceRepositoryEloquent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-              <folding />
+            <state vertical-scroll-proportion="-12.423077">
+              <caret line="19" column="6" selection-start-line="18" selection-start-column="21" selection-end-line="19" selection-end-column="6" />
+              <folding>
+                <element signature="e#49#113#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ministry.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Ministry.php">
+      <file leaf-file-name="RepositoryServiceProvider.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="5" selection-start-line="8" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
-              <folding />
+            <state vertical-scroll-proportion="-18.307692">
+              <caret line="28" column="85" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding>
+                <element signature="e#37#76#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <file leaf-file-name="MinistryRepositoryInterface.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/MinistryRepositoryInterface.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="59" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -256,7 +168,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/MinistryController.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Eloquent/MinistryRepositoryEloquent.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Interfaces/MinistryRepositoryInterface.php" />
-        <option value="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Interfaces/DenominationRepositoryInterface.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/DenominationController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
@@ -265,6 +176,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/Transformers/DenominationTransformer.php" />
         <option value="$PROJECT_DIR$/app/Models/Denomination.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Eloquent/DenominationRepositoryEloquent.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_09_07_074846_create_table_services.php" />
+        <option value="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Interfaces/ServiceRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/app/Repositories/Eloquent/ServiceRepositoryEloquent.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -311,8 +226,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -331,40 +244,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-gfccm-systems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-gfccm-systems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-gfccm-systems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api-gfccm-systems" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -422,7 +305,7 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21510416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32911393" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -448,45 +331,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3232662">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/league/fractal/src/TransformerAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8199105">
-          <caret line="260" column="23" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RespondWithResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51342285">
-          <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.807693">
           <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_08_26_161532_create_user_roles.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -595,9 +443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4492255">
           <caret line="33" column="93" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="93" />
-          <folding>
-            <element signature="e#49#76#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -633,7 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.80895007">
           <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -655,9 +499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#49#85#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -696,24 +537,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17114094">
-          <caret line="9" column="62" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/JWTValidation/ValidateJWT.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.893736">
           <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/MinistryRepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5704698">
-          <caret line="30" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -724,18 +551,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/MinistryRepositoryEloquent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82885903">
-          <caret line="57" column="5" selection-start-line="37" selection-start-column="4" selection-end-line="57" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/KyokaiAccSysAuth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47762865">
           <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -749,7 +568,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Ministry.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.39932886">
           <caret line="21" column="5" selection-start-line="8" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
           <folding />
         </state>
@@ -764,33 +583,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.5704698">
           <caret line="30" column="59" selection-start-line="30" selection-start-column="59" selection-end-line="30" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MinistryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="100" selection-start-line="71" selection-start-column="7" selection-end-line="73" selection-end-column="100" />
-          <folding>
-            <element signature="e#49#77#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_09_04_012330_create_table_denominations.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/DenominationsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.63870245">
           <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
           <folding />
         </state>
@@ -798,17 +599,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/Transformers/DenominationTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.20917226">
           <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
           <folding>
-            <element signature="e#61#100#0#PHP" expanded="true" />
+            <element signature="e#61#100#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Denomination.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.20917226">
           <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
           <folding />
         </state>
@@ -816,18 +617,110 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/DenominationRepositoryEloquent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.576923">
+        <state vertical-scroll-proportion="0.22035794">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
-            <element signature="e#49#118#0#PHP" expanded="true" />
+            <element signature="e#49#118#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_08_26_161532_create_user_roles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30425057">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_09_04_012330_create_table_denominations.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2852349">
+          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_09_07_074846_create_table_services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="e#7#48#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ServicesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.346153">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+          <folding>
+            <element signature="e#49#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/MinistryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.192307">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding>
+            <element signature="e#49#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/MinistryRepositoryEloquent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding>
+            <element signature="e#49#114#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/ServiceRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17114094">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Interfaces/MinistryRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8846154">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.307692">
+          <caret line="28" column="85" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#37#76#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repositories/Eloquent/ServiceRepositoryEloquent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="19" column="6" selection-start-line="18" selection-start-column="21" selection-end-line="19" selection-end-column="6" />
+          <folding>
+            <element signature="e#49#113#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11422172">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.13325869">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
           <folding />
         </state>
       </provider>
