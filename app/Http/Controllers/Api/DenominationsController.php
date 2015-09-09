@@ -10,7 +10,7 @@ use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
 
-class DenominationsController extends Controller
+class DenominationsController extends ApiController
 {
 
     /**
@@ -54,6 +54,13 @@ class DenominationsController extends Controller
      */
     public function store(Request $request)
     {
+
+        $this->validate($request, [
+            'amount' => 'required|unique:denominations|integer',
+            'description' => 'required',
+        ]);
+
+
         $input = array_filter($request->request->all());
 
         return (new ItemResponse($this->denomination->createNewDenomination($input)))->asType('Denomination');

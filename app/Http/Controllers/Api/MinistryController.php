@@ -10,7 +10,7 @@ use ApiGfccm\Repositories\Interfaces\MinistryRepositoryInterface;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
 
-class MinistryController extends Controller
+class MinistryController extends ApiController
 {
 
     /**

@@ -8,7 +8,7 @@ use ApiGfccm\Repositories\Interfaces\UserRoleRepositoryInterface;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
 
-class UserRolesController extends Controller
+class UserRolesController extends ApiController
 {
 
     /**

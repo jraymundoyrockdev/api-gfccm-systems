@@ -10,7 +10,7 @@ use ApiGfccm\Http\Controllers\Controller;
 use Tymon\JWTAuth\JWTAuth as JWT;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException as TokenExpiredException;
 
-class AuthenticationController extends Controller
+class AuthenticationController extends ApiController
 {
     /**
      * @var JWT

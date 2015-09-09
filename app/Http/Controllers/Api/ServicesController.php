@@ -10,7 +10,7 @@ use ApiGfccm\Repositories\Interfaces\ServiceRepositoryInterface;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
 
-class ServicesController extends Controller
+class ServicesController extends ApiController
 {
 
     /**
