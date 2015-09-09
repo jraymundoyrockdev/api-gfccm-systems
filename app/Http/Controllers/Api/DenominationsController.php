@@ -5,7 +5,7 @@ namespace ApiGfccm\Http\Controllers\Api;
 use Illuminate\Http\Request;
 
 use ApiGfccm\Http\Requests;
-use ApiGfccm\Http\Controllers\Controller;
+use ApiGfccm\Http\Requests\DenominationRequest;
 use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
@@ -49,18 +49,11 @@ class DenominationsController extends ApiController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request $request
+     * @param  DenominationRequest $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(DenominationRequest $request)
     {
-
-        $this->validate($request, [
-            'amount' => 'required|unique:denominations|integer',
-            'description' => 'required',
-        ]);
-
-
         $input = array_filter($request->request->all());
 
         return (new ItemResponse($this->denomination->createNewDenomination($input)))->asType('Denomination');
