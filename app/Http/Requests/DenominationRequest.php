@@ -22,7 +22,7 @@ class DenominationRequest extends Request
     public function rules()
     {
         return [
-            'amount' => 'required|unique:denominations|integer',
+            'amount' => 'required|integer|unique:denominations,amount,' . $this->segment(3),
             'description' => 'required',
         ];
     }

@@ -84,11 +84,11 @@ class DenominationsController extends ApiController
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request $request
+     * @param  DenominationRequest $request
      * @param  int $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(DenominationRequest $request, $id)
     {
         $input = array_filter($request->request->all());
 
