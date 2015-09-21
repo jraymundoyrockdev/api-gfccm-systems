@@ -27,6 +27,7 @@ class UserTransformer extends TransformerAbstract
         return [
             'id' => $user->id,
             'username' => $user->username,
+            'status' => $user->status,
             'ministry' => $this->ministry->transform($user->ministry),
             'member' => $this->member->transform($user->member),
             'role' => $this->userRole->transform($user->role)
