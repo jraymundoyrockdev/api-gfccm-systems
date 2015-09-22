@@ -3,6 +3,7 @@
 namespace ApiGfccm\Http\Controllers\Api;
 
 use ApiGfccm\Http\Requests;
+use Illuminate\Http\Request;
 use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
@@ -44,5 +45,19 @@ class UsersController extends ApiController
     public function show($id)
     {
         return new ItemResponse($this->user->getById($id));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  Request $request
+     * @param  int $id
+     * @return Response
+     */
+    public function update(Request $request, $id)
+    {
+        $input = array_filter($request->request->all());
+
+        return (new ItemResponse($this->user->updateUser($id, $input)))->asType('User');
     }
 }

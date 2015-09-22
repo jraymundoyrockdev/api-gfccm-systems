@@ -13,7 +13,7 @@ class AddStatusOnUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('status')->default(0);
+            $table->integer('status')->after('username');
         });
 
     }

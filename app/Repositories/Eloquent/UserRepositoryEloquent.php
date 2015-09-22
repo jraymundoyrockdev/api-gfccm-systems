@@ -36,4 +36,17 @@ class UserRepositoryEloquent implements UserRepositoryInterface
 
     }
 
+    /**
+     * @param $id
+     * @param $payload
+     * @return User|null
+     */
+    public function updateUser($id, $payload)
+    {
+        $user = $this->getById($id);
+        $user->fill($payload)->save();
+
+        return $user;
+    }
+
 }

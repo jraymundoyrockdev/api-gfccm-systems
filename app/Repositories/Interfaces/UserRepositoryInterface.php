@@ -10,10 +10,16 @@ interface UserRepositoryInterface
     public function getAllUsers();
 
     /**
-    * Get a certain user
-    *
-    * @return Collection|null
-    */
+     * Get a certain user
+     *
+     * @return Collection|null
+     */
     public function getById($id);
 
+    /**
+     * @param $id
+     * @param $payload
+     * @return User|null
+     */
+    public function updateUser($id, $payload);
 }
