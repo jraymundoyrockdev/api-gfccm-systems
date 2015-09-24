@@ -30,6 +30,7 @@ Route::group(
             Route::resource('ministry', 'MinistryController');
             Route::resource('denominations', 'DenominationsController');
             Route::resource('services', 'ServicesController');
+            Route::resource('members', 'MembersController');
         });
     }
 );

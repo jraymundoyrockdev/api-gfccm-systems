@@ -12,6 +12,7 @@ class MemberTransformer extends TransformerAbstract
             'firstname' => $member->firstname,
             'lastname' => $member->lastname,
             'middlename' => $member->middlename,
+            'apellation' => $member->apellation,
             'gender' => $member->gender,
             'birthdate' => $member->birthdate,
             'address' => $member->address,

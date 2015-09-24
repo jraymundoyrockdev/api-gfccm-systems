@@ -36,6 +36,18 @@ class UserRepositoryEloquent implements UserRepositoryInterface
 
     }
 
+
+    public function createNewUserAccountFromMember(Array $payload)
+    {
+        $userData = [
+            'username' => $this->buildUsernameFromMembersCreation($payload),
+            'password' => bcrypt($payload['firstname'].$payload['lastname']),
+
+        ];
+
+        return $this->user->create($userData);
+    }
+
     /**
      * @param $id
      * @param $payload
@@ -47,6 +59,11 @@ class UserRepositoryEloquent implements UserRepositoryInterface
         $user->fill($payload)->save();
 
         return $user;
+    }
+
+    private function buildUsernameFromMembersCreation(Array $payload)
+    {
+        return 'test'.date('i');
     }
 
 }

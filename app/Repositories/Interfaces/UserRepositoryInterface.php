@@ -17,6 +17,14 @@ interface UserRepositoryInterface
     public function getById($id);
 
     /**
+     * Creates new Account from Members Creation
+     *
+     * @param array $payload
+     * @return mixed
+     */
+    public function createNewUserAccountFromMember(Array $payload);
+
+    /**
      * @param $id
      * @param $payload
      * @return User|null
