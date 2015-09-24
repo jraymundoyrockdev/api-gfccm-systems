@@ -24,6 +24,14 @@ class Member extends Model
      */
     public function user()
     {
-        return $this->belongsTo('ApiGfccm\Models\User');
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function member_ministry()
+    {
+        return $this->hasMany(MemberMinistry::class, 'member_id', 'id');
     }
 }

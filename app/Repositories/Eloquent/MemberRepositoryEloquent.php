@@ -50,7 +50,7 @@ class MemberRepositoryEloquent implements MemberRepositoryInterface
     {
         $member = $this->member->create($payload);
 
-        $this->user->createNewUserAccountFromMember($member->toArray());
+        $this->user->createNewUserAccountFromMember($member->id, $member->firstname, $member->lastname);
     }
 
     /**

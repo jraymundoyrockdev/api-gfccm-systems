@@ -19,10 +19,12 @@ interface UserRepositoryInterface
     /**
      * Creates new Account from Members Creation
      *
-     * @param array $payload
+     * @param $id
+     * @param $firstname
+     * @param $lastname
      * @return mixed
      */
-    public function createNewUserAccountFromMember(Array $payload);
+    public function createNewUserAccountFromMember($id, $firstname, $lastname);
 
     /**
      * @param $id

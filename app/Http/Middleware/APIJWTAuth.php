@@ -5,7 +5,7 @@ namespace ApiGfccm\Http\Middleware;
 use Closure;
 use ApiGfccm\Services\JWTValidation\ValidateJWT;
 
-class KyokaiAccSysAuth
+class APIJWTAuth
 {
     /**
      * @var ValidateJWT
@@ -32,11 +32,7 @@ class KyokaiAccSysAuth
         if ($validatedJWTResult->message != 'token_valid') {
             return response()->json($this->buildErrorResponse($validatedJWTResult->message), 200);
         }
-
-        if ($validatedJWTResult->authenticated->user->role_id != 3) {
-            return 'token_unautorised';
-        }
-
+        
         return $next($request);
     }
 

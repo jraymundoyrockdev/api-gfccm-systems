@@ -33,6 +33,6 @@ class Kernel extends HttpKernel
         'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
         'jwt.refresh' => \ApiGfccm\Http\Middleware\RefreshToken::class,
         'jwt.validate' => \ApiGfccm\Http\Middleware\ValidateToken::class,
-        'kyokai.auth' => \ApiGfccm\Http\Middleware\KyokaiAccSysAuth::class
+        'APIJWT.auth' => \ApiGfccm\Http\Middleware\APIJWTAuth::class
     ];
 }

@@ -9,8 +9,8 @@ class UserRole extends Model
     protected $table = 'user_roles';
 
     protected $fillable = [
-        'name',
-        'description'
+        'user_id',
+        'role_id'
     ];
 
     /**
@@ -18,6 +18,15 @@ class UserRole extends Model
      */
     public function user()
     {
-        return $this->belongsTo('ApiGfccm\Models\User');
+        return $this->belongsTo(User::class, 'id', 'user_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function role()
+    {
+        return $this->hasOne(Role::class, 'id', 'role_id');
+    }
+
 }

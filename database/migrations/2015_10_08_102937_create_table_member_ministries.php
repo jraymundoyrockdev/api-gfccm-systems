@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddNicknameFieldToMembersTbl extends Migration
+class CreateTableMemberMinistries extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,11 @@ class AddNicknameFieldToMembersTbl extends Migration
      */
     public function up()
     {
-        Schema::table('members', function (Blueprint $table) {
-            $table->string('apellation', 32)->after('middlename');
+        Schema::create('member_ministries', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('member_id');
+            $table->string('ministry_id');
+            $table->timestamps();
         });
     }
 
@@ -24,8 +27,6 @@ class AddNicknameFieldToMembersTbl extends Migration
      */
     public function down()
     {
-        Schema::table('members', function ($table) {
-            $table->dropColumn('apellation');
-        });
+        Schema::drop('member_ministries');
     }
 }

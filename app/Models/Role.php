@@ -4,9 +4,9 @@ namespace ApiGfccm\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ministry extends Model
+class Role extends Model
 {
-    protected $table = 'ministries';
+    protected $table = 'roles';
 
     protected $fillable = [
         'name',

@@ -1,18 +1,18 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
-use ApiGfccm\Repositories\Interfaces\UserRoleRepositoryInterface;
-use ApiGfccm\Models\UserRole;
+use ApiGfccm\Repositories\Interfaces\RoleRepositoryInterface;
+use ApiGfccm\Models\Role;
 
-class UserRoleRepositoryEloquent implements UserRoleRepositoryInterface
+class RoleRepositoryEloquent implements RoleRepositoryInterface
 {
     /**
      * @var UserRole
      */
     protected $userRole;
 
-    public function __construct(UserRole $userRole)
+    public function __construct(Role $role)
     {
-        $this->userRole = $userRole;
+        $this->userRole = $role;
     }
 
     /**

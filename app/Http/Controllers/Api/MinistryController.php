@@ -84,4 +84,9 @@ class MinistryController extends ApiController
     {
         //
     }
+
+    public function asList()
+    {
+        return $this->ministry->getAllMinistryAsList('name', 'id');
+    }
 }

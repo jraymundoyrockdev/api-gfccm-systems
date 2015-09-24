@@ -57,4 +57,9 @@ class MinistryRepositoryEloquent implements MinistryRepositoryInterface
         return $ministry;
     }
 
+    public function getAllMinistryAsList($value, $key)
+    {
+        return $this->getAllMinistry()->lists($value, $key);
+    }
+
 }

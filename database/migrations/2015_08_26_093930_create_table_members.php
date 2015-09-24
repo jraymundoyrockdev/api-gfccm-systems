@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMembersTable extends Migration
+class CreateTableMembers extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,7 @@ class CreateMembersTable extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('apellation', 32);
             $table->string('firstname', 32);
             $table->string('lastname', 32);
             $table->string('middlename', 32);

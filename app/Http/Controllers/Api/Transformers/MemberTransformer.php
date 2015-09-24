@@ -7,8 +7,15 @@ class MemberTransformer extends TransformerAbstract
 {
     public function transform(Member $member)
     {
+        $ministry = new MinistryTransformer();
+        $memMinistry = [];
+
+        foreach ($member->member_ministry as $memMin) {
+            $memMinistry[] = $ministry->transform($memMin->ministry);
+        }
+
         return [
-            'id' => (int)$member->id,
+            'id' => (int) $member->id,
             'firstname' => $member->firstname,
             'lastname' => $member->lastname,
             'middlename' => $member->middlename,
@@ -17,7 +24,8 @@ class MemberTransformer extends TransformerAbstract
             'birthdate' => $member->birthdate,
             'address' => $member->address,
             'phone_mobile' => $member->phone_mobile,
-            'email' => $member->email
+            'email' => $member->email,
+            'ministry' => $memMinistry
         ];
     }
 }

@@ -22,7 +22,7 @@ class UserRepositoryEloquent implements UserRepositoryInterface
      */
     public function getAllUsers()
     {
-        return $this->user->with(['ministry', 'member'])->get();
+        return $this->user->with(['member', 'user_role'])->get();
     }
 
     /**
@@ -32,17 +32,18 @@ class UserRepositoryEloquent implements UserRepositoryInterface
      */
     public function getById($id)
     {
-        return $this->user->with(['ministry', 'member'])->where('id', $id)->first();
+        return $this->user->with(['member', 'user_role'])->where('id', $id)->first();
 
     }
 
 
-    public function createNewUserAccountFromMember(Array $payload)
+    public function createNewUserAccountFromMember($id, $firstname, $lastname)
     {
         $userData = [
-            'username' => $this->buildUsernameFromMembersCreation($payload),
-            'password' => bcrypt($payload['firstname'].$payload['lastname']),
-
+            'member_id' => $id,
+            'role_id' => 1,
+            'username' => $this->buildUsernameFromMembersCreation($firstname, $lastname),
+            'password' => $this->buildPasswordFromMembersCreation($firstname, $lastname)
         ];
 
         return $this->user->create($userData);
@@ -61,9 +62,14 @@ class UserRepositoryEloquent implements UserRepositoryInterface
         return $user;
     }
 
-    private function buildUsernameFromMembersCreation(Array $payload)
+    private function buildUsernameFromMembersCreation($firstname, $lastname)
     {
-        return 'test'.date('i');
+        return strtolower($firstname . $lastname);
+    }
+
+    private function buildPasswordFromMembersCreation($firstname, $lastname)
+    {
+        return bcrypt(strtolower($firstname . $lastname . 'abc123'));
     }
 
 }
