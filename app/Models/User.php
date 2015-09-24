@@ -27,7 +27,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $fillable = [
         'username',
         'password',
-        'ministry_id',
         'member_id',
         'role_id',
         'status'
@@ -39,15 +38,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password'];
-
-
-    /**
-     * A User has one main ministry
-     */
-    public function ministry()
-    {
-        return $this->hasOne('ApiGfccm\Models\Ministry', 'id', 'ministry_id');
-    }
 
     /**
      * A User is always a member

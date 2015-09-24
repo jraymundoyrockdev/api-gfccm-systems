@@ -6,14 +6,11 @@ use ApiGfccm\Models\User;
 
 class UserTransformer extends TransformerAbstract
 {
-
-    protected $ministry;
     protected $member;
     protected $userRole;
 
     public function __construct()
     {
-        $this->ministry = new MinistryTransformer();
         $this->member = new MemberTransformer();
         $this->userRole = new UserRoleTransformer();
     }
@@ -28,7 +25,6 @@ class UserTransformer extends TransformerAbstract
             'id' => $user->id,
             'username' => $user->username,
             'status' => $user->status,
-            'ministry' => $this->ministry->transform($user->ministry),
             'member' => $this->member->transform($user->member),
             'role' => $this->userRole->transform($user->role)
         ];
