@@ -29,4 +29,11 @@ interface MinistryRepositoryInterface
      */
     public function updateMinistry($id, $payload);
 
+    /**
+     * @param $value
+     * @param $key
+     * @return mixed
+     */
+    public function getAllMinistryAsList($value, $key);
+
 }
