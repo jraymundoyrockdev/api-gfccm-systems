@@ -24,7 +24,7 @@ Route::group(
         /**
          * Authenticated API Resources
          */
-        Route::group(['middleware' => ['resource', 'kyokai.auth']], function () {
+        Route::group(['middleware' => ['resource', 'APIJWT.auth']], function () {
             Route::resource('users', 'UsersController');
             Route::resource('user-roles', 'UserRolesController');
             Route::get('ministry/list', 'MinistryController@asList');
