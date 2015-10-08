@@ -4,12 +4,12 @@ namespace ApiGfccm\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ministry extends Model
+class Module extends Model
 {
-    protected $table = 'ministries';
+    protected $table = 'modules';
 
     protected $fillable = [
         'name',
         'description'
-    ];
+    ];//
 }

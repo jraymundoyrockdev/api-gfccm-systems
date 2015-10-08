@@ -12,7 +12,7 @@ class CreateMinistryTable extends Migration
      */
     public function up()
     {
-        Schema::create('ministry', function (Blueprint $table) {
+        Schema::create('ministries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('description');
@@ -27,6 +27,6 @@ class CreateMinistryTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ministry');
+        Schema::drop('ministries');
     }
 }

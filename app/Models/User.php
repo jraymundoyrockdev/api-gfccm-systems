@@ -25,10 +25,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $fillable = [
+        'member_id',
         'username',
         'password',
-        'member_id',
-        'role_id',
         'status'
     ];
 
@@ -39,19 +38,4 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password'];
 
-    /**
-     * A User is always a member
-     */
-    public function member()
-    {
-        return $this->hasOne('ApiGfccm\Models\Member', 'id', 'member_id');
-    }
-
-    /**
-     * A User has one role
-     */
-    public function role()
-    {
-        return $this->hasOne('ApiGfccm\Models\UserRole', 'id', 'role_id');
-    }
 }

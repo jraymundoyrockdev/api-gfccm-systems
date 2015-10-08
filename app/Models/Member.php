@@ -9,7 +9,6 @@ class Member extends Model
     protected $table = 'members';
 
     protected $fillable = [
-        'ministry_id',
         'firstname',
         'lastname',
         'middlename',
@@ -26,14 +25,6 @@ class Member extends Model
     public function user()
     {
         return $this->belongsTo('ApiGfccm\Models\User');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function ministry()
-    {
-        return $this->hasOne('ApiGfccm\Models\Ministry','id','ministry_id');
     }
 
 }
