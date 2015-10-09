@@ -1,6 +1,6 @@
 <?php namespace ApiGfccm\Repositories\Interfaces;
 
-interface UserRoleRepositoryInterface
+interface RoleRepositoryInterface
 {
     /**
      * Returns all user roles

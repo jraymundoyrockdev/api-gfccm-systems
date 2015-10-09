@@ -3,10 +3,10 @@
 namespace ApiGfccm\Http\Controllers\Api;
 
 use ApiGfccm\Http\Requests;
-use Illuminate\Http\Request;
-use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
-use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
+use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
+use Illuminate\Http\Request;
 
 class UsersController extends ApiController
 {
@@ -32,9 +32,7 @@ class UsersController extends ApiController
 
     public function index()
     {
-        return $test = (new CollectionResponse($this->user->getAllUsers()))->asType('User');
-
-        print_r($this->user->getAllUsers()->toArray());
+        return (new CollectionResponse($this->user->getAllUsers()));
     }
 
     /**
@@ -60,6 +58,6 @@ class UsersController extends ApiController
     {
         $input = array_filter($request->request->all());
 
-        return (new ItemResponse($this->user->updateUser($id, $input)))->asType('User');
+        return (new ItemResponse($this->user->updateUser($id, $input)));
     }
 }

@@ -3,8 +3,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::controller('login', 'Auth\AuthController');
-
 Route::get('auth/login', 'Auth\AuthController@getIndex');
 Route::post('auth/login', 'Auth\AuthController@postIndex');
 
@@ -27,6 +25,7 @@ Route::group(
         Route::group(['middleware' => ['resource', 'APIJWT.auth']], function () {
             Route::resource('users', 'UsersController');
             Route::resource('user-roles', 'UserRolesController');
+            Route::resource('roles', 'RolesController');
             Route::get('ministry/list', 'MinistryController@asList');
             Route::resource('ministry', 'MinistryController');
             Route::resource('denominations', 'DenominationsController');
