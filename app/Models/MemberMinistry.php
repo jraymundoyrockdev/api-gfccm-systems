@@ -12,4 +12,21 @@ class MemberMinistry extends Model
         'member_id',
         'ministry_id'
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function member()
+    {
+        return $this->belongsTo(Member::class,'id','member_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function ministry()
+    {
+        return $this->hasOne(Ministry::class, 'id', 'ministry_id');
+    }
+
 }

@@ -1,5 +1,6 @@
 <?php namespace ApiGfccm\Http\Controllers\Api\Transformers;
 
+use ApiGfccm\Models\Role;
 use League\Fractal\TransformerAbstract;
 use ApiGfccm\Models\User;
 
@@ -20,18 +21,20 @@ class UserTransformer extends TransformerAbstract
      */
     public function transform(User $user)
     {
-        $userRoles = [];
+        $member = new MemberTransformer();
+        $role = new RoleTransformer();
+        $roles = [];
 
         foreach ($user->user_role as $urole) {
-            $userRoles[] =  $this->userRole->transform($urole);
+            $roles[] = $role->transform($urole->role);
         }
 
         return [
             'id' => $user->id,
             'username' => $user->username,
             'status' => $user->status,
-            'member' => $this->member->transform($user->member),
-            'user_role' => $userRoles
+            'member' => $member->transform($user->member),
+            'role' => $roles
         ];
     }
 }

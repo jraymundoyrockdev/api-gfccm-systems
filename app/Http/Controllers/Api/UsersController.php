@@ -32,7 +32,9 @@ class UsersController extends ApiController
 
     public function index()
     {
-        return (new CollectionResponse($this->user->getAllUsers()))->asType('User');
+        return $test = (new CollectionResponse($this->user->getAllUsers()))->asType('User');
+
+        print_r($this->user->getAllUsers()->toArray());
     }
 
     /**

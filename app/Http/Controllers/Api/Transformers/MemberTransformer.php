@@ -5,17 +5,17 @@ use ApiGfccm\Models\Member;
 
 class MemberTransformer extends TransformerAbstract
 {
-    protected $ministry;
-
-    public function __construct()
-    {
-        $this->ministry = new MinistryTransformer();
-    }
-
     public function transform(Member $member)
     {
+        $ministry = new MinistryTransformer();
+        $memMinistry = [];
+
+        foreach ($member->member_ministry as $memMin) {
+            $memMinistry[] = $ministry->transform($memMin->ministry);
+        }
+
         return [
-            'id' => (int)$member->id,
+            'id' => (int) $member->id,
             'firstname' => $member->firstname,
             'lastname' => $member->lastname,
             'middlename' => $member->middlename,
@@ -25,7 +25,7 @@ class MemberTransformer extends TransformerAbstract
             'address' => $member->address,
             'phone_mobile' => $member->phone_mobile,
             'email' => $member->email,
-            /*'ministry' => $this->ministry->transform($member->ministry)*/
+            'ministry' => $memMinistry
         ];
     }
 }
