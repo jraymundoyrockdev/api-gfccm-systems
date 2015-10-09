@@ -24,7 +24,7 @@ class Member extends Model
      */
     public function user()
     {
-        return $this->belongsTo('ApiGfccm\Models\User');
+        return $this->belongsTo(User::class);
     }
 
 }

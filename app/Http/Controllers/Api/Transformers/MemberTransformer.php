@@ -25,7 +25,7 @@ class MemberTransformer extends TransformerAbstract
             'address' => $member->address,
             'phone_mobile' => $member->phone_mobile,
             'email' => $member->email,
-            'ministry' => $this->ministry->transform($member->ministry)
+            /*'ministry' => $this->ministry->transform($member->ministry)*/
         ];
     }
 }

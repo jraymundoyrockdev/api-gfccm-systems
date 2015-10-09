@@ -5,12 +5,20 @@ use ApiGfccm\Models\UserRole;
 
 class UserRoleTransformer extends TransformerAbstract
 {
+    protected $role;
+
+    public function __construct()
+    {
+        $this->role = new RoleTransformer();
+    }
+
     public function transform(UserRole $userRole)
     {
         return [
             'id' => (int)$userRole->id,
-            'name' => $userRole->name,
-            'description' => $userRole->description
+            'user_id' => $userRole->user_id,
+            'role_id' => $userRole->role_id,
+            'role' =>  $this->role->transform($userRole->role)
         ];
     }
 }

@@ -38,4 +38,20 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     protected $hidden = ['password'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function member()
+    {
+        return $this->hasOne(Member::class, 'id', 'member_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function user_role()
+    {
+        return $this->hasMany(UserRole::class, 'user_id', 'id');
+    }
+
 }
