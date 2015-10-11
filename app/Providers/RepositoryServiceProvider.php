@@ -13,6 +13,8 @@ use ApiGfccm\Repositories\Interfaces\ServiceRepositoryInterface;
 use ApiGfccm\Repositories\Eloquent\ServiceRepositoryEloquent;
 use ApiGfccm\Repositories\Interfaces\MemberRepositoryInterface;
 use ApiGfccm\Repositories\Eloquent\MemberRepositoryEloquent;
+use ApiGfccm\Repositories\Interfaces\FundRepositoryInterface;
+use ApiGfccm\Repositories\Eloquent\FundRepositoryEloquent;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -30,5 +32,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(DenominationRepositoryInterface::class, DenominationRepositoryEloquent::class);
         $this->app->bind(ServiceRepositoryInterface::class, ServiceRepositoryEloquent::class);
         $this->app->bind(MemberRepositoryInterface::class, MemberRepositoryEloquent::class);
+        $this->app->bind(FundRepositoryInterface::class, FundRepositoryEloquent::class);
     }
 }

@@ -31,6 +31,7 @@ Route::group(
             Route::resource('denominations', 'DenominationsController');
             Route::resource('services', 'ServicesController');
             Route::resource('members', 'MembersController');
+            Route::resource('funds', 'FundsController');
         });
     }
 );
