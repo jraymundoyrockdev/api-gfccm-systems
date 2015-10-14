@@ -8,6 +8,7 @@ use ApiGfccm\Http\Requests\FundRequest;
 use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Repositories\Interfaces\FundRepositoryInterface;
+use ApiGfccm\Repositories\Interfaces\FundItemRepositoryInterface;
 
 class FundsController extends Controller
 {
@@ -62,7 +63,7 @@ class FundsController extends Controller
      * Update the specified resource in storage.
      *
      * @param FundRequest $request
-     * @param $id
+     * @param int $id
      * @return ItemResponse
      */
     public function update(FundRequest $request, $id)
@@ -71,4 +72,17 @@ class FundsController extends Controller
 
         return (new ItemResponse($this->fund->save($input, $id)));
     }
+
+    /**
+     * Display list of items of a Fund
+     *
+     * @param int $fundId
+     * @param FundItemRepositoryInterface $fundItem
+     * @return $this
+     */
+    public function showItems($fundId, FundItemRepositoryInterface $fundItem)
+    {
+        return (new CollectionResponse($fundItem->all($fundId)))->asType('FundItem');
+    }
+
 }

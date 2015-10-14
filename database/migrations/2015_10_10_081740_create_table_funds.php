@@ -17,7 +17,7 @@ class CreateTableFunds extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('category');
-            $table->string('status');
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }

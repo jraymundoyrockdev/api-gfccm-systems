@@ -8,6 +8,7 @@ class FundItemTransformer extends TransformerAbstract
     public function transform(FundItem $item)
     {
         return [
+            'id' => $item->id,
             'name' => $item->name,
             'status' => $item->status
         ];

@@ -2,86 +2,63 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
-
-use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Controllers\Controller;
+use ApiGfccm\Http\Requests;
+use ApiGfccm\Http\Requests\FundItemRequest;
+use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Repositories\Interfaces\FundItemRepositoryInterface;
 
 class FundItemsController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return Response
+     * @var FundItemRepositoryInterface
      */
-    public function index()
-    {
-        //
-    }
+    protected $fundItem;
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
+     * @param FundItemRepositoryInterface $fundItem
      */
-    public function create()
+    public function __construct(FundItemRepositoryInterface $fundItem)
     {
-        //
+        $this->fundItem = $fundItem;
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
-     * @return Response
+     * @param FundItemRequest $request
+     * @return ItemResponse
      */
-    public function store(Request $request)
+    public function store(FundItemRequest $request)
     {
-        //
+        $input = array_filter($request->request->all());
+
+        return (new ItemResponse($this->fundItem->save($input)));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return Response
+     * @param  int $id
+     * @return ItemResponse
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
+        return (new ItemResponse($this->fundItem->show($id)))->asType('FundItem');
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  int  $id
-     * @return Response
+     * @param FundItemRequest $request
+     * @param $id
+     * @return ItemResponse
      */
-    public function update(Request $request, $id)
+    public function update(FundItemRequest $request, $id)
     {
-        //
+        $input = array_filter($request->request->all());
+
+        return (new ItemResponse($this->fundItem->save($input, $id)));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
