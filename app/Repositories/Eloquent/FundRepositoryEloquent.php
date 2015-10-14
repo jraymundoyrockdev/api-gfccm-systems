@@ -2,7 +2,6 @@
 
 use ApiGfccm\Models\Fund;
 use ApiGfccm\Repositories\Interfaces\FundRepositoryInterface;
-use Illuminate\Contracts\Auth\Guard;
 
 class FundRepositoryEloquent implements FundRepositoryInterface
 {
@@ -12,24 +11,17 @@ class FundRepositoryEloquent implements FundRepositoryInterface
     protected $fund;
 
     /**
-     * @var Guard
-     */
-    protected $auth;
-
-    /**
-     * @param Guard $auth
      * @param Fund $fund
      */
-    public function __construct(Guard $auth, Fund $fund)
+    public function __construct(Fund $fund)
     {
         $this->fund = $fund;
-        $this->auth = $auth;
     }
 
     /**
      * Returns all Funds
      *
-     * @return User|null
+     * @return Fund|null
      */
     public function all()
     {
@@ -37,13 +29,31 @@ class FundRepositoryEloquent implements FundRepositoryInterface
     }
 
     /**
-     * Get a certain user
+     * Get a certain fund
      *
-     * @return User|null
+     * @return Fund|null
      */
     public function show($id)
     {
-        return $this->user->with(['member', 'user_role','item'])->where('id', $id)->first();
+        return $this->fund->with('item')->find($id);
+    }
 
+    /**
+     * Create|Update Fund
+     *
+     * @param $payload
+     * @param null $id
+     * @return Fund|null|static
+     */
+    public function save($payload, $id = null)
+    {
+        if ($id) {
+            $fund = $this->show($id);
+            $fund->fill($payload)->save();
+
+            return $fund;
+        }
+
+        return $this->fund->create($payload);
     }
 }

@@ -12,8 +12,17 @@ interface FundRepositoryInterface
     /**
      * Get a certain fund
      *
-     * @return Collection|null
+     * @return Fund|null
      */
     public function show($id);
+
+    /**
+     * Create|Update Fund
+     *
+     * @param $payload
+     * @param null $id
+     * @return Fund|null|static
+     */
+    public function save($payload, $id = null);
 
 }
