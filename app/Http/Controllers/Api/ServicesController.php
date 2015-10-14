@@ -2,17 +2,14 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
-
 use ApiGfccm\Http\Requests;
-use ApiGfccm\Http\Controllers\Controller;
-use ApiGfccm\Repositories\Interfaces\ServiceRepositoryInterface;
-use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Http\Requests\ServiceRequest;
 use ApiGfccm\Http\Responses\CollectionResponse;
+use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Repositories\Interfaces\ServiceRepositoryInterface;
 
 class ServicesController extends ApiController
 {
-
     /**
      * @var ServiceRepositoryInterface
      */
@@ -39,10 +36,10 @@ class ServicesController extends ApiController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request $request
+     * @param  ServiceRequest $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(ServiceRequest $request)
     {
         $input = array_filter($request->request->all());
 
@@ -63,11 +60,11 @@ class ServicesController extends ApiController
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request $request
+     * @param  ServiceRequest $request
      * @param  int $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(ServiceRequest $request, $id)
     {
         $input = array_filter($request->request->all());
 
@@ -75,13 +72,13 @@ class ServicesController extends ApiController
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Return service as list
      *
-     * @param  int $id
-     * @return Response
+     * @return mixed
      */
-    public function destroy($id)
+    public function asList()
     {
-        //
+        return $this->service->getAllServicesAsList('name', 'id');
     }
+
 }

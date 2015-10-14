@@ -22,6 +22,7 @@ Route::group(
         Route::get('ministry/list', 'MinistryController@asList');
         Route::resource('ministry', 'MinistryController');
         Route::resource('denominations', 'DenominationsController');
+        Route::get('services/list', 'ServicesController@asList');
         Route::resource('services', 'ServicesController');
         Route::resource('members', 'MembersController');
         Route::resource('funds', 'FundsController');
