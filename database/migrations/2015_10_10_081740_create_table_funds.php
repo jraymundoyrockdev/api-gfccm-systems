@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableFund extends Migration
+class CreateTableFunds extends Migration
 {
     /**
      * Run the migrations.
@@ -17,6 +17,7 @@ class CreateTableFund extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('category');
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }

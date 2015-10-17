@@ -2,8 +2,6 @@
 
 use ApiGfccm\Models\Fund;
 use ApiGfccm\Repositories\Interfaces\FundRepositoryInterface;
-use ApiGfccm\Services\KyokaiUserRoleValidator;
-use Illuminate\Contracts\Auth\Guard;
 
 class FundRepositoryEloquent implements FundRepositoryInterface
 {
@@ -13,51 +11,49 @@ class FundRepositoryEloquent implements FundRepositoryInterface
     protected $fund;
 
     /**
-     * @var Guard
-     */
-    protected $auth;
-
-    /**
-     * @var KyokaiUserRoleValidator
-     */
-    protected $kyokai;
-
-    /**
-     * @param Guard $auth
      * @param Fund $fund
-     * @param KyokaiUserRoleValidator $kyokai
      */
-    public function __construct(Guard $auth, Fund $fund, KyokaiUserRoleValidator $kyokai)
+    public function __construct(Fund $fund)
     {
         $this->fund = $fund;
-        $this->auth = $auth;
-        $this->kyokai = $kyokai;
     }
 
     /**
      * Returns all Funds
      *
-     * @return User|null
+     * @return Fund|null
      */
     public function all()
     {
-/*        $user = $this->kyokai->validate($this->auth->user());
-
-        if (!$user) {
-            return false;
-        }*/
-
-        return $this->fund->all();
+        return $this->fund->with('item')->get();
     }
 
     /**
-     * Get a certain user
+     * Get a certain fund
      *
-     * @return User|null
+     * @return Fund|null
      */
     public function show($id)
     {
-        return $this->user->with(['member', 'user_role'])->where('id', $id)->first();
+        return $this->fund->with('item')->find($id);
+    }
 
+    /**
+     * Create|Update Fund
+     *
+     * @param $payload
+     * @param null $id
+     * @return Fund|null|static
+     */
+    public function save($payload, $id = null)
+    {
+        if ($id) {
+            $fund = $this->show($id);
+            $fund->fill($payload)->save();
+
+            return $fund;
+        }
+
+        return $this->fund->create($payload);
     }
 }

@@ -1,13 +1,14 @@
 <?php namespace ApiGfccm\Repositories\Interfaces;
 
-interface FundRepositoryInterface
+interface FundItemRepositoryInterface
 {
     /**
      * Returns all Fund Items under a Fund
      *
+     * @param int $fundId
      * @return mixed
      */
-    public function all();
+    public function all($fundId);
 
     /**
      * Get a certain Fund Item

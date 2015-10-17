@@ -30,6 +30,7 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \ApiGfccm\Http\Middleware\RedirectIfAuthenticated::class,
         'resource' => \ApiGfccm\Http\Middleware\RespondWithResource::class,
+        'format.json' => \ApiGfccm\Http\Middleware\FormatJsonRequest::class,
         'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
         'jwt.refresh' => \ApiGfccm\Http\Middleware\RefreshToken::class,
         'jwt.validate' => \ApiGfccm\Http\Middleware\ValidateToken::class,

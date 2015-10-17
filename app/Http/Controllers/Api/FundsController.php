@@ -2,13 +2,13 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
-use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Controllers\Controller;
-use ApiGfccm\Repositories\Interfaces\FundRepositoryInterface;
+use ApiGfccm\Http\Requests;
+use ApiGfccm\Http\Requests\FundRequest;
 use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;
-use Symfony\Component\HttpFoundation\Response;
+use ApiGfccm\Repositories\Interfaces\FundItemRepositoryInterface;
+use ApiGfccm\Repositories\Interfaces\FundRepositoryInterface;
 
 class FundsController extends Controller
 {
@@ -30,36 +30,22 @@ class FundsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Response $response)
+    public function index()
     {
-/*        $fund = $this->fund->all();
-
-        if (! $fund) {
-            return $response->setStatusCode(403);
-        }*/
-
         return (new CollectionResponse($this->fund->all()))->asType('Fund');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param FundRequest $request
+     * @return ItemResponse
      */
-    public function store(Request $request)
+    public function store(FundRequest $request)
     {
-        //
+        $input = array_filter($request->request->all());
+
+        return (new ItemResponse($this->fund->save($input)));
     }
 
     /**
@@ -70,40 +56,33 @@ class FundsController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return (new ItemResponse($this->fund->show($id)));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param FundRequest $request
+     * @param int $id
+     * @return ItemResponse
      */
-    public function update(Request $request, $id)
+    public function update(FundRequest $request, $id)
     {
-        //
+        $input = array_filter($request->request->all());
+
+        return (new ItemResponse($this->fund->save($input, $id)));
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Display list of items of a Fund
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param int $fundId
+     * @param FundItemRepositoryInterface $fundItem
+     * @return $this
      */
-    public function destroy($id)
+    public function showItems($fundId, FundItemRepositoryInterface $fundItem)
     {
-        //
+        return (new CollectionResponse($fundItem->all($fundId)))->asType('FundItem');
     }
+
 }

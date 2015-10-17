@@ -14,4 +14,11 @@ class Fund extends Model
         'category'
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function item()
+    {
+        return $this->hasMany(FundItem::class, 'fund_id', 'id');
+    }
 }
