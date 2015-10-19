@@ -36,7 +36,9 @@ class ServiceRepositoryEloquent implements ServiceRepositoryInterface
     }
 
     /**
-     * @param $payload
+     * Create new Service
+     *
+     * @param array $payload
      * @return static
      */
     public function createNewService($payload)
@@ -45,8 +47,8 @@ class ServiceRepositoryEloquent implements ServiceRepositoryInterface
     }
 
     /**
-     * @param $id
-     * @param $payload
+     * @param int $id
+     * @param array $payload
      * @return Service|null
      */
     public function updateService($id, $payload)
@@ -55,6 +57,18 @@ class ServiceRepositoryEloquent implements ServiceRepositoryInterface
         $service->fill($payload)->save();
 
         return $service;
+    }
+
+    /**
+     * Return service as list
+     *
+     * @param string $value
+     * @param string $key
+     * @return mixed
+     */
+    public function getAllServicesAsList($value, $key)
+    {
+        return $this->getAllServices()->lists($value, $key);
     }
 
 }

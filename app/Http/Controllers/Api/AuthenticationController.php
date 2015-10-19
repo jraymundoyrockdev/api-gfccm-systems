@@ -50,7 +50,7 @@ class AuthenticationController extends ApiController
 
         return [
             'token' => $this->getUserToken($this->auth->user()),
-            //'role' =>  $this->createSalt().$this->auth->user()->role_id.$this->createPepper()
+            //'user_role' =>  $this->createSalt().$this->auth->user()->role_id.$this->createPepper()
             //'jem_message' => 'i miss you!!!'
         ];
     }

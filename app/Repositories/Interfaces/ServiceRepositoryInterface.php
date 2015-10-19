@@ -3,30 +3,41 @@
 interface ServiceRepositoryInterface
 {
     /**
-     * Returns all Ministry
+     * Returns all Services
      *
      * @return Collection|null
      */
     public function getAllServices();
 
     /**
-     * Get a certain Ministry
+     * Get a certain Service
      *
      * @return Collection|null
      */
     public function getById($id);
 
     /**
-     * @param $payload
+     * Create new Service
+     *
+     * @param array $payload
      * @return static
      */
     public function createNewService($payload);
 
     /**
-     * @param $id
-     * @param $payload
+     * @param int $id
+     * @param array $payload
      * @return Ministry|null
      */
     public function updateService($id, $payload);
+
+    /**
+     * Return service as list
+     *
+     * @param string $value
+     * @param string $key
+     * @return mixed
+     */
+    public function getAllServicesAsList($value, $key);
 
 }

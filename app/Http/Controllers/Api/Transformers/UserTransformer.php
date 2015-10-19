@@ -34,7 +34,7 @@ class UserTransformer extends TransformerAbstract
             'username' => $user->username,
             'status' => $user->status,
             'member' => $member->transform($user->member),
-            'role' => $roles
+            'user_role' => $roles
         ];
     }
 }

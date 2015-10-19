@@ -16,6 +16,9 @@ class EventServiceProvider extends ServiceProvider
         'ApiGfccm\Events\SomeEvent' => [
             'ApiGfccm\Listeners\EventListener',
         ],
+        'ApiGfccm\Events\IncomeServiceWasCreated'=>[
+            'ApiGfccm\Listeners\BuildIncomeServiceStructureData'
+        ]
     ];
 
     /**

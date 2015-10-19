@@ -58,4 +58,13 @@ class FundItemRepositoryEloquent implements FundItemRepositoryInterface
 
         return $this->fundItem->create($payload);
     }
+
+    /**
+     * Get all Active Fund Items
+     * @return mixed
+     */
+    public function getActive()
+    {
+        return $this->fundItem->where('status', 'active')->get();
+    }
 }
