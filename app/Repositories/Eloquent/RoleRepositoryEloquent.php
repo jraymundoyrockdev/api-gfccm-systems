@@ -26,7 +26,7 @@ class RoleRepositoryEloquent implements RoleRepositoryInterface
     }
 
     /**
-     * Get a certain role
+     * Get a certain user_role
      *
      * @return User|null
      */

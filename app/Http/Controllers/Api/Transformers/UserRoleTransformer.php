@@ -18,7 +18,7 @@ class UserRoleTransformer extends TransformerAbstract
             'id' => (int)$userRole->id,
             'user_id' => $userRole->user_id,
             'role_id' => $userRole->role_id,
-            'role' =>  $this->role->transform($userRole->role)
+            'user_role' =>  $this->role->transform($userRole->role)
         ];
     }
 }
