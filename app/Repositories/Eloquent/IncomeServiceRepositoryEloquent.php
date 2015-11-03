@@ -1,6 +1,8 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Models\IncomeService;
+use ApiGfccm\Models\IncomeServiceDenominationStructuralFund;
+use ApiGfccm\Models\IncomeServiceStructuralFund;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
 use Illuminate\Contracts\Auth\Guard;
 
@@ -12,18 +14,29 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
     protected $incomeService;
 
     /**
-     * @var Guard
+     * @var IncomeServiceStructuralFund
      */
-    private $guard;
+    protected $structuralFund;
+
+    /**
+     * @var IncomeServiceDenominationStructuralFund
+     */
+    protected $denominationStructuralFund;
 
     /**
      * @param IncomeService $incomeService
-     * @param Guard $guard
+     * @param IncomeServiceStructuralFund $structuralFund
+     * @param IncomeServiceDenominationStructuralFund $denominationStructuralFund
      */
-    public function __construct(IncomeService $incomeService, Guard $guard)
+    public function __construct(
+        IncomeService $incomeService,
+        IncomeServiceStructuralFund $structuralFund,
+        IncomeServiceDenominationStructuralFund $denominationStructuralFund
+    )
     {
         $this->incomeService = $incomeService;
-        $this->guard = $guard;
+        $this->structuralFund = $structuralFund;
+        $this->denominationStructuralFund = $denominationStructuralFund;
     }
 
     /**
@@ -35,7 +48,6 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
     protected function make(array $with = [])
     {
         $income = $this->incomeService->with($with);
-
         return $income->whereIn('role_access', $this->grantedRoles());
     }
 
@@ -72,25 +84,45 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
         if ($id) {
             $incomeService = $this->show($id);
             $incomeService->fill($payload)->save();
-
             return $incomeService;
         }
-
         return $this->incomeService->create($payload);
+    }
+
+    /**
+     * Create a bulk of Structural Fund
+     *
+     * @param array $payload
+     * @return mixed
+     */
+    public function createStructuralFund(array $payload)
+    {
+        return $this->structuralFund->insert($payload);
+    }
+
+    /**
+     * Create a bulk of Denomination Structural Fund
+     *
+     * @param array $payload
+     * @return mixed
+     */
+    public function createDenominationStructuralFund(array $payload)
+    {
+        return $this->denominationStructuralFund->insert($payload);
     }
 
     /**
      * Get all roles of the current user
      *
+     * @param Guard $guard
      * @return array
      */
-    private function grantedRoles()
+    private function grantedRoles(Guard $guard)
     {
-        $userRoles = $this->guard->user()->user_role->toArray();
+        $userRoles = $guard->user()->user_role->toArray();
 
         return array_map(function ($roles) {
             return $roles['role_id'];
         }, $userRoles);
     }
-
 }

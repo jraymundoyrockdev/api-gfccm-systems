@@ -1,5 +1,4 @@
 <?php namespace ApiGfccm\Repositories\Interfaces;
-
 interface IncomeServiceRepositoryInterface
 {
     /**
@@ -26,4 +25,19 @@ interface IncomeServiceRepositoryInterface
      */
     public function save($payload, $id = null);
 
+    /**
+     * Create a bulk of Structural Fund
+     *
+     * @param array $payload
+     * @return mixed
+     */
+    public function createStructuralFund(array $payload);
+
+    /**
+     * Create a bulk of Denomination Structural Fund
+     *
+     * @param array $payload
+     * @return mixed
+     */
+    public function createDenominationStructuralFund(array $payload);
 }

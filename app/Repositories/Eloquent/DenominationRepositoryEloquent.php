@@ -57,4 +57,13 @@ class DenominationRepositoryEloquent implements DenominationRepositoryInterface
         return $denomination;
     }
 
+    /**
+     * Get all Active Fund Items
+     * @return mixed
+     */
+    public function getActive()
+    {
+        return $this->denomination->all();
+    }
+
 }

@@ -13,7 +13,8 @@ interface FundItemRepositoryInterface
     /**
      * Get a certain Fund Item
      *
-     * @return FundItem|null
+     * @param $id
+     * @return mixed
      */
     public function show($id);
 
@@ -22,7 +23,13 @@ interface FundItemRepositoryInterface
      *
      * @param $payload
      * @param null $id
-     * @return FundItem|null|static
+     * @return mixed
      */
     public function save($payload, $id = null);
+
+    /**
+     * Get all Active Fund Items
+     * @return mixed
+     */
+    public function getActive();
 }

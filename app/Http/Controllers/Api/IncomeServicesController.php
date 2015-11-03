@@ -1,5 +1,6 @@
 <?php namespace ApiGfccm\Http\Controllers\Api;
-
+use ApiGfccm\Commands\CreateIncomeServiceCommand;
+use ApiGfccm\Events\IncomeServiceWasCreated;
 use ApiGfccm\Http\Controllers\Controller;
 use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Requests\IncomeServiceRequest;
@@ -8,14 +9,12 @@ use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
 use Illuminate\Auth\Guard;
 use Illuminate\Http\Request;
-
 class IncomeServicesController extends Controller
 {
     /**
      * @var IncomeServiceRepositoryInterface
      */
     private $incomeService;
-
     /**
      * @param IncomeServiceRepositoryInterface $incomeService
      */
@@ -23,7 +22,6 @@ class IncomeServicesController extends Controller
     {
         $this->incomeService = $incomeService;
     }
-
     /**
      * Display a listing Income Services
      *
@@ -33,7 +31,6 @@ class IncomeServicesController extends Controller
     {
         return (new CollectionResponse($this->incomeService->all()))->asType('IncomeService');
     }
-
     /**
      * Display a certain Income Service
      *
@@ -44,7 +41,6 @@ class IncomeServicesController extends Controller
     {
         return (new ItemResponse($this->incomeService->show($id)))->asType('IncomeService');
     }
-
     /**
      * Create new Income Service
      *
@@ -54,16 +50,10 @@ class IncomeServicesController extends Controller
      */
     public function store(IncomeServiceRequest $request, Guard $guard)
     {
-        $input = array_filter($request->request->all());
-
-        $input = array_merge($input, [
-            'created_by' => $guard->user()->id,
-            'role_access' => 3,
-            'status' => 'active']);
-
-        return (new ItemResponse($this->incomeService->save($input)));
+        return (new ItemResponse($this->dispatch(
+            new CreateIncomeServiceCommand($request->get('service_id'), $guard->user()->id, 3, 'status')
+        )));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -75,5 +65,4 @@ class IncomeServicesController extends Controller
     {
         //
     }
-
 }
