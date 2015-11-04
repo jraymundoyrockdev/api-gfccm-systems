@@ -20,7 +20,6 @@ class BuildIncomeServiceDenominationStructureData
      *
      * @param DenominationRepositoryInterface $denomination
      * @param IncomeServiceRepositoryInterface $incomeService
-     * @internal param FundItemRepositoryInterface $fundItem
      */
     public function __construct(
         DenominationRepositoryInterface $denomination,
@@ -38,24 +37,27 @@ class BuildIncomeServiceDenominationStructureData
      */
     public function handle(IncomeServiceWasCreated $event)
     {
-        $this->incomeService->createDenominationStructuralFund($this->buildStructure($event->incomeServiceId));
+        $this->incomeService->createDenominationStructure(
+            $this->buildStructure($event->incomeServiceId, $this->denomination->getActive()->toArray()));
     }
 
     /**
      * Build Structure fields
      *
      * @param $incomeServiceId
+     * @param array $denominations
      * @return array
      */
-    private function buildStructure($incomeServiceId)
+    private function buildStructure($incomeServiceId, Array $denominations = [])
     {
         return array_map(function ($structure) use ($incomeServiceId) {
             return [
                 'income_service_id' => $incomeServiceId,
                 'denomination_id' => $structure['id'],
+                'amount' => $structure['amount'],
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ];
-        }, $this->denomination->getActive()->toArray());
+        }, $denominations);
     }
 }

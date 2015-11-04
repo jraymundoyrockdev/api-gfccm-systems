@@ -2,7 +2,7 @@
 
 use ApiGfccm\Commands\CreateIncomeServiceCommand;
 use ApiGfccm\Events\IncomeServiceWasCreated;
-use ApiGfccm\Models\IncomeServiceStructuralFund;
+use ApiGfccm\Models\IncomeServiceFundStructure;
 use ApiGfccm\Repositories\Eloquent\IncomeServiceRepositoryEloquent;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -17,7 +17,7 @@ class CreateIncomeServiceCommandHandler
      */
     private $dispatcher;
     /**
-     * @var IncomeServiceStructuralFund
+     * @var IncomeServiceFundStructure
      */
     private $structuralFund;
 
@@ -26,13 +26,14 @@ class CreateIncomeServiceCommandHandler
      *
      * @param IncomeServiceRepositoryEloquent $incomeService
      * @param Dispatcher $dispatcher
-     * @param IncomeServiceStructuralFund $structuralFund
+     * @param IncomeServiceFundStructure $structuralFund
      */
     public function __construct(
         IncomeServiceRepositoryEloquent $incomeService,
         Dispatcher $dispatcher,
-        IncomeServiceStructuralFund $structuralFund
-    ) {
+        IncomeServiceFundStructure $structuralFund
+    )
+    {
         $this->incomeService = $incomeService;
         $this->dispatcher = $dispatcher;
         $this->structuralFund = $structuralFund;
@@ -48,6 +49,7 @@ class CreateIncomeServiceCommandHandler
     {
         $input = [
             'service_id' => $command->serviceId,
+            'service_date' => $command->serviceDate,
             'created_by' => $command->userId,
             'role_access' => $command->roleAccess,
             'status' => $command->status

@@ -1,9 +1,11 @@
-<?php
+<?php namespace ApiGfccm\Providers;
 
-namespace ApiGfccm\Providers;
-
+use ApiGfccm\Listeners\BuildIncomeServiceDenominationStructureData;
+use ApiGfccm\Listeners\BuildIncomeServiceFundItemStructureData;
+use ApiGfccm\Listeners\BuildIncomeServiceFundStructureData;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use ApiGfccm\Listeners\EventListener;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -14,18 +16,19 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         'ApiGfccm\Events\SomeEvent' => [
-            'ApiGfccm\Listeners\EventListener',
+            EventListener::class
         ],
-        'ApiGfccm\Events\IncomeServiceWasCreated'=>[
-            'ApiGfccm\Listeners\BuildIncomeServiceStructureData',
-            'ApiGfccm\Listeners\BuildIncomeServiceDenominationStructureData'
+        'ApiGfccm\Events\IncomeServiceWasCreated' => [
+            BuildIncomeServiceFundStructureData::class,
+            BuildIncomeServiceFundItemStructureData::class,
+            BuildIncomeServiceDenominationStructureData::class
         ]
     ];
 
     /**
      * Register any other events for your application.
      *
-     * @param  \Illuminate\Contracts\Events\Dispatcher  $events
+     * @param  \Illuminate\Contracts\Events\Dispatcher $events
      * @return void
      */
     public function boot(DispatcherContract $events)

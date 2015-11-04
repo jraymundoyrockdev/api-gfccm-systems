@@ -22,7 +22,7 @@ class IncomeService extends Model
      */
     public function service()
     {
-        return $this->hasOne(Service::class, 'id', 'service_id');
+        return $this->belongsTo(Service::class);
     }
 
     /**
@@ -33,4 +33,19 @@ class IncomeService extends Model
         return $this->hasOne(User::class, 'id', 'created_by');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function fund_structure()
+    {
+        return $this->hasMany(IncomeServiceFundStructure::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function denomination_structure()
+    {
+        return $this->hasMany(IncomeServiceDenominationStructure::class);
+    }
 }

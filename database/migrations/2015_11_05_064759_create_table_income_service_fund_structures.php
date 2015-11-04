@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableIncomeServicesDenominationStructuralFund extends Migration
+class CreateTableIncomeServiceFundStructures extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,11 @@ class CreateTableIncomeServicesDenominationStructuralFund extends Migration
      */
     public function up()
     {
-        Schema::create('income_service_denomination_structural_funds', function (Blueprint $table) {
+        Schema::create('income_service_fund_structures', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('income_service_id');
-            $table->double('denomination_id');
+            $table->integer('fund_id');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateTableIncomeServicesDenominationStructuralFund extends Migration
      */
     public function down()
     {
-        Schema::drop('income_service_denomination_structural_funds');
+        Schema::drop('income_service_fund_structures');
     }
 }

@@ -8,6 +8,11 @@ class CreateIncomeServiceCommand extends Command
     public $incomeServiceId;
 
     /**
+     * @var datetime
+     */
+    public $serviceDate;
+
+    /**
      * @var int
      */
     public $userId;
@@ -26,14 +31,18 @@ class CreateIncomeServiceCommand extends Command
      * Create a new command instance.
      *
      * @param int $serviceId
+     * @param datetime $serviceDate
      * @param int $userId
      * @param int $roleAccess
+     * @param string $status
      */
-    public function __construct($serviceId, $userId, $roleAccess, $status)
+    public function __construct($serviceId, $serviceDate, $userId, $roleAccess, $status)
     {
         $this->serviceId = $serviceId;
+        $this->serviceDate = $serviceDate;
         $this->userId = $userId;
         $this->roleAccess = $roleAccess;
         $this->status = $status;
+
     }
 }

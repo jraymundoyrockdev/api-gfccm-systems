@@ -1,8 +1,9 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Models\IncomeService;
-use ApiGfccm\Models\IncomeServiceDenominationStructuralFund;
-use ApiGfccm\Models\IncomeServiceStructuralFund;
+use ApiGfccm\Models\IncomeServiceDenominationStructure;
+use ApiGfccm\Models\IncomeServiceFundItemStructure;
+use ApiGfccm\Models\IncomeServiceFundStructure;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
 use Illuminate\Contracts\Auth\Guard;
 
@@ -14,29 +15,45 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
     protected $incomeService;
 
     /**
-     * @var IncomeServiceStructuralFund
+     * @var IncomeServiceFundStructure
      */
-    protected $structuralFund;
+    protected $fundStructure;
 
     /**
-     * @var IncomeServiceDenominationStructuralFund
+     * @var IncomeServiceDenominationStructure
      */
-    protected $denominationStructuralFund;
+    protected $denominationStructure;
+
+    /**
+     * @var IncomeServiceFundItemStructure
+     */
+    protected $fundItemStructure;
+
+    /**
+     * @var Guard
+     */
+    protected $guard;
 
     /**
      * @param IncomeService $incomeService
-     * @param IncomeServiceStructuralFund $structuralFund
-     * @param IncomeServiceDenominationStructuralFund $denominationStructuralFund
+     * @param Guard $guard
+     * @param IncomeServiceFundStructure $fundStructure
+     * @param IncomeServiceFundItemStructure $fundItemStructure
+     * @param IncomeServiceDenominationStructure $denominationStructure
      */
     public function __construct(
         IncomeService $incomeService,
-        IncomeServiceStructuralFund $structuralFund,
-        IncomeServiceDenominationStructuralFund $denominationStructuralFund
+        Guard $guard,
+        IncomeServiceFundStructure $fundStructure,
+        IncomeServiceFundItemStructure $fundItemStructure,
+        IncomeServiceDenominationStructure $denominationStructure
     )
     {
         $this->incomeService = $incomeService;
-        $this->structuralFund = $structuralFund;
-        $this->denominationStructuralFund = $denominationStructuralFund;
+        $this->fundStructure = $fundStructure;
+        $this->fundItemStructure = $fundItemStructure;
+        $this->denominationStructure = $denominationStructure;
+        $this->guard = $guard;
     }
 
     /**
@@ -95,9 +112,19 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
      * @param array $payload
      * @return mixed
      */
-    public function createStructuralFund(array $payload)
+    public function createFundStructure(array $payload)
     {
-        return $this->structuralFund->insert($payload);
+        return $this->fundStructure->insert($payload);
+    }
+
+    /**
+     * Create a bulk of Structural Fund Item
+     * @param array $payload
+     * @return mixed
+     */
+    public function createFundItemStructure(array $payload)
+    {
+        return $this->fundItemStructure->insert($payload);
     }
 
     /**
@@ -106,20 +133,18 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
      * @param array $payload
      * @return mixed
      */
-    public function createDenominationStructuralFund(array $payload)
+    public function createDenominationStructure(array $payload)
     {
-        return $this->denominationStructuralFund->insert($payload);
+        return $this->denominationStructure->insert($payload);
     }
 
     /**
      * Get all roles of the current user
-     *
-     * @param Guard $guard
      * @return array
      */
-    private function grantedRoles(Guard $guard)
+    private function grantedRoles()
     {
-        $userRoles = $guard->user()->user_role->toArray();
+        $userRoles = $this->guard->user()->user_role->toArray();
 
         return array_map(function ($roles) {
             return $roles['role_id'];

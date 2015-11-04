@@ -11,9 +11,6 @@ class IncomeServiceTransformer extends TransformerAbstract
      */
     public function transform(IncomeService $incomeService)
     {
-        $service = new ServiceTransformer();
-        $user = new UserTransformer();
-
         return [
             'id' => (int) $incomeService->id,
             'service_id' => $incomeService->service_id,
@@ -24,8 +21,33 @@ class IncomeServiceTransformer extends TransformerAbstract
             'status' => $incomeService->status,
             'created_by' => $incomeService->created_by,
             'role_access' => $incomeService->role_access,
-            'service' => $service->transform($incomeService->service),
-            'user' => $user->transform($incomeService->user)
+            'service' => $incomeService->service->name,
+            'user' => $incomeService->user->username,
+            'funds_structure' => $this->getStructure(
+                $incomeService->fund_structure,
+                new IncomeServiceFundStructureTransformer()),
+            'denominations_structure' => $this->getStructure(
+                $incomeService->denomination_structure,
+                new IncomeServiceDenominationStructureTransformer())
         ];
     }
+
+    /**
+     * Get Structures
+     *
+     * @param $structures
+     * @param $transformer
+     * @return array
+     */
+    private function getStructure($structures, $transformer)
+    {
+        $transformedStructures = [];
+
+        foreach ($structures as $structure) {
+            $transformedStructures[] = $transformer->transform($structure);
+        }
+
+        return $transformedStructures;
+    }
+
 }

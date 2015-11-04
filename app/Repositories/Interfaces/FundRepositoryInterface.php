@@ -24,4 +24,10 @@ interface FundRepositoryInterface
      * @return FundItem|null|static
      */
     public function save($payload, $id = null);
+
+    /**
+     * Get all Active Fund Items
+     * @return mixed
+     */
+    public function getActive();
 }

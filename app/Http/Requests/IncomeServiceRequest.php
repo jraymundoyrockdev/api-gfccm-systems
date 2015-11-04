@@ -21,7 +21,7 @@ class IncomeServiceRequest extends Request
     {
         return [
             'service_id' => 'required|integer',
-            'service_date' => 'date_format:Y-m-d H:i:s',
+            'service_date' => 'required|date_format:Y-m-d H:i',
         ];
     }
 
@@ -33,7 +33,8 @@ class IncomeServiceRequest extends Request
     public function messages()
     {
         return [
-            'service_id.required' => 'Service field is required.'
+            'service_id.required' => 'Service field is required.',
+            'service_date.required' => 'Service date is required.'
         ];
     }
 }

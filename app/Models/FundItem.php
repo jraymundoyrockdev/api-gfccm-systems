@@ -28,4 +28,12 @@ class FundItem extends Model
     {
         return $this->belongsTo(Fund::class, 'fund_id', 'id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function fund_structure()
+    {
+        return $this->belongsTo(IncomeServiceFundStructure::class, 'fund_id', 'id');
+    }
 }
