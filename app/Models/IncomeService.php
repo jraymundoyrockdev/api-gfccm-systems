@@ -11,6 +11,7 @@ class IncomeService extends Model
         'tithes',
         'offering',
         'other_fund',
+        'total',
         'service_date',
         'status',
         'created_by',
@@ -47,5 +48,13 @@ class IncomeService extends Model
     public function denomination_structure()
     {
         return $this->hasMany(IncomeServiceDenominationStructure::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function member_fund_total()
+    {
+        return $this->hasMany(IncomeServiceMemberFundTotal::class);
     }
 }

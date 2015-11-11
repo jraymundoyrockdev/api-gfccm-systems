@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableIncomeServices extends Migration
+class CreateTableIncomeServiceMemberFundTotals extends Migration
 {
     /**
      * Run the migrations.
@@ -12,17 +12,14 @@ class CreateTableIncomeServices extends Migration
      */
     public function up()
     {
-        Schema::create('income_services', function (Blueprint $table) {
+        Schema::create('income_service_member_fund_totals', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('service_id');
+            $table->integer('income_service_id');
+            $table->integer('member_id');
             $table->double('tithes');
             $table->double('offering');
-            $table->double('other_fund');
+            $table->double('others');
             $table->double('total');
-            $table->dateTime('service_date');
-            $table->string('status')->default('active');
-            $table->integer('created_by');
-            $table->integer('role_access');
             $table->timestamps();
         });
     }
@@ -34,6 +31,6 @@ class CreateTableIncomeServices extends Migration
      */
     public function down()
     {
-        Schema::drop('income_services');
+        Schema::drop('income_service_member_fund_totals');
     }
 }

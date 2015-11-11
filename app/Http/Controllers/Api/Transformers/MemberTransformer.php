@@ -18,6 +18,8 @@ class MemberTransformer extends TransformerAbstract
             'id' => (int) $member->id,
             'firstname' => $member->firstname,
             'lastname' => $member->lastname,
+            'fullname' => $member->full_name,
+            'fullname_with_apellation' => $member->full_name_with_apellation,
             'middlename' => $member->middlename,
             'apellation' => $member->apellation,
             'gender' => $member->gender,

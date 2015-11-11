@@ -19,6 +19,8 @@ use ApiGfccm\Repositories\Interfaces\FundItemRepositoryInterface;
 use ApiGfccm\Repositories\Eloquent\FundItemRepositoryEloquent;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
 use ApiGfccm\Repositories\Eloquent\IncomeServiceRepositoryEloquent;
+use ApiGfccm\Repositories\Interfaces\IncomeServiceMemberFundRepositoryInterface;
+use ApiGfccm\Repositories\Eloquent\IncomeServiceMemberFundRepositoryEloquent;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -39,5 +41,6 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(FundRepositoryInterface::class, FundRepositoryEloquent::class);
         $this->app->bind(FundItemRepositoryInterface::class, FundItemRepositoryEloquent::class);
         $this->app->bind(IncomeServiceRepositoryInterface::class, IncomeServiceRepositoryEloquent::class);
+        $this->app->bind(IncomeServiceMemberFundRepositoryInterface::class, IncomeServiceMemberFundRepositoryEloquent::class);
     }
 }

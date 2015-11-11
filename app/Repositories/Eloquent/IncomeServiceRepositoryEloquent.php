@@ -139,6 +139,24 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
     }
 
     /**
+     * Updates funds amount
+     *
+     * @param $id
+     * @param $payload
+     * @return mixed
+     */
+    public function updateFunds($id, $payload)
+    {
+        $incomeService = $this->incomeService->find($id)->first();
+
+        foreach ($payload as $field => $value) {
+            $incomeService->$field += $value;
+        }
+
+        return $incomeService->save();
+    }
+
+    /**
      * Get all roles of the current user
      * @return array
      */

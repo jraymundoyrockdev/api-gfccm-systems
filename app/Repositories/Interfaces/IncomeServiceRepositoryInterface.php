@@ -49,4 +49,13 @@ interface IncomeServiceRepositoryInterface
      * @return mixed
      */
     public function createDenominationStructure(array $payload);
+
+    /**
+     * Updates funds amount
+     *
+     * @param $id
+     * @param $payload
+     * @return mixed
+     */
+    public function updateFunds($id, $payload);
 }

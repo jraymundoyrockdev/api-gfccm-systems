@@ -1,8 +1,6 @@
 <?php namespace ApiGfccm\Events;
 
-use ApiGfccm\Events\Event;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class IncomeServiceWasCreated extends Event
 {

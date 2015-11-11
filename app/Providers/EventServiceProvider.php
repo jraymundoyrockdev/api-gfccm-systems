@@ -1,11 +1,13 @@
 <?php namespace ApiGfccm\Providers;
 
+use ApiGfccm\Listeners\AddIncomeServiceMemberFundTotal;
 use ApiGfccm\Listeners\BuildIncomeServiceDenominationStructureData;
 use ApiGfccm\Listeners\BuildIncomeServiceFundItemStructureData;
 use ApiGfccm\Listeners\BuildIncomeServiceFundStructureData;
+use ApiGfccm\Listeners\EventListener;
+use ApiGfccm\Listeners\UpdateIncomeServiceFund;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use ApiGfccm\Listeners\EventListener;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -22,6 +24,10 @@ class EventServiceProvider extends ServiceProvider
             BuildIncomeServiceFundStructureData::class,
             BuildIncomeServiceFundItemStructureData::class,
             BuildIncomeServiceDenominationStructureData::class
+        ],
+        'ApiGfccm\Events\IncomeServiceMemberFundWasUpdated' => [
+            AddIncomeServiceMemberFundTotal::class,
+            UpdateIncomeServiceFund::class
         ]
     ];
 

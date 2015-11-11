@@ -4,7 +4,7 @@
  * @var $factory Illuminate\Database\Eloquent\Factory
  */
 
-$factory->define(\ApiGfccm\Models\IncomeServiceFund::class, function (\Faker\Generator $faker) {
+$factory->define(\ApiGfccm\Models\IncomeServiceMemberFundTotal::class, function (\Faker\Generator $faker) {
     return [
         'id' => $faker->numberBetween(1, 1000),
         'income_service_id' => $faker->numberBetween(1, 1000),
