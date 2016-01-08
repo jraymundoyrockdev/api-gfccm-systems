@@ -53,9 +53,10 @@ interface IncomeServiceRepositoryInterface
     /**
      * Updates funds amount
      *
-     * @param $id
-     * @param $payload
+     * @param int $id
+     * @param array $payload
+     * @param string $method
      * @return mixed
      */
-    public function updateFunds($id, $payload);
+    public function updateFunds($id, $payload, $method);
 }

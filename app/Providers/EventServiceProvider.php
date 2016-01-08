@@ -4,8 +4,10 @@ use ApiGfccm\Listeners\AddIncomeServiceMemberFundTotal;
 use ApiGfccm\Listeners\BuildIncomeServiceDenominationStructureData;
 use ApiGfccm\Listeners\BuildIncomeServiceFundItemStructureData;
 use ApiGfccm\Listeners\BuildIncomeServiceFundStructureData;
+use ApiGfccm\Listeners\DeleteIncomeServiceMemberFunds;
 use ApiGfccm\Listeners\EventListener;
-use ApiGfccm\Listeners\UpdateIncomeServiceFund;
+use ApiGfccm\Listeners\SubtractIncomeServiceFund;
+use ApiGfccm\Listeners\SumIncomeServiceFund;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -27,7 +29,11 @@ class EventServiceProvider extends ServiceProvider
         ],
         'ApiGfccm\Events\IncomeServiceMemberFundWasUpdated' => [
             AddIncomeServiceMemberFundTotal::class,
-            UpdateIncomeServiceFund::class
+            SumIncomeServiceFund::class
+        ],
+        'ApiGfccm\Events\IncomeServiceMemberFundTotalWasDeleted' => [
+            DeleteIncomeServiceMemberFunds::class,
+            SubtractIncomeServiceFund::class
         ]
     ];
 

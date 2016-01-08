@@ -1,11 +1,9 @@
 <?php namespace ApiGfccm\Listeners;
 
-use ApiGfccm\Events\IncomeServiceMemberFundWasUpdated;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use ApiGfccm\Events\IncomeServiceMemberFundTotalWasDeleted;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
 
-class UpdateIncomeServiceFund
+class SubtractIncomeServiceFund
 {
 
     /**
@@ -20,17 +18,16 @@ class UpdateIncomeServiceFund
      */
     public function __construct(IncomeServiceRepositoryInterface $incomeService)
     {
-        //
         $this->incomeService = $incomeService;
     }
 
     /**
      * Handle the event.
      *
-     * @param  IncomeServiceMemberFundWasUpdated  $event
+     * @param  IncomeServiceMemberFundTotalWasDeleted $event
      * @return void
      */
-    public function handle(IncomeServiceMemberFundWasUpdated $event)
+    public function handle(IncomeServiceMemberFundTotalWasDeleted $event)
     {
         $payload = [
             'tithes' => $event->tithes,
@@ -39,10 +36,8 @@ class UpdateIncomeServiceFund
             'total' => $event->total
         ];
 
-        $this->incomeService->updateFunds($event->incomeServiceId,$payload);
+        $this->incomeService->updateFunds($event->incomeServiceId, $payload, 'subtraction');
 
-        $payload['id'] = $event->incomeServiceId;
-
-        return $payload;
+        return $this->incomeService->show($event->incomeServiceId);
     }
 }

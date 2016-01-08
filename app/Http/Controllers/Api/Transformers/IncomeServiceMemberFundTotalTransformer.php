@@ -9,6 +9,7 @@ class IncomeServiceMemberFundTotalTransformer extends TransformerAbstract
     {
         return [
             'id' => (int) $fund->id,
+            'income_service_id' => $fund->income_service_id,
             'member_id' => $fund->member_id,
             'member' => $fund->member->full_name,
             'tithes' => $fund->tithes,

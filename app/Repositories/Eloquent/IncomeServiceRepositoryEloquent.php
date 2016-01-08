@@ -141,16 +141,25 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
     /**
      * Updates funds amount
      *
-     * @param $id
-     * @param $payload
+     * @param int $id
+     * @param array $payload
+     * @param string $method
      * @return mixed
      */
-    public function updateFunds($id, $payload)
+    public function updateFunds($id, $payload, $method = 'addition')
     {
         $incomeService = $this->incomeService->find($id)->first();
 
-        foreach ($payload as $field => $value) {
-            $incomeService->$field += $value;
+        if ($method == 'addition') {
+            foreach ($payload as $field => $value) {
+                $incomeService->$field += $value;
+            }
+        }
+
+        if ($method == 'subtraction') {
+            foreach ($payload as $field => $value) {
+                $incomeService->$field -= $value;
+            }
         }
 
         return $incomeService->save();

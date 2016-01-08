@@ -2,6 +2,14 @@
 
 interface IncomeServiceMemberFundRepositoryInterface
 {
+    /**
+     * Get Member Fund Total by Income Service ID and Member ID
+     *
+     * @param $incomeServiceId
+     * @param $memberId
+     * @return mixed
+     */
+    public function getByIdAndMemberId($incomeServiceId, $memberId);
 
     /**
      * Create Totals of Member
@@ -18,5 +26,22 @@ interface IncomeServiceMemberFundRepositoryInterface
      * @return mixed
      */
     public function createTotal($payload);
+
+    /**
+     * Deletes Member Funds
+     *
+     * @param $incomeServiceId
+     * @param $memberId
+     * @return mixed
+     */
+    public function delete($incomeServiceId, $memberId);
+
+    /**
+     * Deletes Member Fund Total
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function deleteTotal($id);
 
 }

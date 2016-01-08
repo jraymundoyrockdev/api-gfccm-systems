@@ -27,6 +27,21 @@ class IncomeServiceMemberFundRepositoryEloquent implements IncomeServiceMemberFu
     }
 
     /**
+     * Get Member Fund Total by Income Service ID and Member ID
+     *
+     * @param $incomeServiceId
+     * @param $memberId
+     * @return mixed
+     */
+    public function getByIdAndMemberId($incomeServiceId, $memberId)
+    {
+        return $this->memberFundTotal
+            ->where('income_service_id', $incomeServiceId)
+            ->where('member_id', $memberId)
+            ->first();
+    }
+
+    /**
      * Insert Bulk data of member funds
      *
      * @param array $payload
@@ -35,6 +50,21 @@ class IncomeServiceMemberFundRepositoryEloquent implements IncomeServiceMemberFu
     public function create(array $payload)
     {
         return $this->memberFund->insert($payload);
+    }
+
+    /**
+     * Deletes Member Funds
+     *
+     * @param $incomeServiceId
+     * @param $memberId
+     * @return mixed
+     */
+    public function delete($incomeServiceId, $memberId)
+    {
+        return $this->memberFund
+            ->where('income_service_id', $incomeServiceId)
+            ->where('member_id', $memberId)
+            ->delete();
     }
 
     /**
@@ -48,4 +78,14 @@ class IncomeServiceMemberFundRepositoryEloquent implements IncomeServiceMemberFu
         return $this->memberFundTotal->create($payload);
     }
 
+    /**
+     * Deletes Member Fund Total
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function deleteTotal($id)
+    {
+        return $this->memberFundTotal->find($id)->delete();
+    }
 }

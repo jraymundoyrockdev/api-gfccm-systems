@@ -1,7 +1,6 @@
 <?php namespace ApiGfccm\Http\Controllers\Api;
 
 use ApiGfccm\Commands\CreateIncomeServiceCommand;
-use ApiGfccm\Commands\UpdateIncomeServiceMemberFund;
 use ApiGfccm\Http\Controllers\Controller;
 use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Requests\IncomeServiceRequest;
@@ -11,7 +10,6 @@ use ApiGfccm\Repositories\Interfaces\IncomeServiceMemberFundRepositoryInterface;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
 use Illuminate\Auth\Guard;
 use Illuminate\Http\Request;
-use ApiGfccm\Http\Requests\IncomeServiceMemberFundRequest;
 
 
 class IncomeServicesController extends Controller
@@ -94,40 +92,5 @@ class IncomeServicesController extends Controller
     public function update(Request $request, $id)
     {
         //
-    }
-
-    public function updateMemberFund(Request $request)
-    {
-        $input = $request->all();
-
-        $validate = $this->validateUpdateMemberIncomeService(array_shift($input));
-
-        if (!empty($validate)) {
-            return response($validate, 422);
-        }
-
-        return response()->json(($this->dispatch(
-            new UpdateIncomeServiceMemberFund($request->all())
-        )));
-
-    }
-
-    /**
-     * Custom Validate member_id and income_service_id
-     *
-     * @param $input
-     * @return array
-     */
-    private function validateUpdateMemberIncomeService($input)
-    {
-        if (empty($input['member_id'])) {
-            return ['message' => 'Validation Error', 'errors' => ['member_id' => 'Member does not exists']];
-        }
-
-        if (empty($input['income_service_id'])) {
-            return ['message' => 'Validation Error', 'errors' => ['income_service_id' => 'Income Service does not exists']];
-        }
-
-        return [];
     }
 }

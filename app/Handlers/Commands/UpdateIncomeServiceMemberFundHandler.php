@@ -11,12 +11,12 @@ class UpdateIncomeServiceMemberFundHandler
     /**
      * @var IncomeServiceMemberFundRepositoryInterface
      */
-    private $memberFund;
+    protected $memberFund;
 
     /**
      * @var Dispatcher
      */
-    private $dispatcher;
+    protected $dispatcher;
 
     /**
      * Create the command handler.
@@ -42,7 +42,7 @@ class UpdateIncomeServiceMemberFundHandler
 
         $incomeService = $this->dispatcher->fire(new IncomeServiceMemberFundWasUpdated($command->memberFund));
 
-        return ['memberFund' => $memberFund, 'memberFundTotal' => $incomeService[0], 'fundTotal' => $incomeService[1]];
+        return ['memberFundTotal' => $incomeService[0], 'fundTotal' => $incomeService[1]];
     }
 
 }

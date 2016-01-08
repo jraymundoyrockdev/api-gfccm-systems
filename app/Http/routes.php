@@ -29,7 +29,8 @@ Route::group(
         Route::get('funds/{fundId}/items', 'FundsController@showItems');
         Route::resource('fund-items', 'FundItemsController', ['only' => ['store', 'update', 'show']]);
         Route::get('funds/{fundId}/items', 'FundsController@showItems');
-        Route::post('income-services/{id}/update', 'IncomeServicesController@updateMemberFund');
+        Route::post('income-services/{id}/member-fund/{member_id}/update', 'IncomeServiceMemberFundsController@updateMemberFund');
+        Route::delete('income-services/{id}/member-fund/{member_id}', 'IncomeServiceMemberFundsController@deleteMemberFund');
         Route::resource('income-services', 'IncomeServicesController');
     });
 }
