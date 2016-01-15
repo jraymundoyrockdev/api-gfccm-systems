@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
+use ApiGfccm\Models\Service;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateTableServices extends Migration
 {
@@ -18,6 +19,8 @@ class CreateTableServices extends Migration
             $table->string('description');
             $table->timestamps();
         });
+
+        $this->insertServices();
     }
 
     /**
@@ -28,5 +31,15 @@ class CreateTableServices extends Migration
     public function down()
     {
         Schema::drop('services');
+    }
+
+    private function insertServices()
+    {
+        $dateNow = date("Y-m-d H:i:s");
+
+        return Service::insert([
+            ['name' => '1st Service', 'description' => '1st service', 'created_at' => $dateNow],
+            ['name' => '2nd Service', 'description' => '2nd service', 'created_at' => $dateNow]
+        ]);
     }
 }
