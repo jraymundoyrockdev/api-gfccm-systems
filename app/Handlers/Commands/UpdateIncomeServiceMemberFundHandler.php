@@ -38,11 +38,26 @@ class UpdateIncomeServiceMemberFundHandler
      */
     public function handle(UpdateIncomeServiceMemberFund $command)
     {
-        $memberFund = $this->memberFund->create($command->memberFund);
+        $this->memberFund->create($this->addCreatedAndUpdatedDates($command->memberFund));
 
         $incomeService = $this->dispatcher->fire(new IncomeServiceMemberFundWasUpdated($command->memberFund));
 
         return ['memberFundTotal' => $incomeService[0], 'fundTotal' => $incomeService[1]];
+    }
+
+    private function addCreatedAndUpdatedDates($memberFund)
+    {
+        return array_map(function ($structure) {
+            return [
+                'income_service_id' => $structure['income_service_id'],
+                'member_id' => $structure['member_id'],
+                'fund_id' => $structure['fund_id'],
+                'fund_item_id' => $structure['fund_item_id'],
+                'amount' => $structure['amount'],
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ];
+        }, $memberFund);
     }
 
 }
