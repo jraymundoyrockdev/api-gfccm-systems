@@ -30,7 +30,7 @@ class IncomeServiceTransformer extends TransformerAbstract
                 new IncomeServiceFundStructureTransformer()),
             'denominations_structure' => $this->getStructure(
                 $incomeService->denomination_structure,
-                new IncomeServiceDenominationStructureTransformer()),
+                new IncomeServiceDenominationTransformer()),
             'member_fund_total' => $this->getFundTotal($incomeService->member_fund_total)
         ];
     }

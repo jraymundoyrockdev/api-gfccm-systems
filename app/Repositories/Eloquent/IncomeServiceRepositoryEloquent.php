@@ -1,7 +1,7 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Models\IncomeService;
-use ApiGfccm\Models\IncomeServiceDenominationStructure;
+use ApiGfccm\Models\IncomeServiceDenomination;
 use ApiGfccm\Models\IncomeServiceFundItemStructure;
 use ApiGfccm\Models\IncomeServiceFundStructure;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
@@ -20,7 +20,7 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
     protected $fundStructure;
 
     /**
-     * @var IncomeServiceDenominationStructure
+     * @var IncomeServiceDenomination
      */
     protected $denominationStructure;
 
@@ -39,16 +39,15 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
      * @param Guard $guard
      * @param IncomeServiceFundStructure $fundStructure
      * @param IncomeServiceFundItemStructure $fundItemStructure
-     * @param IncomeServiceDenominationStructure $denominationStructure
+     * @param IncomeServiceDenomination $denominationStructure
      */
     public function __construct(
         IncomeService $incomeService,
         Guard $guard,
         IncomeServiceFundStructure $fundStructure,
         IncomeServiceFundItemStructure $fundItemStructure,
-        IncomeServiceDenominationStructure $denominationStructure
-    )
-    {
+        IncomeServiceDenomination $denominationStructure
+    ) {
         $this->incomeService = $incomeService;
         $this->fundStructure = $fundStructure;
         $this->fundItemStructure = $fundItemStructure;
@@ -148,7 +147,7 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
      */
     public function updateFunds($id, $payload, $method = 'addition')
     {
-        $incomeService = $this->incomeService->find($id)->first();
+        $incomeService = $this->incomeService->find($id);
 
         if ($method == 'addition') {
             foreach ($payload as $field => $value) {
@@ -163,6 +162,24 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
         }
 
         return $incomeService->save();
+    }
+
+    /**
+     * Update Denomination
+     *
+     * @param array $payload
+     * @return array
+     */
+    public function updateDenomination($payload)
+    {
+        foreach ($payload as $denomination) {
+            $this->denominationStructure->find($denomination['id'])->fill([
+                'piece' => $denomination['piece'],
+                'total' => $denomination['total']
+            ])->save();
+        }
+
+        return $payload;
     }
 
     /**
