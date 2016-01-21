@@ -47,7 +47,7 @@ class IncomeService extends Model
      */
     public function denomination_structure()
     {
-        return $this->hasMany(IncomeServiceDenominationStructure::class);
+        return $this->hasMany(IncomeServiceDenomination::class);
     }
 
     /**

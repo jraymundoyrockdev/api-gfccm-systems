@@ -1,7 +1,7 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Models\IncomeService;
-use ApiGfccm\Models\IncomeServiceDenominationStructure;
+use ApiGfccm\Models\IncomeServiceDenomination;
 use ApiGfccm\Models\IncomeServiceFundItemStructure;
 use ApiGfccm\Models\IncomeServiceFundStructure;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
@@ -20,7 +20,7 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
     protected $fundStructure;
 
     /**
-     * @var IncomeServiceDenominationStructure
+     * @var IncomeServiceDenomination
      */
     protected $denominationStructure;
 
@@ -39,14 +39,14 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
      * @param Guard $guard
      * @param IncomeServiceFundStructure $fundStructure
      * @param IncomeServiceFundItemStructure $fundItemStructure
-     * @param IncomeServiceDenominationStructure $denominationStructure
+     * @param IncomeServiceDenomination $denominationStructure
      */
     public function __construct(
         IncomeService $incomeService,
         Guard $guard,
         IncomeServiceFundStructure $fundStructure,
         IncomeServiceFundItemStructure $fundItemStructure,
-        IncomeServiceDenominationStructure $denominationStructure
+        IncomeServiceDenomination $denominationStructure
     )
     {
         $this->incomeService = $incomeService;
