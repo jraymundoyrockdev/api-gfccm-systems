@@ -54,7 +54,10 @@ class BuildIncomeServiceDenominationStructureData
             return [
                 'income_service_id' => $incomeServiceId,
                 'denomination_id' => $structure['id'],
+                'description' => $structure['description'],
                 'amount' => $structure['amount'],
+                'piece' => 0,
+                'total' => 0,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ];

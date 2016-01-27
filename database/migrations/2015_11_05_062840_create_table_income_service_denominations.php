@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableIncomeServiceDenominationStructures extends Migration
+class CreateTableIncomeServiceDenominations extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,14 @@ class CreateTableIncomeServiceDenominationStructures extends Migration
      */
     public function up()
     {
-        Schema::create('income_service_denomination_structures', function (Blueprint $table) {
+        Schema::create('income_service_denominations', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('income_service_id');
-            $table->double('denomination_id');
+            $table->integer('denomination_id');
+            $table->string('description');
             $table->double('amount');
+            $table->double('piece');
+            $table->double('total');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateTableIncomeServiceDenominationStructures extends Migration
      */
     public function down()
     {
-        Schema::drop('income_service_denomination_structures');
+        Schema::drop('income_service_denominations');
     }
 }
