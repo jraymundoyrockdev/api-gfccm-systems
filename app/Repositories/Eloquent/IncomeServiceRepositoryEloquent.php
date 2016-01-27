@@ -148,7 +148,7 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
      */
     public function updateFunds($id, $payload, $method = 'addition')
     {
-        $incomeService = $this->incomeService->find($id)->first();
+        $incomeService = $this->incomeService->find($id);
 
         if ($method == 'addition') {
             foreach ($payload as $field => $value) {
@@ -163,6 +163,24 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
         }
 
         return $incomeService->save();
+    }
+
+    /**
+     * Update Denomination
+     *
+     * @param array $payload
+     * @return array
+     */
+    public function updateDenomination($payload)
+    {
+        foreach ($payload as $denomination) {
+            $this->denominationStructure->find($denomination['id'])->fill([
+                'piece' => $denomination['piece'],
+                'total' => $denomination['total']
+            ])->save();
+        }
+
+        return $payload;
     }
 
     /**

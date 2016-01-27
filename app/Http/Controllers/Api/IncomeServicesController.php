@@ -93,4 +93,9 @@ class IncomeServicesController extends Controller
     {
         //
     }
+
+    public function updateDenomination(Request $request)
+    {
+        return $this->incomeService->updateDenomination($request->all());
+    }
 }
