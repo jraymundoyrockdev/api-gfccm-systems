@@ -76,7 +76,7 @@ class IncomeServiceMemberFundsController extends Controller
             return ['message' => 'Validation Error', 'errors' => ['income_service_id' => ['Income Service does not exists.']]];
         }
 
-        $member = $this->isMemberExits($input['member_id'], $input['income_service_id']);
+        $member = $this->isMemberExits($input['income_service_id'], $input['member_id']);
 
         if ($member) {
             return ['message' => 'Validation Error', 'errors' => ['member_id' => ['Member already Exists.']]];
@@ -88,12 +88,12 @@ class IncomeServiceMemberFundsController extends Controller
     /**
      * Check for member duplication
      *
-     * @param $memberId
      * @param $incomeServiceId
+     * @param $memberId
      * @return mixed
      */
-    private function isMemberExits($memberId, $incomeServiceId)
+    private function isMemberExits($incomeServiceId, $memberId)
     {
-        return $this->incomeService->getByIdAndMemberId($memberId, $incomeServiceId);
+        return $this->incomeService->getByIdAndMemberId($incomeServiceId, $memberId);
     }
 }
