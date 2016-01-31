@@ -1,18 +1,19 @@
 <?php namespace ApiGfccm\Http\Controllers\Api;
 
 use ApiGfccm\Commands\CreateIncomeServiceCommand;
-use ApiGfccm\Http\Controllers\Controller;
 use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Requests\IncomeServiceRequest;
 use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Models\UserRole;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceMemberFundRepositoryInterface;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
 use Illuminate\Auth\Guard;
+use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
-
-class IncomeServicesController extends Controller
+class IncomeServicesController extends ApiController
 {
     /**
      * @var IncomeServiceRepositoryInterface
@@ -23,17 +24,24 @@ class IncomeServicesController extends Controller
      * @var IncomeServiceMemberFundRepositoryInterface
      */
     protected $memberFund;
+    /**
+     * @var UserRole
+     */
+    private $role;
 
     /**
      * @param IncomeServiceRepositoryInterface $incomeService
      * @param IncomeServiceMemberFundRepositoryInterface $memberFund
+     * @param UserRole $role
      */
     public function __construct(
         IncomeServiceRepositoryInterface $incomeService,
-        IncomeServiceMemberFundRepositoryInterface $memberFund)
-    {
+        IncomeServiceMemberFundRepositoryInterface $memberFund,
+        UserRole $role
+    ) {
         $this->incomeService = $incomeService;
         $this->memberFund = $memberFund;
+        $this->role = $role;
     }
 
     /**
@@ -68,10 +76,15 @@ class IncomeServicesController extends Controller
      *
      * @param IncomeServiceRequest $request
      * @param Guard $guard
-     * @return ItemResponse
+     * @param Gate $gate
+     * @return ItemResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function store(IncomeServiceRequest $request, Guard $guard)
+    public function store(IncomeServiceRequest $request, Guard $guard, Gate $gate)
     {
+        if (!$gate->check('putPostDelete', $guard->user())) {
+            return (new Response())->setContent('Unauthorized')->setStatusCode(302);
+        }
+
         return (new ItemResponse($this->dispatch(
             new CreateIncomeServiceCommand(
                 $request->get('service_id'),
@@ -94,8 +107,12 @@ class IncomeServicesController extends Controller
         //
     }
 
-    public function updateDenomination(Request $request)
+    public function updateDenomination(Request $request, Guard $guard, Gate $gate)
     {
+        if (!$gate->check('putPostDelete', $guard->user())) {
+            return (new Response())->setContent('Unauthorized')->setStatusCode(302);
+        }
+
         return $this->incomeService->updateDenomination($request->all());
     }
 }

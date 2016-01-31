@@ -5,6 +5,8 @@ use ApiGfccm\Commands\UpdateIncomeServiceMemberFund;
 use ApiGfccm\Http\Controllers\Controller;
 use ApiGfccm\Http\Requests;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceMemberFundRepositoryInterface;
+use Illuminate\Auth\Guard;
+use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -28,10 +30,16 @@ class IncomeServiceMemberFundsController extends Controller
      * Updates Member Funds and Calculate Amount
      *
      * @param Request $request
-     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\Response
+     * @param Guard $guard
+     * @param Gate $gate
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function updateMemberFund(Request $request)
+    public function updateMemberFund(Request $request, Guard $guard, Gate $gate)
     {
+        if (!$gate->check('putPostDelete', $guard->user())) {
+            return (new Response())->setContent('Unauthorized')->setStatusCode(302);
+        }
+
         $input = $request->all();
 
         $validate = $this->validateUpdateMemberIncomeService(array_shift($input));
@@ -53,8 +61,12 @@ class IncomeServiceMemberFundsController extends Controller
      * @param $memberId
      * @return \Illuminate\Http\JsonResponse
      */
-    public function deleteMemberFund($incomeServiceId, $memberId)
+    public function deleteMemberFund($incomeServiceId, $memberId, Guard $guard, Gate $gate)
     {
+        if (!$gate->check('putPostDelete', $guard->user())) {
+            return (new Response())->setContent('Unauthorized')->setStatusCode(302);
+        }
+
         return response()->json(($this->dispatch(
             new DeleteIncomeServiceMemberFundTotal($incomeServiceId, $memberId)
         )));
@@ -73,7 +85,10 @@ class IncomeServiceMemberFundsController extends Controller
         }
 
         if (empty($input['income_service_id'])) {
-            return ['message' => 'Validation Error', 'errors' => ['income_service_id' => ['Income Service does not exists.']]];
+            return [
+                'message' => 'Validation Error',
+                'errors' => ['income_service_id' => ['Income Service does not exists.']]
+            ];
         }
 
         $member = $this->isMemberExits($input['income_service_id'], $input['member_id']);

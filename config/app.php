@@ -142,6 +142,7 @@ return [
          */
         ApiGfccm\Providers\RepositoryServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
+        ApiGfccm\Providers\AuthServiceProvider::class,
         /*
          * JWT
          */
