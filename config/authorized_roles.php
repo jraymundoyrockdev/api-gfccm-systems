@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'roleId' => [3]
+    'kyokai' => [3],
+    'default' => [2]
 ];

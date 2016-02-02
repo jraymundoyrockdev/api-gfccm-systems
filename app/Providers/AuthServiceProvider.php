@@ -2,10 +2,11 @@
 
 namespace ApiGfccm\Providers;
 
-use ApiGfccm\Models\User;
+use ApiGfccm\Models\IncomeService;
+use ApiGfccm\Models\IncomeServiceMemberFund;
 use ApiGfccm\Policies\IncomeServicePolicy;
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 
 class AuthServiceProvider extends ServiceProvider
@@ -16,7 +17,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        User::class => IncomeServicePolicy::class,
+        IncomeService::class => IncomeServicePolicy::class,
+        IncomeServiceMemberFund::class => IncomeServicePolicy::class
     ];
 
     /**

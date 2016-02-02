@@ -5,7 +5,7 @@ use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Requests\IncomeServiceRequest;
 use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;
-use ApiGfccm\Models\UserRole;
+use ApiGfccm\Models\IncomeService;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceMemberFundRepositoryInterface;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
 use Illuminate\Auth\Guard;
@@ -24,24 +24,18 @@ class IncomeServicesController extends ApiController
      * @var IncomeServiceMemberFundRepositoryInterface
      */
     protected $memberFund;
-    /**
-     * @var UserRole
-     */
-    private $role;
 
     /**
      * @param IncomeServiceRepositoryInterface $incomeService
      * @param IncomeServiceMemberFundRepositoryInterface $memberFund
-     * @param UserRole $role
      */
     public function __construct(
         IncomeServiceRepositoryInterface $incomeService,
-        IncomeServiceMemberFundRepositoryInterface $memberFund,
-        UserRole $role
-    ) {
+        IncomeServiceMemberFundRepositoryInterface $memberFund
+    )
+    {
         $this->incomeService = $incomeService;
         $this->memberFund = $memberFund;
-        $this->role = $role;
     }
 
     /**
@@ -76,13 +70,14 @@ class IncomeServicesController extends ApiController
      *
      * @param IncomeServiceRequest $request
      * @param Guard $guard
+     * @param Response $response
      * @param Gate $gate
      * @return ItemResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function store(IncomeServiceRequest $request, Guard $guard, Gate $gate)
+    public function store(IncomeServiceRequest $request, Guard $guard, Response $response, Gate $gate)
     {
-        if (!$gate->check('putPostDelete', $guard->user())) {
-            return (new Response())->setContent('Unauthorized')->setStatusCode(302);
+        if (!$gate->check('putPostDelete', new IncomeService())) {
+            return $response->setContent('Unauthorized')->setStatusCode(302);
         }
 
         return (new ItemResponse($this->dispatch(
@@ -95,21 +90,9 @@ class IncomeServicesController extends ApiController
         )));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
     public function updateDenomination(Request $request, Guard $guard, Gate $gate)
     {
-        if (!$gate->check('putPostDelete', $guard->user())) {
+        if (!$gate->check('putPostDelete', new IncomeService())) {
             return (new Response())->setContent('Unauthorized')->setStatusCode(302);
         }
 

@@ -4,8 +4,8 @@ use ApiGfccm\Commands\DeleteIncomeServiceMemberFundTotal;
 use ApiGfccm\Commands\UpdateIncomeServiceMemberFund;
 use ApiGfccm\Http\Controllers\Controller;
 use ApiGfccm\Http\Requests;
+use ApiGfccm\Models\IncomeServiceMemberFund;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceMemberFundRepositoryInterface;
-use Illuminate\Auth\Guard;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -30,22 +30,21 @@ class IncomeServiceMemberFundsController extends Controller
      * Updates Member Funds and Calculate Amount
      *
      * @param Request $request
-     * @param Guard $guard
+     * @param Response $response
      * @param Gate $gate
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function updateMemberFund(Request $request, Guard $guard, Gate $gate)
+    public function updateMemberFund(Request $request, Response $response, Gate $gate)
     {
-        if (!$gate->check('putPostDelete', $guard->user())) {
-            return (new Response())->setContent('Unauthorized')->setStatusCode(302);
+        if (!$gate->check('putPostDelete', new IncomeServiceMemberFund())) {
+            return $response->setContent('Unauthorized')->setStatusCode(302);
         }
 
         $input = $request->all();
-
         $validate = $this->validateUpdateMemberIncomeService(array_shift($input));
 
         if (!empty($validate)) {
-            return (new Response())->setContent($validate)->setStatusCode(422);
+            return $response->setContent($validate)->setStatusCode(422);
         }
 
         return response()->json(($this->dispatch(
@@ -61,10 +60,10 @@ class IncomeServiceMemberFundsController extends Controller
      * @param $memberId
      * @return \Illuminate\Http\JsonResponse
      */
-    public function deleteMemberFund($incomeServiceId, $memberId, Guard $guard, Gate $gate)
+    public function deleteMemberFund($incomeServiceId, $memberId, Response $response, Gate $gate)
     {
-        if (!$gate->check('putPostDelete', $guard->user())) {
-            return (new Response())->setContent('Unauthorized')->setStatusCode(302);
+        if (!$gate->check('putPostDelete', new IncomeServiceMemberFund())) {
+            return $response->setContent('Unauthorized')->setStatusCode(302);
         }
 
         return response()->json(($this->dispatch(
