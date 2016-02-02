@@ -1,15 +1,29 @@
-<?php namespace ApiGfccm\Policies;
+<?php
 
-use ApiGfccm\Models\User;
+namespace ApiGfccm\Http\Middleware;
+
 use ApiGfccm\Models\UserRole;
+use Closure;
+use Illuminate\Auth\Guard;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Config;
 
-abstract class AbstractPolicy
+abstract class IndexShowCreateUpdateAuth
 {
     /**
      * @var UserRole
      */
     protected $userRole;
+
+    /**
+     * @var Guard
+     */
+    protected $guard;
+
+    /**
+     * @var Response
+     */
+    protected $response;
 
     /**
      * @var array
@@ -18,28 +32,36 @@ abstract class AbstractPolicy
 
     /**
      * @param UserRole $userRole
-*/
-    public function __construct(UserRole $userRole)
+     * @param Guard $guard
+     * @param Response $response
+     */
+    public function __construct(UserRole $userRole, Guard $guard, Response $response)
     {
         $this->userRole = $userRole;
+        $this->guard = $guard;
+        $this->response = $response;
+
         $this->authorizedRoles = Config::get('authorized_roles.default');
     }
 
     /**
-     * @param User $user
-     * @return bool
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
+     * @return mixed
      */
-    public function putPostDelete(User $user)
+    public function handle($request, Closure $next)
     {
-        $userProfile = $this->userRole->where('user_id', ($user->id))->get(['role_id']);
+        $userProfile = $this->userRole->where('user_id', ($this->guard->id()))->get(['role_id']);
 
         $currentUserRoles = $this->getUserRoleIds($userProfile);
 
-        if ($this->isAuthorized($currentUserRoles)) {
-            return true;
+        if (!$this->isAuthorized($currentUserRoles)) {
+            return $this->response->setContent('Unauthorized')->setStatusCode(302);
         }
 
-        return false;
+        return $next($request);
     }
 
     /**

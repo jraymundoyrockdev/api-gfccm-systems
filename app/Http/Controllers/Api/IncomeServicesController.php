@@ -36,6 +36,8 @@ class IncomeServicesController extends ApiController
     {
         $this->incomeService = $incomeService;
         $this->memberFund = $memberFund;
+
+        $this->middleware('income.service.auth', ['only' => ['index', 'show']]);
     }
 
     /**
@@ -90,7 +92,14 @@ class IncomeServicesController extends ApiController
         )));
     }
 
-    public function updateDenomination(Request $request, Guard $guard, Gate $gate)
+    /**
+     * Updates Denomination
+     *
+     * @param Request $request
+     * @param Gate $gate
+     * @return mixed|\Symfony\Component\HttpFoundation\Response
+     */
+    public function updateDenomination(Request $request, Gate $gate)
     {
         if (!$gate->check('putPostDelete', new IncomeService())) {
             return (new Response())->setContent('Unauthorized')->setStatusCode(302);
