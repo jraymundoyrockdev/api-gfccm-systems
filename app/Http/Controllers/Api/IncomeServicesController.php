@@ -37,7 +37,7 @@ class IncomeServicesController extends ApiController
         $this->incomeService = $incomeService;
         $this->memberFund = $memberFund;
 
-        $this->middleware('income.service.auth', ['only' => ['index', 'show']]);
+        $this->middleware('income.service.auth', ['only' => ['index', 'show', 'getTotal']]);
     }
 
     /**
@@ -59,10 +59,6 @@ class IncomeServicesController extends ApiController
     public function show($id)
     {
         $incomeService = $this->incomeService->show($id);
-
-        if (empty($incomeService)) {
-            return response('Unauthorized.', 401);
-        }
 
         return (new ItemResponse($incomeService))->asType('IncomeService');
     }
@@ -106,5 +102,17 @@ class IncomeServicesController extends ApiController
         }
 
         return $this->incomeService->updateDenomination($request->all());
+    }
+
+    /**
+     * Get Total
+     *
+     * @param int $year
+     * @param null $month
+     * @return mixed
+     */
+    public function getTotal($year, $month = null)
+    {
+        return $this->incomeService->getTotal($year, $month);
     }
 }

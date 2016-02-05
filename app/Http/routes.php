@@ -22,12 +22,19 @@ Route::group(
         Route::get('funds/{fundId}/items', 'FundsController@showItems');
         Route::resource('fund-items', 'FundItemsController', ['only' => ['store', 'update', 'show']]);
         Route::get('funds/{fundId}/items', 'FundsController@showItems');
+
+        /**
+         * Income Services
+         */
         Route::post('income-services/{id}/member-fund/{member_id}/update',
             'IncomeServiceMemberFundsController@updateMemberFund');
         Route::delete('income-services/{id}/member-fund/{member_id}',
             'IncomeServiceMemberFundsController@deleteMemberFund');
-        Route::resource('income-services', 'IncomeServicesController');
+        Route::get('income-services/total/{year}/{month?}', 'IncomeServicesController@getTotal');
         Route::post('income-services/{id}/denomination', 'IncomeServicesController@updateDenomination');
+        Route::resource('income-services', 'IncomeServicesController');
+
+
     });
 }
 );

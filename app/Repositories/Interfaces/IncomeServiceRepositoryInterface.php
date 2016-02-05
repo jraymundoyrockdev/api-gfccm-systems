@@ -67,4 +67,13 @@ interface IncomeServiceRepositoryInterface
      * @return mixed
      */
     public function updateDenomination($payload);
+
+    /**
+     * Compute the totals of each income service
+     *
+     * @param int $year
+     * @param null $month
+     * @return mixed
+     */
+    public function getTotal($year, $month = null);
 }

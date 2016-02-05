@@ -6,6 +6,7 @@ use ApiGfccm\Models\IncomeServiceFundItemStructure;
 use ApiGfccm\Models\IncomeServiceFundStructure;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\DB;
 
 class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterface
 {
@@ -181,6 +182,29 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
         }
 
         return $payload;
+    }
+
+    /**
+     * Compute totals of all Income Services
+     *
+     * @param int $year
+     * @param null $month
+     * @return mixed
+     */
+    public function getTotal($year, $month = null)
+    {
+        return DB::table('income_services')
+            ->select(DB::raw(
+                'DATE_FORMAT(service_date, "%m") AS month,
+                DATE_FORMAT(service_date, "%Y") AS year,
+                SUM(tithes) as tithes ,
+                SUM(offering) as offering,
+                SUM(other_fund) as other_fund,
+                SUM(total) as total'))
+            ->whereYear('service_date', '=', $year)
+            ->groupBy(DB::raw('DATE_FORMAT(service_date, "%m")'))
+            ->orderBy(DB::raw('DATE_FORMAT(service_date, "%m")'), 'ASC')
+            ->get();
     }
 
     /**
