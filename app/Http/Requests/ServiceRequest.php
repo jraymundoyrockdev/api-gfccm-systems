@@ -23,6 +23,9 @@ class ServiceRequest extends Request
     {
         return [
             'name' => 'required|unique:services,name,' . $this->segment(3),
+            'start_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i',
+            'description' => 'required',
         ];
     }
 }

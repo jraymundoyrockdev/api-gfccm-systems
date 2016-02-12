@@ -1,6 +1,4 @@
-<?php
-
-namespace ApiGfccm\Providers;
+<?php namespace ApiGfccm\Providers;
 
 use ApiGfccm\Models\IncomeService;
 use ApiGfccm\Models\IncomeServiceMemberFund;
