@@ -193,7 +193,7 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
      */
     public function getTotal($year, $month = null)
     {
-        return DB::table('income_services')
+        $queryBuild = DB::table('income_services')
             ->select(DB::raw(
                 'DATE_FORMAT(service_date, "%m") AS month,
                 DATE_FORMAT(service_date, "%Y") AS year,
@@ -201,9 +201,30 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
                 SUM(offering) as offering,
                 SUM(other_fund) as other_fund,
                 SUM(total) as total'))
-            ->whereYear('service_date', '=', $year)
-            ->groupBy(DB::raw('DATE_FORMAT(service_date, "%m")'))
+            ->whereYear('service_date', '=', $year);
+
+        if ($month) {
+            $queryBuild = $queryBuild->whereMonth('service_date', '=', $month);
+        }
+
+        return $queryBuild->groupBy(DB::raw('DATE_FORMAT(service_date, "%m")'))
             ->orderBy(DB::raw('DATE_FORMAT(service_date, "%m")'), 'ASC')
+            ->get();
+    }
+
+    /**
+     * Get all Services by month and year
+     *
+     * @param int $year
+     * @param int $month
+     * @return mixed
+     */
+    public function getAllServices($year, $month)
+    {
+        return $this->incomeService
+            ->whereYear('service_date', '=', $year)
+            ->whereMonth('service_date', '=', $month)
+            ->orderBy('service_date')
             ->get();
     }
 

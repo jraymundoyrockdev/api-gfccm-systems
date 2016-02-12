@@ -31,6 +31,7 @@ Route::group(
         Route::delete('income-services/{id}/member-fund/{member_id}',
             'IncomeServiceMemberFundsController@deleteMemberFund');
         Route::get('income-services/total/{year}/{month?}', 'IncomeServicesController@getTotal');
+        Route::get('income-services/list/{year}/{month}', 'IncomeServicesController@getAllServices');
         Route::post('income-services/{id}/denomination', 'IncomeServicesController@updateDenomination');
         Route::resource('income-services', 'IncomeServicesController');
 

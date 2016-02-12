@@ -14,14 +14,14 @@ class IncomeServiceTransformer extends TransformerAbstract
     {
         return [
             'id' => (int) $incomeService->id,
-            'service_id' => $incomeService->service_id,
+            'service_id' => (int) $incomeService->service_id,
             'tithes' => $incomeService->tithes,
             'offering' => $incomeService->offering,
             'other_fund' => $incomeService->other_fund,
             'total' => $incomeService->total,
             'service_date' => $incomeService->service_date,
             'status' => $incomeService->status,
-            'created_by' => $incomeService->created_by,
+            'created_by' => $incomeService->user->member->fullname,
             'role_access' => $incomeService->role_access,
             'service' => $incomeService->service->name,
             'user' => $incomeService->user->username,
@@ -53,6 +53,12 @@ class IncomeServiceTransformer extends TransformerAbstract
         return $transformedStructures;
     }
 
+    /**
+     * Get Fund Structure
+     *
+     * @param $incomeService
+     * @return array
+     */
     private function getFundTotal($incomeService)
     {
         $memberFundTotal = [];

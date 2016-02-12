@@ -16,6 +16,13 @@ class ServiceTransformer extends TransformerAbstract
         ];
     }
 
+    /**
+     * Reformat Time
+     *
+     * @param $time
+     * @param string $format
+     * @return bool|string
+     */
     private function reformatTime($time, $format = 'H:i')
     {
         return date($format, strtotime($time));

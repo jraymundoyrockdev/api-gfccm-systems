@@ -37,7 +37,7 @@ class IncomeServicesController extends ApiController
         $this->incomeService = $incomeService;
         $this->memberFund = $memberFund;
 
-        $this->middleware('income.service.auth', ['only' => ['index', 'show', 'getTotal']]);
+        $this->middleware('income.service.auth', ['only' => ['index', 'show', 'getTotal', 'getAllServices']]);
     }
 
     /**
@@ -114,5 +114,19 @@ class IncomeServicesController extends ApiController
     public function getTotal($year, $month = null)
     {
         return $this->incomeService->getTotal($year, $month);
+    }
+
+    /**
+     * Get all Services within the year or month
+     *
+     * @param int $year
+     * @param int $month
+     * @return CollectionResponse
+     */
+    public function getAllServices($year, $month)
+    {
+        $incomeServices = $this->incomeService->getAllServices($year, $month);
+
+        return (new CollectionResponse($incomeServices))->asType('IncomeServiceList');
     }
 }
