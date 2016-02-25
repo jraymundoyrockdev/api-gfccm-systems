@@ -19,7 +19,7 @@ class CreateTableIncomeServices extends Migration
             $table->double('offering');
             $table->double('other_fund');
             $table->double('total');
-            $table->dateTime('service_date');
+            $table->date('service_date');
             $table->string('status')->default('active');
             $table->integer('created_by');
             $table->integer('role_access');
