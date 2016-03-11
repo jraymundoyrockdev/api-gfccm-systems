@@ -2,17 +2,15 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
-
 use ApiGfccm\Http\Requests;
-use ApiGfccm\Http\Controllers\Controller;
-use ApiGfccm\Repositories\Interfaces\MinistryRepositoryInterface;
-use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Http\Requests\MinistryRequest;
 use ApiGfccm\Http\Responses\CollectionResponse;
+use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Repositories\Interfaces\MinistryRepositoryInterface;
+use Illuminate\Http\Request;
 
 class MinistryController extends ApiController
 {
-
     /**
      * @var MinistryRepositoryInterface
      */
@@ -39,10 +37,10 @@ class MinistryController extends ApiController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request $request
-     * @return Response
+     * @param MinistryRequest $request
+     * @return $this
      */
-    public function store(Request $request)
+    public function store(MinistryRequest $request)
     {
         $input = array_filter($request->request->all());
 
@@ -63,11 +61,11 @@ class MinistryController extends ApiController
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request $request
-     * @param  int $id
-     * @return Response
+     * @param MinistryRequest $request
+     * @param $id
+     * @return $this
      */
-    public function update(Request $request, $id)
+    public function update(MinistryRequest $request, $id)
     {
         $input = array_filter($request->request->all());
 

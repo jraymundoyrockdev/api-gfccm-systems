@@ -40,11 +40,11 @@ class ValidateJWT
                 return $this->returnUnauthenticatedUserResponse();
             }
         } catch (TokenExpiredException $exception) {
-            return $this->returnTokenExceptionResponse('token_expired', $exception->getStatusCode());
+            return $this->returnTokenExceptionResponse('token_expired', 401);
         } catch (TokenInvalidException $exception) {
-            return $this->returnTokenExceptionResponse('token_invalid', $exception->getStatusCode());
+            return $this->returnTokenExceptionResponse('token_invalid', 401);
         } catch (JWTException $exception) {
-            return $this->returnTokenExceptionResponse('token_absent', $exception->getStatusCode());
+            return $this->returnTokenExceptionResponse('token_absent', 401);
         }
 
         return $this->returnAuthenticatedUserResponse(compact('user'));

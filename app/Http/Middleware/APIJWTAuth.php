@@ -2,8 +2,8 @@
 
 namespace ApiGfccm\Http\Middleware;
 
-use Closure;
 use ApiGfccm\Services\JWTValidation\ValidateJWT;
+use Closure;
 
 class APIJWTAuth
 {
@@ -30,9 +30,9 @@ class APIJWTAuth
         $validatedJWTResult = $validatedJWTResult->getData();
 
         if ($validatedJWTResult->message != 'token_valid') {
-            return response()->json($this->buildErrorResponse($validatedJWTResult->message), 200);
+            return response()->json($this->buildErrorResponse($validatedJWTResult->message), 401);
         }
-        
+
         return $next($request);
     }
 

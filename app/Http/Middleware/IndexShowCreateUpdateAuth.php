@@ -58,7 +58,7 @@ abstract class IndexShowCreateUpdateAuth
         $currentUserRoles = $this->getUserRoleIds($userProfile);
 
         if (!$this->isAuthorized($currentUserRoles)) {
-            return $this->response->setContent('Unauthorized')->setStatusCode(302);
+            return $this->response->setContent('Unauthorized')->setStatusCode(401);
         }
 
         return $next($request);

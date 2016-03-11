@@ -37,7 +37,7 @@ class IncomeServiceMemberFundsController extends Controller
     public function updateMemberFund(Request $request, Response $response, Gate $gate)
     {
         if (!$gate->check('putPostDelete', new IncomeServiceMemberFund())) {
-            return $response->setContent('Unauthorized')->setStatusCode(302);
+            return $response->setContent('Unauthorized')->setStatusCode(401);
         }
 
         $input = $request->all();
@@ -63,7 +63,7 @@ class IncomeServiceMemberFundsController extends Controller
     public function deleteMemberFund($incomeServiceId, $memberId, Response $response, Gate $gate)
     {
         if (!$gate->check('putPostDelete', new IncomeServiceMemberFund())) {
-            return $response->setContent('Unauthorized')->setStatusCode(302);
+            return $response->setContent('Unauthorized')->setStatusCode(401);
         }
 
         return response()->json(($this->dispatch(

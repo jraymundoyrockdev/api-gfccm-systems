@@ -75,7 +75,7 @@ class IncomeServicesController extends ApiController
     public function store(IncomeServiceRequest $request, Guard $guard, Response $response, Gate $gate)
     {
         if (!$gate->check('putPostDelete', new IncomeService())) {
-            return $response->setContent('Unauthorized')->setStatusCode(302);
+            return $response->setContent('Unauthorized')->setStatusCode(401);
         }
 
         return (new ItemResponse($this->dispatch(
@@ -98,7 +98,7 @@ class IncomeServicesController extends ApiController
     public function updateDenomination(Request $request, Gate $gate)
     {
         if (!$gate->check('putPostDelete', new IncomeService())) {
-            return (new Response())->setContent('Unauthorized')->setStatusCode(302);
+            return (new Response())->setContent('Unauthorized')->setStatusCode(401);
         }
 
         return $this->incomeService->updateDenomination($request->all());

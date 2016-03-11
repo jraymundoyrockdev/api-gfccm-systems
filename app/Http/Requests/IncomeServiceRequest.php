@@ -21,7 +21,7 @@ class IncomeServiceRequest extends Request
     {
         return [
             'service_id' => 'required|integer',
-            'service_date' => 'required|date_format:Y-m-d H:i',
+            'service_date' => 'required|date_format:Y-m-d',
         ];
     }
 
