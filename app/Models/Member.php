@@ -29,7 +29,9 @@ class Member extends Model
 
     public function getFullNameWithApellationAttribute()
     {
-        return $this->getFullNameAttribute() . ' (' . ucwords($this->attributes['apellation']) . ')';
+        $apellation = (!empty($this->attributes['apellation']) ? $this->attributes['apellation'] : '');
+
+        return $this->getFullNameAttribute() . ' (' . ucwords($apellation) . ')';
     }
 
     /**

@@ -2,8 +2,6 @@
 
 namespace ApiGfccm\Http\Requests;
 
-use ApiGfccm\Http\Requests\Request;
-
 class MemberRequest extends Request
 {
     /**
@@ -24,8 +22,8 @@ class MemberRequest extends Request
     public function rules()
     {
         return [
-            'firstname' => 'required|alpha'/*,
-            'lastname' => 'required|alpha',
+            'firstname' => 'required',
+            'lastname' => 'required'/*,
             'apellation' => 'required|alpha',
             'gender' => 'required|alpha',
             'birthdate' => 'required',

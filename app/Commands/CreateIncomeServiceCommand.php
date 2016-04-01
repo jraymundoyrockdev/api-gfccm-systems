@@ -43,6 +43,5 @@ class CreateIncomeServiceCommand extends Command
         $this->userId = $userId;
         $this->roleAccess = $roleAccess;
         $this->status = $status;
-
     }
 }

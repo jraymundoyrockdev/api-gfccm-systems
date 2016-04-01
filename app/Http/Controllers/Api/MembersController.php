@@ -2,17 +2,17 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
+use ApiGfccm\Commands\CreateMemberCommand;
+use ApiGfccm\Http\Controllers\Controller;
 use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Requests\MemberRequest;
-use ApiGfccm\Http\Controllers\Controller;
-use ApiGfccm\Repositories\Interfaces\MemberRepositoryInterface;
-use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
+use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Repositories\Interfaces\MemberRepositoryInterface;
+use Illuminate\Http\Request;
 
 class MembersController extends Controller
 {
-
     /**
      * @var MemberRepositoryInterface
      */
@@ -37,55 +37,25 @@ class MembersController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
-     * @param  MemberRequest  $request
+     * @param  MemberRequest $request
      * @return Response
      */
     public function store(MemberRequest $request)
     {
         $input = array_filter($request->request->all());
 
-        return (new ItemResponse($this->member->createNewMember($input)))->asType('Member');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
+        return (new ItemResponse($this->dispatch(
+            new CreateMemberCommand($input)
+        )));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
-     * @param  int  $id
+     * @param  Request $request
+     * @param  int $id
      * @return Response
      */
     public function update(Request $request, $id)
@@ -93,14 +63,4 @@ class MembersController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

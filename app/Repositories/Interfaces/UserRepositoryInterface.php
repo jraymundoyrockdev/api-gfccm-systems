@@ -17,6 +17,13 @@ interface UserRepositoryInterface
     public function getById($id);
 
     /**
+     * Get by Username
+     *
+     * @param string $userName
+     */
+    public function getByUsername($userName);
+
+    /**
      * Creates new Account from Members Creation
      *
      * @param $id
@@ -24,7 +31,7 @@ interface UserRepositoryInterface
      * @param $lastname
      * @return mixed
      */
-    public function createNewUserAccountFromMember($id, $firstname, $lastname);
+    public function create($id, $firstname, $lastname);
 
     /**
      * @param $id

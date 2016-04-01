@@ -4,6 +4,7 @@ use ApiGfccm\Listeners\AddIncomeServiceMemberFundTotal;
 use ApiGfccm\Listeners\BuildIncomeServiceDenominationStructureData;
 use ApiGfccm\Listeners\BuildIncomeServiceFundItemStructureData;
 use ApiGfccm\Listeners\BuildIncomeServiceFundStructureData;
+use ApiGfccm\Listeners\CreateMemberUserAccount;
 use ApiGfccm\Listeners\DeleteIncomeServiceMemberFunds;
 use ApiGfccm\Listeners\EventListener;
 use ApiGfccm\Listeners\SubtractIncomeServiceFund;
@@ -34,6 +35,9 @@ class EventServiceProvider extends ServiceProvider
         'ApiGfccm\Events\IncomeServiceMemberFundTotalWasDeleted' => [
             DeleteIncomeServiceMemberFunds::class,
             SubtractIncomeServiceFund::class
+        ],
+        'ApiGfccm\Events\MemberWasCreated' => [
+            CreateMemberUserAccount::class
         ]
     ];
 

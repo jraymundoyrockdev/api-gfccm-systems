@@ -1,7 +1,7 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
-use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
 use ApiGfccm\Models\User;
+use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
 
 class UserRepositoryEloquent implements UserRepositoryInterface
 {
@@ -33,17 +33,30 @@ class UserRepositoryEloquent implements UserRepositoryInterface
     public function getById($id)
     {
         return $this->user->with(['member', 'user_role'])->where('id', $id)->first();
-
     }
 
+    /**
+     * @param string $userName
+     */
+    public function getByUsername($userName)
+    {
+        return $this->user->where('username', $userName)->first();
+    }
 
-    public function createNewUserAccountFromMember($id, $firstname, $lastname)
+    /**
+     * @param int $id
+     * @param string $userName
+     * @param string $password
+     *
+     * @return User
+     */
+    public function create($id, $userName, $password)
     {
         $userData = [
             'member_id' => $id,
             'role_id' => 1,
-            'username' => $this->buildUsernameFromMembersCreation($firstname, $lastname),
-            'password' => $this->buildPasswordFromMembersCreation($firstname, $lastname)
+            'username' => $userName,
+            'password' => $password
         ];
 
         return $this->user->create($userData);
@@ -60,16 +73,6 @@ class UserRepositoryEloquent implements UserRepositoryInterface
         $user->fill($payload)->save();
 
         return $user;
-    }
-
-    private function buildUsernameFromMembersCreation($firstname, $lastname)
-    {
-        return strtolower($firstname . $lastname);
-    }
-
-    private function buildPasswordFromMembersCreation($firstname, $lastname)
-    {
-        return bcrypt(strtolower($firstname . $lastname . 'abc123'));
     }
 
 }

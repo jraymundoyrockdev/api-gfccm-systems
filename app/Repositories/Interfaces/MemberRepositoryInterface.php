@@ -20,7 +20,7 @@ interface MemberRepositoryInterface
      * @param $payload
      * @return static
      */
-    public function createNewMember($payload);
+    public function create($payload);
 
     /**
      * @param $id

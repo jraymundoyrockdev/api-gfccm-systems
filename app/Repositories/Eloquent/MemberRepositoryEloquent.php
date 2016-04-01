@@ -46,11 +46,9 @@ class MemberRepositoryEloquent implements MemberRepositoryInterface
      * @param $payload
      * @return static
      */
-    public function createNewMember($payload)
+    public function create($payload)
     {
-        $member = $this->member->create($payload);
-
-        $this->user->createNewUserAccountFromMember($member->id, $member->firstname, $member->lastname);
+        return $test =  $this->member->create($payload);
     }
 
     /**
