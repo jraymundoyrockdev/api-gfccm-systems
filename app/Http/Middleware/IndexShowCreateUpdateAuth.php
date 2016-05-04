@@ -53,15 +53,26 @@ abstract class IndexShowCreateUpdateAuth
      */
     public function handle($request, Closure $next)
     {
-        $userProfile = $this->userRole->where('user_id', ($this->guard->id()))->get(['role_id']);
-
-        $currentUserRoles = $this->getUserRoleIds($userProfile);
+        $currentUserRoles = $this->grantedRoles();
 
         if (!$this->isAuthorized($currentUserRoles)) {
             return $this->response->setContent('Unauthorized')->setStatusCode(401);
         }
 
         return $next($request);
+    }
+
+    /**
+     * Get all roles of the current user
+     * @return array
+     */
+    protected function grantedRoles()
+    {
+        $userRoles = $this->guard->user()->user_role->toArray();
+
+        return array_map(function ($roles) {
+            return $roles['role_id'];
+        }, $userRoles);
     }
 
     /**

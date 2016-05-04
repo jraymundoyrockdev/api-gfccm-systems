@@ -6,15 +6,6 @@ use ApiGfccm\Models\User;
 
 class UserTransformer extends TransformerAbstract
 {
-    protected $member;
-    protected $userRole;
-
-    public function __construct()
-    {
-        $this->member = new MemberTransformer();
-        $this->userRole = new UserRoleTransformer();
-    }
-
     /**
      * @param User $user
      * @return array
@@ -26,7 +17,9 @@ class UserTransformer extends TransformerAbstract
         $roles = [];
 
         foreach ($user->user_role as $urole) {
-            $roles[] = $role->transform($urole->role);
+            if (!is_null($urole->role)) {
+                $roles[] = $role->transform($urole->role);
+            }
         }
 
         return [

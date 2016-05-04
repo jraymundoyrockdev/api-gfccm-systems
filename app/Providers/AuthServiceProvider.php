@@ -2,7 +2,9 @@
 
 use ApiGfccm\Models\IncomeService;
 use ApiGfccm\Models\IncomeServiceMemberFund;
+use ApiGfccm\Models\MinistryTransaction;
 use ApiGfccm\Policies\IncomeServicePolicy;
+use ApiGfccm\Policies\MinistryTransactionPolicy;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -16,7 +18,8 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         IncomeService::class => IncomeServicePolicy::class,
-        IncomeServiceMemberFund::class => IncomeServicePolicy::class
+        IncomeServiceMemberFund::class => IncomeServicePolicy::class,
+        MinistryTransaction::class => MinistryTransactionPolicy::class
     ];
 
     /**

@@ -35,6 +35,7 @@ class Kernel extends HttpKernel
         'jwt.refresh' => \ApiGfccm\Http\Middleware\RefreshToken::class,
         'jwt.validate' => \ApiGfccm\Http\Middleware\ValidateToken::class,
         'APIJWT.auth' => \ApiGfccm\Http\Middleware\APIJWTAuth::class,
-        'income.service.auth' => \ApiGfccm\Http\Middleware\IncomeServiceAuth::class
+        'income.service.auth' => \ApiGfccm\Http\Middleware\IncomeServiceAuth::class,
+        'ministry.transaction.auth' => \ApiGfccm\Http\Middleware\MinistryTransactionAuth::class
     ];
 }

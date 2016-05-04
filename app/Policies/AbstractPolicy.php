@@ -17,8 +17,13 @@ abstract class AbstractPolicy
     protected $authorizedRoles = [];
 
     /**
+     * @var array
+     */
+    protected $currentUserRoles = [];
+
+    /**
      * @param UserRole $userRole
-*/
+     */
     public function __construct(UserRole $userRole)
     {
         $this->userRole = $userRole;
@@ -29,17 +34,21 @@ abstract class AbstractPolicy
      * @param User $user
      * @return bool
      */
-    public function putPostDelete(User $user)
+    public function putPostDelete(User $user = null)
     {
-        $userProfile = $this->userRole->where('user_id', ($user->id))->get(['role_id']);
+        $this->setCurrentUserRoles($user->id);
 
-        $currentUserRoles = $this->getUserRoleIds($userProfile);
+        return $this->isAuthorized($this->currentUserRoles);
+    }
 
-        if ($this->isAuthorized($currentUserRoles)) {
-            return true;
-        }
+    /**
+     * @param null $userId
+     */
+    protected function setCurrentUserRoles($userId = null)
+    {
+        $user = $this->userRole->where('user_id', $userId)->get(['role_id']);
 
-        return false;
+        $this->currentUserRoles = $this->getUserRoleIds($user);
     }
 
     /**
