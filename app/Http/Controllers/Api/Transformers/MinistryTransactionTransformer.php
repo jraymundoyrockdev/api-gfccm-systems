@@ -12,7 +12,7 @@ class MinistryTransactionTransformer extends TransformerAbstract
     public function transform(MinistryTransaction $ministryTransaction)
     {
         return [
-            'id' => (int)$ministryTransaction->id,
+            'id' => (int) $ministryTransaction->id,
             'ministry_id' => $ministryTransaction->ministry_id,
             'type' => $ministryTransaction->type,
             'amount' => $ministryTransaction->amount,

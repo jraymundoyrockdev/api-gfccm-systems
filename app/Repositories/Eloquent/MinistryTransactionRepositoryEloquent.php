@@ -189,6 +189,7 @@ class MinistryTransactionRepositoryEloquent implements MinistryTransactionReposi
         return array_merge(
             $cashInOutBank,
             [
+                'id' => $transaction['id'],
                 'transaction_date' => $transaction['transaction_date'],
                 'running_balance' => $transaction['running_balance'],
                 'description' => $transaction['description'],
