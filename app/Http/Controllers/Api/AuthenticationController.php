@@ -41,21 +41,19 @@ class AuthenticationController extends ApiController
      */
     public function authorize(ResponseFactory $response)
     {
-        $credentials = $this->request->only(['username', 'password']);
+        $credentials = array_merge($this->request->only(['username', 'password']), ['status' => 'active']);
 
         if (!$this->auth->once($credentials)) {
             return $response->make('Invalid credentials', 401);
         }
 
-        $userRoles = $this->getUserRoles($this->auth->user()->user_role);
-/*
-        if (!$this->isAuthorized($userRoles)) {
-            return $response->make('Unauthorized user', 401);
-        }*/
+        /*
+                if (!$this->isAuthorized($userRoles)) {
+                    return $response->make('Unauthorized user', 401);
+                }*/
 
         return [
-            'token' => $this->getUserToken($this->auth->user()),
-            'user_roles' => $userRoles
+            'token' => $this->getUserToken($this->auth->user())
         ];
     }
 
@@ -102,6 +100,7 @@ class AuthenticationController extends ApiController
     {
         return [
             'username' => $user->username,
+            'userRoles' => $this->getUserRoles($user->user_role)
         ];
     }
 

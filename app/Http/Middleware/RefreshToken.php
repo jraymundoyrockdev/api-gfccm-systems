@@ -41,7 +41,7 @@ class RefreshToken extends BaseRefreshToken
     {
         $header = $response->headers->get('Authorization');
         if ($header) {
-            return str_ireplace('bearer', '', $header);
+            return str_ireplace('Bearer', '', $header);
         }
         return null;
     }
