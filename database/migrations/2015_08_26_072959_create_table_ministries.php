@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 use ApiGfccm\Models\Ministry;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateTableMinistries extends Migration
 {
@@ -48,6 +48,6 @@ class CreateTableMinistries extends Migration
             ['name' => 'Usher', 'created_at' => $dateNow]
         ];
 
-        return Ministry::insert($ministries);
+        Ministry::insert($ministries);
     }
 }

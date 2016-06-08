@@ -33,9 +33,8 @@ class Kernel extends HttpKernel
         'format.json' => \ApiGfccm\Http\Middleware\FormatJsonRequest::class,
         'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
         'jwt.refresh' => \ApiGfccm\Http\Middleware\RefreshToken::class,
-        'jwt.validate' => \ApiGfccm\Http\Middleware\ValidateToken::class,
+        'jwt.invalidate' => \ApiGfccm\Http\Middleware\InvalidateToken::class,
         'APIJWT.auth' => \ApiGfccm\Http\Middleware\APIJWTAuth::class,
-        'income.service.auth' => \ApiGfccm\Http\Middleware\IncomeServiceAuth::class,
-        'ministry.transaction.auth' => \ApiGfccm\Http\Middleware\MinistryTransactionAuth::class
+        'income.service.auth' => \ApiGfccm\Http\Middleware\IncomeServiceAuth::class
     ];
 }

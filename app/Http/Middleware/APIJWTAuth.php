@@ -12,6 +12,10 @@ class APIJWTAuth
      */
     protected $validateJWT;
 
+    /**
+     * APIJWTAuth constructor.
+     * @param ValidateJWT $validateJWT
+     */
     public function __construct(ValidateJWT $validateJWT)
     {
         $this->validateJWT = $validateJWT;
@@ -26,8 +30,7 @@ class APIJWTAuth
      */
     public function handle($request, Closure $next)
     {
-        $validatedJWTResult = $this->validateJWT->validate();
-        $validatedJWTResult = $validatedJWTResult->getData();
+        $validatedJWTResult = $this->validateJWT->validate()->getData();
 
         if ($validatedJWTResult->message != 'token_valid') {
             return response()->json($this->buildErrorResponse($validatedJWTResult->message), 401);
@@ -36,6 +39,10 @@ class APIJWTAuth
         return $next($request);
     }
 
+    /**
+     * @param $errorMessage
+     * @return array
+     */
     protected function buildErrorResponse($errorMessage)
     {
         return [

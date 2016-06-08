@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 use ApiGfccm\Models\Denomination;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateTableDenominations extends Migration
 {
@@ -37,7 +37,7 @@ class CreateTableDenominations extends Migration
     {
         $dateNow = date("Y-m-d H:i:s");
 
-        return Denomination::insert([
+        Denomination::insert([
             ['amount' => 1, 'description' => 'one', 'created_at' => $dateNow],
             ['amount' => 5, 'description' => 'five', 'created_at' => $dateNow],
             ['amount' => 10, 'description' => 'ten', 'created_at' => $dateNow],
