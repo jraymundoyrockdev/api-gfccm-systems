@@ -39,7 +39,7 @@ class CreateTableServices extends Migration
     {
         $dateNow = date("Y-m-d H:i:s");
 
-        return Service::insert([
+        Service::insert([
             [
                 'name' => '1st Service',
                 'description' => '1st service',

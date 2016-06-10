@@ -8,6 +8,10 @@ Route::group(
         'middleware' => 'jwt.refresh',
         'uses' => 'AuthenticationController@refreshToken'
     ]);
+    Route::post('api-token-invalidate', [
+        'middleware' => 'jwt.invalidate',
+        'uses' => 'AuthenticationController@invalidateToken'
+    ]);
 
     Route::group(['middleware' => ['resource', 'APIJWT.auth']], function () {
         Route::resource('users', 'UsersController');

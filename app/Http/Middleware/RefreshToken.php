@@ -24,7 +24,7 @@ class RefreshToken extends BaseRefreshToken
     {
         $response = parent::handle($request, $next);
         $token = $this->parseTokenFromHeader($response);
-
+        
         if (! $token) {
             return $response;
         }

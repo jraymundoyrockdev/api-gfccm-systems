@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 use ApiGfccm\Models\Role;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateTableRoles extends Migration
 {
@@ -43,6 +43,6 @@ class CreateTableRoles extends Migration
             ['name' => 'accountant', 'created_at' => $dateNow]
         ];
 
-        return Role::insert($ministries);
+        Role::insert($ministries);
     }
 }

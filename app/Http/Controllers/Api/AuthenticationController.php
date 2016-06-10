@@ -84,6 +84,17 @@ class AuthenticationController extends ApiController
     }
 
     /**
+     * Invalidate access tokens. This is a null route, the refreshing is handled
+     * by middleware
+     *
+     * @return void
+     */
+    public function invalidateToken()
+    {
+        return;
+    }
+
+    /**
      * @param $user
      * @return string
      */
@@ -100,7 +111,8 @@ class AuthenticationController extends ApiController
     {
         return [
             'username' => $user->username,
-            'userRoles' => $this->getUserRoles($user->user_role)
+            'userRoles' => $this->getUserRoles($user->user_role),
+            'userAvatar' => $user->avatar
         ];
     }
 

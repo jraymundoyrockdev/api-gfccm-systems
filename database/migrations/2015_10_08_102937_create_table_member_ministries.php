@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
+use ApiGfccm\Models\MemberMinistry;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateTableMemberMinistries extends Migration
 {
@@ -18,6 +19,8 @@ class CreateTableMemberMinistries extends Migration
             $table->string('ministry_id');
             $table->timestamps();
         });
+
+        $this->insertDefaultUserMinistry();
     }
 
     /**
@@ -28,5 +31,13 @@ class CreateTableMemberMinistries extends Migration
     public function down()
     {
         Schema::drop('member_ministries');
+    }
+
+    private function insertDefaultUserMinistry()
+    {
+        MemberMinistry::create([
+            'member_id' => 1,
+            'ministry_id' => 3
+        ]);
     }
 }
