@@ -2,6 +2,7 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
+use ApiGfccm\Http\Controllers\Api\Transformers\DenominationTransformer;
 use Illuminate\Http\Request;
 
 use ApiGfccm\Http\Requests;
@@ -9,6 +10,8 @@ use ApiGfccm\Http\Requests\DenominationRequest;
 use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
+use League\Fractal\Pagination\IlluminatePaginatorAdapter;
+use League\Fractal\Resource\Collection;
 
 class DenominationsController extends ApiController
 {
@@ -33,7 +36,15 @@ class DenominationsController extends ApiController
      */
     public function index()
     {
-        return (new CollectionResponse($this->denomination->getAllDenomination()))->asType('Denomination');
+        $paginator =  $this->denomination->getAllDenomination();
+
+
+         $resource = new Collection($paginator->getCollection(), new DenominationTransformer());
+
+        $test = $resource->setPaginator(new IlluminatePaginatorAdapter($paginator));
+
+        print_r($test); die;
+       // return (new CollectionResponse($this->denomination->getAllDenomination()))->asType('Denomination');
     }
 
     /**
