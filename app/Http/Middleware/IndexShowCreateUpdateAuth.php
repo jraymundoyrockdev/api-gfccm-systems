@@ -68,10 +68,10 @@ abstract class IndexShowCreateUpdateAuth
      */
     protected function grantedRoles()
     {
-        $userRoles = $this->guard->user()->user_role->toArray();
+        $userRoles = $this->guard->user()->roles->toArray();
 
         return array_map(function ($roles) {
-            return $roles['role_id'];
+            return $roles['pivot']['role_id'];
         }, $userRoles);
     }
 
@@ -91,12 +91,12 @@ abstract class IndexShowCreateUpdateAuth
      * @param array $roles
      * @return array
      */
-    protected function getUserRoleIds($roles = [])
+    protected function getUserRoleIds($roles)
     {
         $userRoles = [];
 
         foreach ($roles as $role) {
-            $userRoles[] = $role->role_id;
+            $userRoles[] = $role->pivot->role_id;
         }
 
         return $userRoles;

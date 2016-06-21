@@ -3,6 +3,7 @@
 namespace ApiGfccm\Http\Controllers\Api;
 
 use ApiGfccm\Http\Requests;
+use ApiGfccm\Models\UserRole;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
@@ -61,11 +62,11 @@ class AuthenticationController extends ApiController
      * @param $userRoles
      * @return array
      */
-    private function getUserRoles($userRoles)
+    private function getUserRoles(UserRole $userRoles)
     {
         $roles = [];
         foreach ($userRoles as $userRole) {
-            $roles[] = $userRole->role_id;
+            $roles[] = $userRole->pivot->role_id;
         }
 
         return $roles;
@@ -111,7 +112,7 @@ class AuthenticationController extends ApiController
     {
         return [
             'username' => $user->username,
-            'userRoles' => $this->getUserRoles($user->user_role),
+            'userRoles' => $this->getUserRoles($user->roles),
             'userAvatar' => $user->avatar
         ];
     }

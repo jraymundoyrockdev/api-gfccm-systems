@@ -3,6 +3,7 @@
 namespace ApiGfccm\Listeners;
 
 use ApiGfccm\Events\MemberWasCreated;
+use ApiGfccm\Models\User;
 use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
 
 class CreateMemberUserAccount
@@ -38,7 +39,19 @@ class CreateMemberUserAccount
 
         $password = $this->buildPassword($userName);
 
-        return $this->user->create($event->id, $userName, $password);
+        $user = $this->user->create($event->id, $userName, $password);
+
+        $this->attachRoles($user);
+
+        return $user;
+    }
+
+    /**
+     * @param User $user
+     */
+    private function attachRoles(User $user)
+    {
+        return $user->roles()->attach(2);
     }
 
     /**

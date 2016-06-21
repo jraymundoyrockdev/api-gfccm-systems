@@ -150,10 +150,10 @@ class MinistryTransactionRepositoryEloquent implements MinistryTransactionReposi
      */
     private function grantedRoles()
     {
-        $userRoles = $this->guard->user()->user_role->toArray();
+        $userRoles = $this->guard->user()->roles->toArray();
 
         return array_map(function ($roles) {
-            return $roles['role_id'];
+            return $roles['pivot']['role_id'];
         }, $userRoles);
     }
 

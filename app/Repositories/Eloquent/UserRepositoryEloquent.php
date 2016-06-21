@@ -22,7 +22,7 @@ class UserRepositoryEloquent implements UserRepositoryInterface
      */
     public function getAllUsers()
     {
-        return $this->user->with(['member', 'user_role'])->get();
+        return $this->user->with(['member', 'roles'])->get();
     }
 
     /**
@@ -32,7 +32,7 @@ class UserRepositoryEloquent implements UserRepositoryInterface
      */
     public function getById($id)
     {
-        return $this->user->with(['member', 'user_role'])->where('id', $id)->first();
+        return $this->user->with(['member', 'roles'])->where('id', $id)->first();
     }
 
     /**

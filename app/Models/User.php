@@ -47,11 +47,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * The roles that belong to the user.
      */
-    public function user_role()
+    public function roles()
     {
-        return $this->hasMany(UserRole::class, 'user_id', 'id');
+        return $this->belongsToMany(Role::class, 'user_roles');
     }
-
 }
