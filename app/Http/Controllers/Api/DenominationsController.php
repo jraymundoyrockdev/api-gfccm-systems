@@ -36,15 +36,7 @@ class DenominationsController extends ApiController
      */
     public function index()
     {
-        $paginator =  $this->denomination->getAllDenomination();
-
-
-         $resource = new Collection($paginator->getCollection(), new DenominationTransformer());
-
-        $test = $resource->setPaginator(new IlluminatePaginatorAdapter($paginator));
-
-        print_r($test); die;
-       // return (new CollectionResponse($this->denomination->getAllDenomination()))->asType('Denomination');
+        return (new CollectionResponse($this->denomination->getAllDenomination()));
     }
 
     /**
