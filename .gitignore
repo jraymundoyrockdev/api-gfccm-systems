@@ -9,3 +9,4 @@ composer.lock
 .idea/
 .idea/*
 .idea/encodings.xml
+/storage/framework/cache/*

@@ -1,6 +1,5 @@
 <?php
 
-use ApiGfccm\Models\Ministry;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
@@ -20,8 +19,6 @@ class CreateTableMinistries extends Migration
             $table->string('logo')->nullable();
             $table->timestamps();
         });
-
-        $this->insertMinistries();
     }
 
     /**
@@ -32,22 +29,5 @@ class CreateTableMinistries extends Migration
     public function down()
     {
         Schema::drop('ministries');
-    }
-
-    private function insertMinistries()
-    {
-        $dateNow = date('Y-m-d H:i:s');
-
-        $ministries = [
-            ['name' => 'Beautification', 'created_at' => $dateNow],
-            ['name' => 'Dance', 'created_at' => $dateNow],
-            ['name' => 'Music', 'created_at' => $dateNow],
-            ['name' => 'Pastoral', 'created_at' => $dateNow],
-            ['name' => 'Teaching', 'created_at' => $dateNow],
-            ['name' => 'Theater', 'created_at' => $dateNow],
-            ['name' => 'Usher', 'created_at' => $dateNow]
-        ];
-
-        Ministry::insert($ministries);
     }
 }

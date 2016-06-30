@@ -1,6 +1,5 @@
 <?php
 
-use ApiGfccm\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
@@ -23,8 +22,6 @@ class CreateUsersTable extends Migration
             //$table->rememberToken();
             $table->timestamps();
         });
-
-        $this->insertDefaultUser();
     }
 
     /**
@@ -35,16 +32,6 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::drop('users');
-    }
-
-    protected function insertDefaultUser()
-    {
-        User::create([
-            'member_id' => 1,
-            'username' => 'jraymundo',
-            'password' => '$2y$10$HtTdAr6zASVsvxWo/Nv/jun0/FuB.hZfYYOqYHzTWw6BQ1PqxdJze',
-            'status' => 'active'
-        ]);
     }
 }
 

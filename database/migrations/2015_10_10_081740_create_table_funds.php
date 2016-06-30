@@ -1,6 +1,5 @@
 <?php
 
-use ApiGfccm\Models\Fund;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
@@ -21,8 +20,6 @@ class CreateTableFunds extends Migration
             $table->string('status')->default('active');
             $table->timestamps();
         });
-
-        $this->insertDefaultFunds();
     }
 
     /**
@@ -33,17 +30,5 @@ class CreateTableFunds extends Migration
     public function down()
     {
         Schema::drop('funds');
-    }
-
-    private function insertDefaultFunds()
-    {
-        $dateNow = date("Y-m-d H:i:s");
-
-        Fund::insert([
-            ['name' => 'General / Operational Fund', 'category' => 'service', 'created_at' => $dateNow],
-            ['name' => 'Special Fund', 'category' => 'service', 'created_at' => $dateNow],
-            ['name' => 'Pastoral Fund', 'category' => 'service', 'created_at' => $dateNow],
-            ['name' => 'Ministry Fund', 'category' => 'service', 'created_at' => $dateNow],
-        ]);
     }
 }

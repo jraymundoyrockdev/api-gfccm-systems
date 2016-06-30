@@ -1,28 +1,30 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
-use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
 use ApiGfccm\Models\Denomination;
+use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
 
 class DenominationRepositoryEloquent implements DenominationRepositoryInterface
 {
     /**
-     * @var Ministry
+     * @var Denomination
      */
     protected $denomination;
 
+    /**
+     * DenominationRepositoryEloquent constructor.
+     * @param Denomination $denomination
+     */
     public function __construct(Denomination $denomination)
     {
         $this->denomination = $denomination;
     }
 
     /**
-     * Returns all Denomination
-     *
-     * @return Ministry|null
+     * @return mixed
      */
     public function getAllDenomination()
     {
-        return $this->denomination->orderBy('amount')->paginate();
+        return $this->denomination->orderBy('amount')->get();
     }
 
     /**

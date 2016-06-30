@@ -62,7 +62,7 @@ class AuthenticationController extends ApiController
      * @param $userRoles
      * @return array
      */
-    private function getUserRoles(UserRole $userRoles)
+    private function getUserRoles($userRoles)
     {
         $roles = [];
         foreach ($userRoles as $userRole) {
