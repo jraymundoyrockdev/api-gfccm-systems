@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Application Test Suite" tests="5" assertions="13" failures="0" errors="0" time="4.920746">
+    <testsuite name="DenominationRepositoryEloquentTest" file="/home/vagrant/Code/gfccm/api-gfccm-systems/tests/unit/ApiGfccm/Repositories/Eloquent/DenominationRepositoryEloquentTest.php" tests="5" assertions="13" failures="0" errors="0" time="4.920746">
+      <testcase name="it_returns_denominations_order_by_amount" class="DenominationRepositoryEloquentTest" file="/home/vagrant/Code/gfccm/api-gfccm-systems/tests/unit/ApiGfccm/Repositories/Eloquent/DenominationRepositoryEloquentTest.php" line="14" assertions="2" time="1.837651"/>
+      <testcase name="it_returns_denominations" class="DenominationRepositoryEloquentTest" file="/home/vagrant/Code/gfccm/api-gfccm-systems/tests/unit/ApiGfccm/Repositories/Eloquent/DenominationRepositoryEloquentTest.php" line="36" assertions="2" time="0.816765"/>
+      <testcase name="it_returns_denomination_when_fetched_by_id" class="DenominationRepositoryEloquentTest" file="/home/vagrant/Code/gfccm/api-gfccm-systems/tests/unit/ApiGfccm/Repositories/Eloquent/DenominationRepositoryEloquentTest.php" line="49" assertions="5" time="0.749520"/>
+      <testcase name="it_returns_denomination_when_the_denomination_is_updated" class="DenominationRepositoryEloquentTest" file="/home/vagrant/Code/gfccm/api-gfccm-systems/tests/unit/ApiGfccm/Repositories/Eloquent/DenominationRepositoryEloquentTest.php" line="65" assertions="2" time="0.770522"/>
+      <testcase name="it_returns_denomination_when_a_new_denomination_is_created" class="DenominationRepositoryEloquentTest" file="/home/vagrant/Code/gfccm/api-gfccm-systems/tests/unit/ApiGfccm/Repositories/Eloquent/DenominationRepositoryEloquentTest.php" line="86" assertions="2" time="0.746288"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

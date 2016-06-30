@@ -36,7 +36,7 @@ class DenominationsController extends ApiController
      */
     public function index()
     {
-        return (new CollectionResponse($this->denomination->getAllDenomination()));
+        return (new CollectionResponse($this->denomination->allOrderByAmount()));
     }
 
     /**
@@ -59,7 +59,7 @@ class DenominationsController extends ApiController
     {
         $input = array_filter($request->request->all());
 
-        return (new ItemResponse($this->denomination->createNewDenomination($input)))->asType('Denomination');
+        return (new ItemResponse($this->denomination->create($input)))->asType('Denomination');
     }
 
     /**
@@ -70,7 +70,7 @@ class DenominationsController extends ApiController
      */
     public function show($id)
     {
-        return new ItemResponse($this->denomination->getById($id));
+        return new ItemResponse($this->denomination->findById($id));
     }
 
     /**
@@ -95,7 +95,7 @@ class DenominationsController extends ApiController
     {
         $input = array_filter($request->request->all());
 
-        return (new ItemResponse($this->denomination->updateDenomination($id, $input)))->asType('Denomination');
+        return (new ItemResponse($this->denomination->update($id, $input)))->asType('Denomination');
     }
 
     /**

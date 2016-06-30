@@ -1,9 +1,10 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Models\Denomination;
+use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
 use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
 
-class DenominationRepositoryEloquent implements DenominationRepositoryInterface
+class DenominationRepositoryEloquent implements AbstractApiInterface, DenominationRepositoryInterface
 {
     /**
      * @var Denomination
@@ -20,52 +21,49 @@ class DenominationRepositoryEloquent implements DenominationRepositoryInterface
     }
 
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function getAllDenomination()
+    public function all()
     {
-        return $this->denomination->orderBy('amount')->get();
+        return $this->denomination->all();
     }
 
     /**
-     * Get a certain denomination
-     *
-     * @return Denomination|null
+     * @param int $id
+     * @return mixed
      */
-    public function getById($id)
+    public function findById($id)
     {
         return $this->denomination->find($id);
     }
 
     /**
-     * @param $payload
+     * @param array $payload
      * @return static
      */
-    public function createNewDenomination($payload)
+    public function create($payload = [])
     {
         return $this->denomination->create($payload);
     }
 
     /**
-     * @param $id
-     * @param $payload
+     * @param int $id
+     * @param array $payload
      * @return Denomination|null
      */
-    public function updateDenomination($id, $payload)
+    public function update($id, $payload = [])
     {
-        $denomination = $this->getById($id);
+        $denomination = $this->denomination->find($id);
         $denomination->fill($payload)->save();
 
         return $denomination;
     }
 
     /**
-     * Get all Active Fund Items
      * @return mixed
      */
-    public function getActive()
+    public function allOrderByAmount()
     {
-        return $this->denomination->all();
+        return $this->denomination->orderBy('amount')->get();
     }
-
 }
