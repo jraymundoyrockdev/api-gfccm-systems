@@ -13,12 +13,12 @@ Route::group(
         'uses' => 'AuthenticationController@invalidateToken'
     ]);
 
-    Route::group(['middleware' => ['resource', 'APIJWT.auth']], function () {
+    Route::group(['middleware' => ['resource', 'format.json', 'APIJWT.auth']], function () {
         Route::resource('users', 'UsersController');
         Route::resource('roles', 'RolesController');
         Route::get('ministry/list', 'MinistryController@asList');
         Route::resource('ministry', 'MinistryController');
-        Route::resource('denominations', 'DenominationsController');
+        Route::resource('denominations', 'DenominationsController', ['only' => ['index', 'store', 'show', 'update']]);
         Route::get('services/list', 'ServicesController@asList');
         Route::resource('services', 'ServicesController');
         Route::resource('members', 'MembersController');

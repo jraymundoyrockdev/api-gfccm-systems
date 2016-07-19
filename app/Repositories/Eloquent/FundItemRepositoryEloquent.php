@@ -1,9 +1,11 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
+use ApiGfccm\Models\Fund;
 use ApiGfccm\Models\FundItem;
+use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
 use ApiGfccm\Repositories\Interfaces\FundItemRepositoryInterface;
 
-class FundItemRepositoryEloquent implements FundItemRepositoryInterface
+class FundItemRepositoryEloquent implements AbstractApiInterface, FundItemRepositoryInterface
 {
     /**
      * @var FundItem
@@ -19,14 +21,11 @@ class FundItemRepositoryEloquent implements FundItemRepositoryInterface
     }
 
     /**
-     * Returns all Fund Items under a Fund
-     *
-     * @param int $fundId
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function all($fundId)
+    public function all()
     {
-        return $this->fundItem->where('fund_id', '=', $fundId)->get();
+        return $this->fundItem->all();
     }
 
     /**
@@ -35,28 +34,51 @@ class FundItemRepositoryEloquent implements FundItemRepositoryInterface
      * @param int $id
      * @return mixed
      */
-    public function show($id)
+    public function findById($id)
     {
-        return $this->fundItem->find($id);
+        $fundItem = $this->fundItem->find($id);
+
+        if (!$fundItem) {
+            return null;
+        }
+
+        return $fundItem;
     }
 
     /**
-     * Create|Update FundItem
-     *
-     * @param $payload
-     * @param null $id
-     * @return FundItem|null|static
+     * @param Fund|null $fundId
+     * @return mixed
      */
-    public function save($payload, $id = null)
+    public function findByFundId(Fund $fundId)
     {
-        if ($id) {
-            $fundItem = $this->show($id);
-            $fundItem->fill($payload)->save();
+        return $this->fundItem->where('fund_id', '=', $fundId->id)->get();
+    }
 
-            return $fundItem;
+    /**
+     * @param array $payload
+     * @return static
+     */
+    public function create($payload = [])
+    {
+        return $this->fundItem->create($payload);
+    }
+
+    /**
+     * @param int $id
+     * @param array $payload
+     * @return FundItem|null
+     */
+    public function update($id, $payload = [])
+    {
+        $fundItem = $this->fundItem->find($id);
+
+        if (!$fundItem) {
+            return null;
         }
 
-        return $this->fundItem->create($payload);
+        $fundItem->fill($payload)->save();
+
+        return $fundItem;
     }
 
     /**

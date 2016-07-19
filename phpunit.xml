@@ -22,7 +22,9 @@
     <php>
         <ini name="memory_limit" value="2048M"/>
         <ini name="xdebug.max_nesting_level" value="250"/>
-
+        <ini name="error_reporting" value="E_ALL"/>
+        <ini name="display_errors" value="on"/>
+        <ini name="display_startup_errors" value="on"/>
         <env name="APP_ENV" value="testing"/>
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>

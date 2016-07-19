@@ -8,12 +8,12 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class DenominationRepositoryEloquentTest extends TestCase
 {
-    use DatabaseMigrations, DatabaseTransactions;
+    use DatabaseMigrations, DatabaseTransactions, DenominationTestsHelper;
 
     /** @test */
     public function it_returns_denominations_order_by_amount()
     {
-        $denominations = $this->createNewDenomination(10);
+        $denominations = $this->createDenomination(10);
         $newDenominations = [];
 
         foreach ($denominations as $denomination) {
@@ -35,7 +35,7 @@ class DenominationRepositoryEloquentTest extends TestCase
     /** @test */
     public function it_returns_denominations()
     {
-        $this->createNewDenomination(10);
+        $this->createDenomination(10);
 
         $repository = $this->app->make(DenominationRepositoryEloquent::class);
 
@@ -48,7 +48,7 @@ class DenominationRepositoryEloquentTest extends TestCase
     /** @test */
     public function it_returns_denomination_when_fetched_by_id()
     {
-        $denomination = $this->createNewDenomination();
+        $denomination = $this->createDenomination();
 
         $repository = $this->app->make(DenominationRepositoryEloquent::class);
 
@@ -62,10 +62,20 @@ class DenominationRepositoryEloquentTest extends TestCase
     }
 
     /** @test */
+    public function it_returns_exception_when_denomination_does_not_exists()
+    {
+        $repository = $this->app->make(DenominationRepositoryEloquent::class);
+
+        $result = $repository->findById(0);
+
+        $this->assertEquals(null, $result);
+    }
+
+    /** @test */
     public function it_returns_denomination_when_the_denomination_is_updated()
     {
         $faker = (new Faker)->create();
-        $denomination = $this->createNewDenomination();
+        $denomination = $this->createDenomination();
 
         $repository = $this->app->make(DenominationRepositoryEloquent::class);
 
@@ -83,6 +93,21 @@ class DenominationRepositoryEloquentTest extends TestCase
     }
 
     /** @test */
+    public function it_returns_null_when_denomination_not_found()
+    {
+        $faker = (new Faker)->create();
+
+        $repository = $this->app->make(DenominationRepositoryEloquent::class);
+
+        $result = $repository->update(0, [
+            'amount' => $faker->numberBetween(1, 1000),
+            'description' => $faker->sentence
+        ]);
+
+        $this->assertEquals(null, $result);
+    }
+
+    /** @test */
     public function it_returns_denomination_when_a_new_denomination_is_created()
     {
         $input = factory(Denomination::class)->make();
@@ -95,17 +120,5 @@ class DenominationRepositoryEloquentTest extends TestCase
         ]);
 
         $this->assertInstanceOf(Denomination::class, $denomination);
-    }
-
-    /**
-     * Creates new denomination
-     *
-     * @param int $max
-     * @param array $attributes
-     * @return mixed
-     */
-    private function createNewDenomination($max = 1, $attributes = [])
-    {
-        return factory(Denomination::class, $max)->create($attributes);
     }
 }

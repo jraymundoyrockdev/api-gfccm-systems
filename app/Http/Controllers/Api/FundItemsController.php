@@ -3,10 +3,10 @@
 namespace ApiGfccm\Http\Controllers\Api;
 
 use ApiGfccm\Http\Controllers\Controller;
-use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Requests\FundItemRequest;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Repositories\Interfaces\FundItemRepositoryInterface;
+use Illuminate\Http\Response;
 
 class FundItemsController extends Controller
 {
@@ -33,7 +33,7 @@ class FundItemsController extends Controller
     {
         $input = array_filter($request->request->all());
 
-        return (new ItemResponse($this->fundItem->save($input)));
+        return (new ItemResponse($this->fundItem->create($input)))->asType('FundItem');
     }
 
     /**
@@ -44,7 +44,11 @@ class FundItemsController extends Controller
      */
     public function show($id)
     {
-        return (new ItemResponse($this->fundItem->show($id)))->asType('FundItem');
+        $fundItem = $this->fundItem->findById($id);
+        if (!$fundItem) {
+            return (new Response())->setStatusCode(404);
+        }
+        return (new ItemResponse($fundItem))->asType('FundItem');
     }
 
     /**
@@ -56,9 +60,12 @@ class FundItemsController extends Controller
      */
     public function update(FundItemRequest $request, $id)
     {
-        $input = array_filter($request->request->all());
+        $fundItem = $this->fundItem->findById($id);
+        if (!$fundItem) {
+            return (new Response())->setStatusCode(404);
+        }
 
-        return (new ItemResponse($this->fundItem->save($input, $id)));
+        return (new ItemResponse($this->fundItem->update($id, $request->request->all())))->asType('FundItem');
     }
 
 }

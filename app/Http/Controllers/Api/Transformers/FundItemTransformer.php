@@ -5,6 +5,10 @@ use League\Fractal\TransformerAbstract;
 
 class FundItemTransformer extends TransformerAbstract
 {
+    /**
+     * @param FundItem $item
+     * @return array
+     */
     public function transform(FundItem $item)
     {
         return [

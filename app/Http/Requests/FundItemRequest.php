@@ -22,6 +22,7 @@ class FundItemRequest extends Request
     public function rules()
     {
         return [
+            'fund_id' => 'required',
             'name' => 'required'
         ];
     }

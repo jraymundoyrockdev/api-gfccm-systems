@@ -13,7 +13,8 @@
         "doctrine/dbal": "~2.3",
         "league/fractal": "^0.12.0",
         "tymon/jwt-auth": "0.5.*",
-        "barryvdh/laravel-cors": "0.7.x"
+        "barryvdh/laravel-cors": "0.7.x",
+        "ramsey/uuid": "^3.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -33,8 +34,7 @@
     },
     "autoload-dev": {
         "classmap": [
-            "tests/TestCase.php",
-            "tests/integration/api/ApiTestCase.php"
+            "tests/"
         ]
     },
     "scripts": {

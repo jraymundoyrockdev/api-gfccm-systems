@@ -1,31 +1,14 @@
 <?php namespace ApiGfccm\Repositories\Interfaces;
 
+use ApiGfccm\Models\Fund;
+
 interface FundItemRepositoryInterface
 {
     /**
-     * Returns all Fund Items under a Fund
-     *
-     * @param int $fundId
+     * @param Fund|null $fundId
      * @return mixed
      */
-    public function all($fundId);
-
-    /**
-     * Get a certain Fund Item
-     *
-     * @param $id
-     * @return mixed
-     */
-    public function show($id);
-
-    /**
-     * Create|Update FundItem
-     *
-     * @param $payload
-     * @param null $id
-     * @return mixed
-     */
-    public function save($payload, $id = null);
+    public function findByFundId(Fund $fundId);
 
     /**
      * Get all Active Fund Items

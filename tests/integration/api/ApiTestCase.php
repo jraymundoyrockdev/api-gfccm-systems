@@ -23,7 +23,7 @@ class ApiTestCase extends TestCase
         return $app;
     }
 
-    public function getContent()
+    public function getContent($model = null)
     {
         $content = $this->response->getContent();
 
@@ -33,7 +33,7 @@ class ApiTestCase extends TestCase
             $content = $json;
         }
 
-        return $content;
+        return (is_null($model)) ? $content : $content->{$model};
     }
-
+    
 }

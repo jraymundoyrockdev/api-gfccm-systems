@@ -34,7 +34,13 @@ class DenominationRepositoryEloquent implements AbstractApiInterface, Denominati
      */
     public function findById($id)
     {
-        return $this->denomination->find($id);
+        $denomination = $this->denomination->find($id);
+
+        if (!$denomination) {
+            return null;
+        }
+
+        return $denomination;
     }
 
     /**
@@ -54,6 +60,11 @@ class DenominationRepositoryEloquent implements AbstractApiInterface, Denominati
     public function update($id, $payload = [])
     {
         $denomination = $this->denomination->find($id);
+
+        if (!$denomination) {
+            return null;
+        }
+
         $denomination->fill($payload)->save();
 
         return $denomination;

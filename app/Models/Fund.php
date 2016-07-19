@@ -4,10 +4,20 @@ namespace ApiGfccm\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Fund
+ * @package ApiGfccm\Models
+ */
 class Fund extends Model
 {
+    /**
+     * @var string
+     */
     protected $table = 'funds';
 
+    /**
+     * @var array
+     */
     protected $fillable = [
         'name',
         'description',
@@ -19,6 +29,6 @@ class Fund extends Model
      */
     public function item()
     {
-        return $this->hasMany(FundItem::class, 'fund_id', 'id');
+        return $this->hasMany(FundItem::class);
     }
 }

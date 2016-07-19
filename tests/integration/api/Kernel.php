@@ -41,7 +41,6 @@ class Kernel extends HttpKernel
         'csrf' => 'ApiGfccm\Http\Middleware\VerifyCsrfToken',
         'resource' => 'ApiGfccm\Http\Middleware\RespondWithResource',
         'format.json' => 'ApiGfccm\Http\Middleware\FormatJsonRequest',
-        'jwt.auth' => 'ApiGfccm\Http\Middleware\PassThrough',
-        'APIJWT.auth' => '\ApiGfccm\Http\Middleware\APIJWTAuth::class'
+        'APIJWT.auth' => 'ApiGfccm\Http\Middleware\PassThrough'
     ];
 }

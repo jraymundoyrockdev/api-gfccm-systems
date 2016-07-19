@@ -2,20 +2,14 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
-use ApiGfccm\Http\Controllers\Api\Transformers\DenominationTransformer;
-use Illuminate\Http\Request;
-
-use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Requests\DenominationRequest;
-use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
-use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
-use League\Fractal\Pagination\IlluminatePaginatorAdapter;
-use League\Fractal\Resource\Collection;
+use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
+use Illuminate\Http\Response;
 
 class DenominationsController extends ApiController
 {
-
     /**
      * @var DenominationRepositoryInterface
      */
@@ -32,80 +26,52 @@ class DenominationsController extends ApiController
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return $this
      */
     public function index()
     {
-        return (new CollectionResponse($this->denomination->allOrderByAmount()));
+        return (new CollectionResponse($this->denomination->allOrderByAmount()))->asType('Denomination');
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  DenominationRequest $request
-     * @return Response
+     * @param DenominationRequest $request
+     * @return ItemResponse
      */
     public function store(DenominationRequest $request)
     {
-        $input = array_filter($request->request->all());
+        $input = $request->request->all();
 
         return (new ItemResponse($this->denomination->create($input)))->asType('Denomination');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return Response
+     * @param $id
+     * @return ItemResponse
      */
     public function show($id)
     {
-        return new ItemResponse($this->denomination->findById($id));
+        $denomination = $this->denomination->findById($id);
+
+        if (!$denomination) {
+            return (new Response())->setStatusCode(404);
+        }
+
+        return new ItemResponse($denomination);
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  DenominationRequest $request
-     * @param  int $id
-     * @return Response
+     * @param DenominationRequest $request
+     * @param $id
+     * @return $this
      */
     public function update(DenominationRequest $request, $id)
     {
-        $input = array_filter($request->request->all());
+        $denomination = $this->denomination->update($id, $request->request->all());
 
-        return (new ItemResponse($this->denomination->update($id, $input)))->asType('Denomination');
-    }
+        if (!$denomination) {
+            return (new Response())->setStatusCode(404);
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
+        return (new ItemResponse($denomination))->asType('Denomination');
     }
 }

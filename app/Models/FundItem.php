@@ -4,10 +4,20 @@ namespace ApiGfccm\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class FundItem
+ * @package ApiGfccm\Models
+ */
 class FundItem extends Model
 {
+    /**
+     * @var string
+     */
     protected $table = 'fund_items';
 
+    /**
+     * @var array
+     */
     protected $fillable = [
         'fund_id',
         'name',
@@ -20,13 +30,13 @@ class FundItem extends Model
      * @var array
      */
     protected $touches = ['fund'];
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function fund()
     {
-        return $this->belongsTo(Fund::class, 'fund_id', 'id');
+        return $this->belongsTo(Fund::class);
     }
 
     /**
