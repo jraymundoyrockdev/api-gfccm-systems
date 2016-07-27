@@ -1,5 +1,6 @@
 <?php
 
+use ApiGfccm\Models\Fund;
 use ApiGfccm\Models\FundItem;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -12,14 +13,15 @@ class FundItemsControllerTest extends ApiTestCase
     /** @test */
     public function it_returns_fund_item_when_created()
     {
-        $fund = $this->createNewFund();
+        $fund = $this->createFund();
         $input = factory(FundItem::class)->make(['fund_id' => $fund->id]);
 
         $this->post('api/fund-items', $input->toArray());
 
         $result = $this->getFirstKey($this->getContent('FundItem'));
 
-        $this->attributeValuesEqualsToExpected(['fund_id', 'name', 'status'], $input, $result);
+        $this->assertObjectHasOnlyAttributes(['id', 'fund', 'name', 'status'], $result);
+        $this->attributeValuesEqualsToExpected(['name', 'status'], $input, $result);
         $this->assertResponseOk();
     }
 
@@ -37,17 +39,18 @@ class FundItemsControllerTest extends ApiTestCase
     /** @test */
     public function it_returns_fund_item_on_update_if_fund_item_exists()
     {
-        $initialFund = $this->createNewFund();
+        $initialFund = $this->createFund();
         $initialFundItem = $this->createFundItem(1, ['fund_id' => $initialFund->id]);
 
-        $updatedFund = $this->createNewFund();
+        $updatedFund = $this->createFund();
         $updatedInput = ['fund_id' => $updatedFund->id, 'name' => 'newName', 'status' => 'active'];
 
         $this->put('api/fund-items/' . $initialFundItem->id, $updatedInput);
 
         $result = $this->getFirstKey($this->getContent('FundItem'));
 
-        $this->attributeValuesEqualsToExpected(['fund_id', 'name', 'status'], $updatedInput, $result);
+        $this->assertObjectHasOnlyAttributes(['id', 'fund', 'name', 'status'], $result);
+        $this->attributeValuesEqualsToExpected(['name', 'status'], $updatedInput, $result);
         $this->assertResponseOk();
     }
 
@@ -57,7 +60,7 @@ class FundItemsControllerTest extends ApiTestCase
      */
     public function it_rejects_update_if_updated_input_is_invalid($payload)
     {
-        $initialFund = $this->createNewFund();
+        $initialFund = $this->createFund();
         $initialFundItem = $this->createFundItem(1, ['fund_id' => $initialFund->id]);
 
         $this->put('api/fund-items/' . $initialFundItem->id, $payload, ['accept' => 'application/json']);
@@ -78,14 +81,14 @@ class FundItemsControllerTest extends ApiTestCase
     /** @test */
     public function it_returns_a_fund_item_if_exists()
     {
-        $initialFund = $this->createNewFund();
+        $initialFund = $this->createFund();
         $initialFundItem = $this->createFundItem(1, ['fund_id' => $initialFund->id]);
 
         $this->get('api/fund-items/' . $initialFundItem->id);
 
         $result = $this->getFirstKey($this->getContent('FundItem'));
 
-        $this->assertObjectHasOnlyAttributes(['id', 'fund_id', 'name', 'status'], $result);
+        $this->assertObjectHasOnlyAttributes(['id', 'fund', 'name', 'status'], $result);
         $this->assertResponseOk();
     }
 

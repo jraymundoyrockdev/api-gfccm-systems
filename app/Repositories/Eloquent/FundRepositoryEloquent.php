@@ -1,9 +1,10 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Models\Fund;
+use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
 use ApiGfccm\Repositories\Interfaces\FundRepositoryInterface;
 
-class FundRepositoryEloquent implements FundRepositoryInterface
+class FundRepositoryEloquent implements AbstractApiInterface, FundRepositoryInterface
 {
     /**
      * @var Fund
@@ -33,28 +34,42 @@ class FundRepositoryEloquent implements FundRepositoryInterface
      *
      * @return Fund|null
      */
-    public function show($id)
+    public function findById($id)
     {
-        return $this->fund->with('item')->find($id);
+        $fund = $this->fund->with('item')->find($id);
+
+        if (!$fund) {
+            return null;
+        }
+
+        return $fund;
     }
 
     /**
-     * Create|Update Fund
-     *
      * @param $payload
-     * @param null $id
-     * @return Fund|null|static
+     * @return static
      */
-    public function save($payload, $id = null)
+    public function create($payload = [])
     {
-        if ($id) {
-            $fund = $this->show($id);
-            $fund->fill($payload)->save();
+        return $this->fund->create($payload);
+    }
 
-            return $fund;
+    /**
+     * @param $id
+     * @param array $payload
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null
+     */
+    public function update($id, $payload = [])
+    {
+        $fund = $this->fund->with('item')->find($id);
+
+        if (!$fund) {
+            return null;
         }
 
-        return $this->fund->create($payload);
+        $fund->fill($payload)->save();
+
+        return $fund;
     }
 
     /**
@@ -65,4 +80,5 @@ class FundRepositoryEloquent implements FundRepositoryInterface
     {
         return $this->fund->where('status', 'active')->get();
     }
+
 }

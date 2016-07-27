@@ -11,11 +11,13 @@ class FundItemTransformer extends TransformerAbstract
      */
     public function transform(FundItem $item)
     {
+        $fund = new FundTransformer();
+
         return [
             'id' => $item->id,
-            'fund_id' => $item->fund_id,
             'name' => $item->name,
-            'status' => $item->status
+            'status' => $item->status,
+            'fund' => $fund->transform($item->fund)
         ];
     }
 }

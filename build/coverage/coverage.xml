@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1468905919">
-  <project timestamp="1468905919">
+<coverage generated="1469594694">
+  <project timestamp="1469594694">
     <package name="ApiGfccm\Commands">
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Commands/Command.php">
         <class name="Command" namespace="ApiGfccm\Commands">
@@ -67,10 +67,10 @@
         <class name="Kernel" namespace="ApiGfccm\Console">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
         </class>
-        <line num="25" type="method" name="schedule" crap="1" count="37"/>
-        <line num="27" type="stmt" count="37"/>
-        <line num="28" type="stmt" count="37"/>
-        <line num="29" type="stmt" count="37"/>
+        <line num="25" type="method" name="schedule" crap="1" count="62"/>
+        <line num="27" type="stmt" count="62"/>
+        <line num="28" type="stmt" count="62"/>
+        <line num="29" type="stmt" count="62"/>
         <metrics loc="30" ncloc="19" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
       </file>
     </package>
@@ -436,35 +436,33 @@
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Controllers/Api/FundsController.php">
         <class name="FundsController" namespace="ApiGfccm\Http\Controllers\Api">
-          <metrics methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="26" coveredelements="0"/>
+          <metrics methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="24" coveredelements="24"/>
         </class>
-        <line num="23" type="method" name="__construct" crap="2" count="0"/>
-        <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="26" type="stmt" count="0"/>
-        <line num="33" type="method" name="index" crap="2" count="0"/>
-        <line num="34" type="stmt" count="0"/>
-        <line num="35" type="stmt" count="0"/>
-        <line num="36" type="stmt" count="0"/>
-        <line num="44" type="method" name="store" crap="2" count="0"/>
-        <line num="45" type="stmt" count="0"/>
-        <line num="46" type="stmt" count="0"/>
-        <line num="48" type="stmt" count="0"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="57" type="method" name="show" crap="2" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="59" type="stmt" count="0"/>
-        <line num="60" type="stmt" count="0"/>
-        <line num="69" type="method" name="update" crap="2" count="0"/>
-        <line num="70" type="stmt" count="0"/>
-        <line num="71" type="stmt" count="0"/>
-        <line num="73" type="stmt" count="0"/>
-        <line num="74" type="stmt" count="0"/>
-        <line num="83" type="method" name="showItems" crap="2" count="0"/>
-        <line num="84" type="stmt" count="0"/>
-        <line num="85" type="stmt" count="0"/>
-        <line num="86" type="stmt" count="0"/>
-        <metrics loc="88" ncloc="51" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="26" coveredelements="0"/>
+        <line num="30" type="method" name="__construct" crap="1" count="14"/>
+        <line num="32" type="stmt" count="14"/>
+        <line num="33" type="stmt" count="14"/>
+        <line num="34" type="stmt" count="14"/>
+        <line num="41" type="method" name="index" crap="1" count="2"/>
+        <line num="43" type="stmt" count="2"/>
+        <line num="52" type="method" name="store" crap="1" count="1"/>
+        <line num="54" type="stmt" count="1"/>
+        <line num="56" type="stmt" count="1"/>
+        <line num="65" type="method" name="show" crap="2" count="2"/>
+        <line num="67" type="stmt" count="2"/>
+        <line num="69" type="stmt" count="2"/>
+        <line num="70" type="stmt" count="1"/>
+        <line num="73" type="stmt" count="1"/>
+        <line num="83" type="method" name="update" crap="2" count="2"/>
+        <line num="85" type="stmt" count="2"/>
+        <line num="87" type="stmt" count="2"/>
+        <line num="88" type="stmt" count="1"/>
+        <line num="91" type="stmt" count="1"/>
+        <line num="101" type="method" name="showItems" crap="2" count="3"/>
+        <line num="103" type="stmt" count="3"/>
+        <line num="105" type="stmt" count="3"/>
+        <line num="106" type="stmt" count="1"/>
+        <line num="109" type="stmt" count="2"/>
+        <metrics loc="112" ncloc="71" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="24" coveredelements="24"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Controllers/Api/IncomeServiceMemberFundsController.php">
         <class name="IncomeServiceMemberFundsController" namespace="ApiGfccm\Http\Controllers\Api">
@@ -760,43 +758,35 @@
         <class name="DenominationTransformer" namespace="ApiGfccm\Http\Controllers\Api\Transformers">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
         </class>
-        <line num="12" type="method" name="transform" crap="1" count="4"/>
-        <line num="15" type="stmt" count="4"/>
-        <line num="16" type="stmt" count="4"/>
-        <line num="17" type="stmt" count="4"/>
+        <line num="12" type="method" name="transform" crap="1" count="5"/>
+        <line num="15" type="stmt" count="5"/>
+        <line num="16" type="stmt" count="5"/>
+        <line num="17" type="stmt" count="5"/>
         <metrics loc="19" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Controllers/Api/Transformers/FundItemTransformer.php">
         <class name="FundItemTransformer" namespace="ApiGfccm\Http\Controllers\Api\Transformers">
-          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
         </class>
-        <line num="12" type="method" name="transform" crap="1" count="3"/>
-        <line num="15" type="stmt" count="3"/>
-        <line num="16" type="stmt" count="3"/>
-        <line num="17" type="stmt" count="3"/>
-        <line num="18" type="stmt" count="3"/>
-        <metrics loc="20" ncloc="16" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="5" coveredelements="5"/>
+        <line num="12" type="method" name="transform" crap="1" count="5"/>
+        <line num="14" type="stmt" count="5"/>
+        <line num="17" type="stmt" count="5"/>
+        <line num="18" type="stmt" count="5"/>
+        <line num="19" type="stmt" count="5"/>
+        <line num="20" type="stmt" count="5"/>
+        <metrics loc="22" ncloc="18" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Controllers/Api/Transformers/FundTransformer.php">
         <class name="FundTransformer" namespace="ApiGfccm\Http\Controllers\Api\Transformers">
-          <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="15" coveredelements="0"/>
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
         </class>
-        <line num="8" type="method" name="transform" crap="6" count="0"/>
-        <line num="9" type="stmt" count="0"/>
-        <line num="10" type="stmt" count="0"/>
-        <line num="11" type="stmt" count="0"/>
-        <line num="13" type="stmt" count="0"/>
-        <line num="14" type="stmt" count="0"/>
-        <line num="15" type="stmt" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="18" type="stmt" count="0"/>
-        <line num="19" type="stmt" count="0"/>
-        <line num="20" type="stmt" count="0"/>
-        <line num="21" type="stmt" count="0"/>
-        <line num="22" type="stmt" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <line num="24" type="stmt" count="0"/>
-        <metrics loc="24" ncloc="24" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="15" coveredelements="0"/>
+        <line num="8" type="method" name="transform" crap="1" count="10"/>
+        <line num="11" type="stmt" count="10"/>
+        <line num="12" type="stmt" count="10"/>
+        <line num="13" type="stmt" count="10"/>
+        <line num="14" type="stmt" count="10"/>
+        <line num="15" type="stmt" count="10"/>
+        <metrics loc="17" ncloc="17" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="6" coveredelements="6"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Controllers/Api/Transformers/IncomeServiceDenominationTransformer.php">
         <class name="IncomeServiceDenominationTransformer" namespace="ApiGfccm\Http\Controllers\Api\Transformers">
@@ -1248,11 +1238,11 @@
         <class name="FormatJsonRequest" namespace="ApiGfccm\Http\Middleware">
           <metrics methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="5" coveredelements="3"/>
         </class>
-        <line num="15" type="method" name="handle" crap="3.14" count="20"/>
-        <line num="17" type="stmt" count="20"/>
-        <line num="18" type="stmt" count="20"/>
+        <line num="15" type="method" name="handle" crap="3.14" count="34"/>
+        <line num="17" type="stmt" count="34"/>
+        <line num="18" type="stmt" count="34"/>
         <line num="19" type="stmt" count="0"/>
-        <line num="21" type="stmt" count="20"/>
+        <line num="21" type="stmt" count="34"/>
         <metrics loc="23" ncloc="15" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="3" elements="5" coveredelements="3"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Middleware/IncomeServiceAuth.php">
@@ -1334,8 +1324,8 @@
         <class name="PassThrough" namespace="ApiGfccm\Http\Middleware">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <line num="17" type="method" name="handle" crap="1" count="20"/>
-        <line num="19" type="stmt" count="20"/>
+        <line num="17" type="method" name="handle" crap="1" count="34"/>
+        <line num="19" type="stmt" count="34"/>
         <metrics loc="21" ncloc="13" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Middleware/RedirectIfAuthenticated.php">
@@ -1382,18 +1372,18 @@
         <class name="RespondWithResource" namespace="ApiGfccm\Http\Middleware">
           <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="12" coveredelements="12"/>
         </class>
-        <line num="14" type="method" name="__construct" crap="1" count="20"/>
-        <line num="16" type="stmt" count="20"/>
-        <line num="17" type="stmt" count="20"/>
-        <line num="18" type="stmt" count="20"/>
-        <line num="20" type="method" name="handle" crap="3" count="20"/>
-        <line num="22" type="stmt" count="20"/>
-        <line num="24" type="stmt" count="20"/>
-        <line num="25" type="stmt" count="8"/>
-        <line num="27" type="stmt" count="12"/>
-        <line num="28" type="stmt" count="4"/>
-        <line num="30" type="stmt" count="8"/>
-        <line num="32" type="stmt" count="8"/>
+        <line num="14" type="method" name="__construct" crap="1" count="34"/>
+        <line num="16" type="stmt" count="34"/>
+        <line num="17" type="stmt" count="34"/>
+        <line num="18" type="stmt" count="34"/>
+        <line num="20" type="method" name="handle" crap="3" count="34"/>
+        <line num="22" type="stmt" count="34"/>
+        <line num="24" type="stmt" count="34"/>
+        <line num="25" type="stmt" count="12"/>
+        <line num="27" type="stmt" count="22"/>
+        <line num="28" type="stmt" count="7"/>
+        <line num="30" type="stmt" count="15"/>
+        <line num="32" type="stmt" count="15"/>
         <metrics loc="34" ncloc="31" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="12" coveredelements="12"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Middleware/VerifyCsrfToken.php">
@@ -1427,19 +1417,13 @@
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Requests/FundRequest.php">
         <class name="FundRequest" namespace="ApiGfccm\Http\Requests">
-          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+          <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
         </class>
-        <line num="12" type="method" name="authorize" crap="2" count="0"/>
-        <line num="13" type="stmt" count="0"/>
-        <line num="14" type="stmt" count="0"/>
-        <line num="15" type="stmt" count="0"/>
-        <line num="22" type="method" name="rules" crap="2" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <line num="24" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="26" type="stmt" count="0"/>
-        <line num="27" type="stmt" count="0"/>
-        <metrics loc="28" ncloc="18" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+        <line num="12" type="method" name="authorize" crap="1" count="7"/>
+        <line num="14" type="stmt" count="7"/>
+        <line num="22" type="method" name="rules" crap="1" count="7"/>
+        <line num="25" type="stmt" count="7"/>
+        <metrics loc="28" ncloc="18" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Requests/IncomeServiceRequest.php">
         <class name="IncomeServiceRequest" namespace="ApiGfccm\Http\Requests">
@@ -1523,9 +1507,9 @@
         <class name="Request" namespace="ApiGfccm\Http\Requests">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
         </class>
-        <line num="14" type="method" name="formatErrors" crap="1" count="8"/>
-        <line num="17" type="stmt" count="8"/>
-        <line num="18" type="stmt" count="8"/>
+        <line num="14" type="method" name="formatErrors" crap="1" count="12"/>
+        <line num="17" type="stmt" count="12"/>
+        <line num="18" type="stmt" count="12"/>
         <metrics loc="21" ncloc="18" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Requests/ServiceRequest.php">
@@ -1556,77 +1540,76 @@
         <line num="43" type="method" name="withMeta" crap="2" count="0"/>
         <line num="45" type="stmt" count="0"/>
         <line num="46" type="stmt" count="0"/>
-        <line num="55" type="method" name="asType" crap="1" count="7"/>
-        <line num="57" type="stmt" count="7"/>
-        <line num="58" type="stmt" count="7"/>
-        <line num="66" type="method" name="__invoke" crap="2.03" count="8"/>
-        <line num="69" type="stmt" count="8"/>
-        <line num="70" type="stmt" count="8"/>
-        <line num="71" type="stmt" count="8"/>
+        <line num="55" type="method" name="asType" crap="1" count="11"/>
+        <line num="57" type="stmt" count="11"/>
+        <line num="58" type="stmt" count="11"/>
+        <line num="66" type="method" name="__invoke" crap="2.03" count="15"/>
+        <line num="69" type="stmt" count="15"/>
+        <line num="70" type="stmt" count="15"/>
+        <line num="71" type="stmt" count="15"/>
         <line num="72" type="stmt" count="0"/>
-        <line num="75" type="stmt" count="8"/>
+        <line num="75" type="stmt" count="15"/>
         <metrics loc="77" ncloc="37" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="6" elements="12" coveredelements="7"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Responses/CollectionResponse.php">
         <class name="CollectionResponse" namespace="ApiGfccm\Http\Responses">
           <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
         </class>
-        <line num="12" type="method" name="getTypeName" crap="2" count="2"/>
-        <line num="14" type="stmt" count="2"/>
-        <line num="20" type="method" name="getResourceInstance" crap="1" count="2"/>
-        <line num="22" type="stmt" count="2"/>
-        <line num="23" type="stmt" count="2"/>
-        <line num="25" type="stmt" count="2"/>
+        <line num="12" type="method" name="getTypeName" crap="2" count="6"/>
+        <line num="14" type="stmt" count="6"/>
+        <line num="20" type="method" name="getResourceInstance" crap="1" count="6"/>
+        <line num="22" type="stmt" count="6"/>
+        <line num="23" type="stmt" count="6"/>
+        <line num="25" type="stmt" count="6"/>
         <metrics loc="28" ncloc="22" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/Responses/ItemResponse.php">
         <class name="ItemResponse" namespace="ApiGfccm\Http\Responses">
           <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
         </class>
-        <line num="11" type="method" name="getTypeName" crap="2" count="6"/>
-        <line num="13" type="stmt" count="6"/>
-        <line num="19" type="method" name="getResourceInstance" crap="1" count="6"/>
-        <line num="21" type="stmt" count="6"/>
-        <line num="22" type="stmt" count="6"/>
-        <line num="24" type="stmt" count="6"/>
+        <line num="11" type="method" name="getTypeName" crap="2" count="9"/>
+        <line num="13" type="stmt" count="9"/>
+        <line num="19" type="method" name="getResourceInstance" crap="1" count="9"/>
+        <line num="21" type="stmt" count="9"/>
+        <line num="22" type="stmt" count="9"/>
+        <line num="24" type="stmt" count="9"/>
         <metrics loc="27" ncloc="21" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </file>
     </package>
     <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Http/routes.php">
-      <line num="3" type="stmt" count="37"/>
-      <line num="6" type="stmt" count="37"/>
-      <line num="7" type="stmt" count="37"/>
-      <line num="8" type="stmt" count="37"/>
-      <line num="11" type="stmt" count="37"/>
-      <line num="12" type="stmt" count="37"/>
-      <line num="17" type="stmt" count="37"/>
-      <line num="18" type="stmt" count="37"/>
-      <line num="19" type="stmt" count="37"/>
-      <line num="20" type="stmt" count="37"/>
-      <line num="21" type="stmt" count="37"/>
-      <line num="22" type="stmt" count="37"/>
-      <line num="23" type="stmt" count="37"/>
-      <line num="24" type="stmt" count="37"/>
-      <line num="25" type="stmt" count="37"/>
-      <line num="26" type="stmt" count="37"/>
-      <line num="27" type="stmt" count="37"/>
-      <line num="28" type="stmt" count="37"/>
-      <line num="33" type="stmt" count="37"/>
-      <line num="34" type="stmt" count="37"/>
-      <line num="35" type="stmt" count="37"/>
-      <line num="37" type="stmt" count="37"/>
-      <line num="38" type="stmt" count="37"/>
-      <line num="39" type="stmt" count="37"/>
-      <line num="41" type="stmt" count="37"/>
-      <line num="42" type="stmt" count="37"/>
-      <line num="43" type="stmt" count="37"/>
-      <line num="44" type="stmt" count="37"/>
-      <line num="49" type="stmt" count="37"/>
-      <line num="50" type="stmt" count="37"/>
-      <line num="51" type="stmt" count="37"/>
-      <line num="53" type="stmt" count="37"/>
-      <line num="54" type="stmt" count="37"/>
-      <metrics loc="55" ncloc="49" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="33" coveredstatements="33" elements="33" coveredelements="33"/>
+      <line num="3" type="stmt" count="62"/>
+      <line num="6" type="stmt" count="62"/>
+      <line num="7" type="stmt" count="62"/>
+      <line num="8" type="stmt" count="62"/>
+      <line num="11" type="stmt" count="62"/>
+      <line num="12" type="stmt" count="62"/>
+      <line num="17" type="stmt" count="62"/>
+      <line num="18" type="stmt" count="62"/>
+      <line num="19" type="stmt" count="62"/>
+      <line num="20" type="stmt" count="62"/>
+      <line num="21" type="stmt" count="62"/>
+      <line num="22" type="stmt" count="62"/>
+      <line num="23" type="stmt" count="62"/>
+      <line num="24" type="stmt" count="62"/>
+      <line num="25" type="stmt" count="62"/>
+      <line num="26" type="stmt" count="62"/>
+      <line num="27" type="stmt" count="62"/>
+      <line num="31" type="stmt" count="62"/>
+      <line num="32" type="stmt" count="62"/>
+      <line num="33" type="stmt" count="62"/>
+      <line num="35" type="stmt" count="62"/>
+      <line num="36" type="stmt" count="62"/>
+      <line num="37" type="stmt" count="62"/>
+      <line num="39" type="stmt" count="62"/>
+      <line num="40" type="stmt" count="62"/>
+      <line num="41" type="stmt" count="62"/>
+      <line num="42" type="stmt" count="62"/>
+      <line num="47" type="stmt" count="62"/>
+      <line num="48" type="stmt" count="62"/>
+      <line num="49" type="stmt" count="62"/>
+      <line num="51" type="stmt" count="62"/>
+      <line num="52" type="stmt" count="62"/>
+      <metrics loc="53" ncloc="47" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="32" elements="32" coveredelements="32"/>
     </file>
     <package name="ApiGfccm\Jobs">
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Jobs/Job.php">
@@ -1874,16 +1857,18 @@
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Models/Fund.php">
         <class name="Fund" namespace="ApiGfccm\Models" fullPackage="ApiGfccm" package="ApiGfccm">
-          <metrics methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+          <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <metrics loc="34" ncloc="21" classes="1" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <line num="31" type="method" name="item" crap="1" count="8"/>
+        <line num="33" type="stmt" count="8"/>
+        <metrics loc="35" ncloc="22" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Models/FundItem.php">
         <class name="FundItem" namespace="ApiGfccm\Models" fullPackage="ApiGfccm" package="ApiGfccm">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <line num="37" type="method" name="fund" crap="1" count="11"/>
-        <line num="39" type="stmt" count="11"/>
+        <line num="37" type="method" name="fund" crap="1" count="16"/>
+        <line num="39" type="stmt" count="16"/>
         <metrics loc="49" ncloc="28" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Models/IncomeService.php">
@@ -2166,19 +2151,19 @@
         <class name="AppServiceProvider" namespace="ApiGfccm\Providers">
           <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
         </class>
-        <line num="14" type="method" name="boot" crap="1" count="37"/>
-        <line num="17" type="stmt" count="37"/>
-        <line num="24" type="method" name="register" crap="1" count="37"/>
-        <line num="27" type="stmt" count="37"/>
+        <line num="14" type="method" name="boot" crap="1" count="62"/>
+        <line num="17" type="stmt" count="62"/>
+        <line num="24" type="method" name="register" crap="1" count="62"/>
+        <line num="27" type="stmt" count="62"/>
         <metrics loc="28" ncloc="14" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Providers/AuthServiceProvider.php">
         <class name="AuthServiceProvider" namespace="ApiGfccm\Providers">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
         </class>
-        <line num="31" type="method" name="boot" crap="1" count="37"/>
-        <line num="33" type="stmt" count="37"/>
-        <line num="34" type="stmt" count="37"/>
+        <line num="31" type="method" name="boot" crap="1" count="62"/>
+        <line num="33" type="stmt" count="62"/>
+        <line num="34" type="stmt" count="62"/>
         <metrics loc="34" ncloc="23" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Providers/BusServiceProvider.php">
@@ -2191,43 +2176,43 @@
         <class name="EventServiceProvider" namespace="ApiGfccm\Providers">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
         </class>
-        <line num="50" type="method" name="boot" crap="1" count="37"/>
-        <line num="52" type="stmt" count="37"/>
-        <line num="55" type="stmt" count="37"/>
+        <line num="50" type="method" name="boot" crap="1" count="62"/>
+        <line num="52" type="stmt" count="62"/>
+        <line num="55" type="stmt" count="62"/>
         <metrics loc="56" ncloc="43" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Providers/RepositoryServiceProvider.php">
         <class name="RepositoryServiceProvider" namespace="ApiGfccm\Providers">
           <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="15" coveredelements="15"/>
         </class>
-        <line num="35" type="method" name="register" crap="1" count="37"/>
-        <line num="37" type="stmt" count="37"/>
-        <line num="38" type="stmt" count="37"/>
-        <line num="39" type="stmt" count="37"/>
-        <line num="40" type="stmt" count="37"/>
-        <line num="41" type="stmt" count="37"/>
-        <line num="42" type="stmt" count="37"/>
-        <line num="43" type="stmt" count="37"/>
-        <line num="44" type="stmt" count="37"/>
-        <line num="45" type="stmt" count="37"/>
-        <line num="46" type="stmt" count="37"/>
-        <line num="47" type="stmt" count="37"/>
-        <line num="48" type="stmt" count="37"/>
-        <line num="50" type="stmt" count="37"/>
-        <line num="51" type="stmt" count="37"/>
+        <line num="35" type="method" name="register" crap="1" count="62"/>
+        <line num="37" type="stmt" count="62"/>
+        <line num="38" type="stmt" count="62"/>
+        <line num="39" type="stmt" count="62"/>
+        <line num="40" type="stmt" count="62"/>
+        <line num="41" type="stmt" count="62"/>
+        <line num="42" type="stmt" count="62"/>
+        <line num="43" type="stmt" count="62"/>
+        <line num="44" type="stmt" count="62"/>
+        <line num="45" type="stmt" count="62"/>
+        <line num="46" type="stmt" count="62"/>
+        <line num="47" type="stmt" count="62"/>
+        <line num="48" type="stmt" count="62"/>
+        <line num="50" type="stmt" count="62"/>
+        <line num="51" type="stmt" count="62"/>
         <metrics loc="52" ncloc="47" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="15" coveredelements="15"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Providers/RouteServiceProvider.php">
         <class name="RouteServiceProvider" namespace="ApiGfccm\Providers">
           <metrics methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
         </class>
-        <line num="25" type="method" name="boot" crap="1" count="37"/>
-        <line num="29" type="stmt" count="37"/>
-        <line num="30" type="stmt" count="37"/>
-        <line num="40" type="method" name="anonymous function" crap="1" count="37"/>
-        <line num="41" type="stmt" count="37"/>
-        <line num="42" type="stmt" count="37"/>
-        <line num="43" type="stmt" count="37"/>
+        <line num="25" type="method" name="boot" crap="1" count="62"/>
+        <line num="29" type="stmt" count="62"/>
+        <line num="30" type="stmt" count="62"/>
+        <line num="40" type="method" name="anonymous function" crap="1" count="62"/>
+        <line num="41" type="stmt" count="62"/>
+        <line num="42" type="stmt" count="62"/>
+        <line num="43" type="stmt" count="62"/>
         <metrics loc="44" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
       </file>
     </package>
@@ -2275,9 +2260,9 @@
         <class name="FundItemRepositoryEloquent" namespace="ApiGfccm\Repositories\Eloquent">
           <metrics methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="22" coveredelements="22"/>
         </class>
-        <line num="18" type="method" name="__construct" crap="1" count="19"/>
-        <line num="20" type="stmt" count="19"/>
-        <line num="21" type="stmt" count="19"/>
+        <line num="18" type="method" name="__construct" crap="1" count="33"/>
+        <line num="20" type="stmt" count="33"/>
+        <line num="21" type="stmt" count="33"/>
         <line num="26" type="method" name="all" crap="1" count="2"/>
         <line num="28" type="stmt" count="2"/>
         <line num="37" type="method" name="findById" crap="2" count="6"/>
@@ -2285,8 +2270,8 @@
         <line num="41" type="stmt" count="6"/>
         <line num="42" type="stmt" count="3"/>
         <line num="45" type="stmt" count="3"/>
-        <line num="52" type="method" name="findByFundId" crap="1" count="2"/>
-        <line num="54" type="stmt" count="2"/>
+        <line num="52" type="method" name="findByFundId" crap="1" count="4"/>
+        <line num="54" type="stmt" count="4"/>
         <line num="61" type="method" name="create" crap="1" count="2"/>
         <line num="63" type="stmt" count="2"/>
         <line num="71" type="method" name="update" crap="2" count="3"/>
@@ -2301,34 +2286,29 @@
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Repositories/Eloquent/FundRepositoryEloquent.php">
         <class name="FundRepositoryEloquent" namespace="ApiGfccm\Repositories\Eloquent">
-          <metrics methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="25" coveredelements="0"/>
+          <metrics methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="20" coveredelements="20"/>
         </class>
-        <line num="16" type="method" name="__construct" crap="2" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="18" type="stmt" count="0"/>
-        <line num="19" type="stmt" count="0"/>
-        <line num="26" type="method" name="all" crap="2" count="0"/>
-        <line num="27" type="stmt" count="0"/>
-        <line num="28" type="stmt" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="36" type="method" name="show" crap="2" count="0"/>
-        <line num="37" type="stmt" count="0"/>
-        <line num="38" type="stmt" count="0"/>
-        <line num="39" type="stmt" count="0"/>
-        <line num="48" type="method" name="save" crap="6" count="0"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="50" type="stmt" count="0"/>
-        <line num="51" type="stmt" count="0"/>
-        <line num="52" type="stmt" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="57" type="stmt" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="64" type="method" name="getActive" crap="2" count="0"/>
-        <line num="65" type="stmt" count="0"/>
-        <line num="66" type="stmt" count="0"/>
-        <line num="67" type="stmt" count="0"/>
-        <metrics loc="67" ncloc="40" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="0" elements="25" coveredelements="0"/>
+        <line num="17" type="method" name="__construct" crap="1" count="22"/>
+        <line num="19" type="stmt" count="22"/>
+        <line num="20" type="stmt" count="22"/>
+        <line num="27" type="method" name="all" crap="1" count="4"/>
+        <line num="29" type="stmt" count="4"/>
+        <line num="37" type="method" name="findById" crap="2" count="9"/>
+        <line num="39" type="stmt" count="9"/>
+        <line num="41" type="stmt" count="9"/>
+        <line num="42" type="stmt" count="4"/>
+        <line num="45" type="stmt" count="5"/>
+        <line num="52" type="method" name="create" crap="1" count="2"/>
+        <line num="54" type="stmt" count="2"/>
+        <line num="62" type="method" name="update" crap="2" count="3"/>
+        <line num="64" type="stmt" count="3"/>
+        <line num="66" type="stmt" count="3"/>
+        <line num="67" type="stmt" count="1"/>
+        <line num="70" type="stmt" count="2"/>
+        <line num="72" type="stmt" count="2"/>
+        <line num="79" type="method" name="getActive" crap="1" count="1"/>
+        <line num="81" type="stmt" count="1"/>
+        <metrics loc="84" ncloc="55" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="20" coveredelements="20"/>
       </file>
       <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Repositories/Eloquent/IncomeServiceMemberFundRepositoryEloquent.php">
         <class name="IncomeServiceMemberFundRepositoryEloquent" namespace="ApiGfccm\Repositories\Eloquent">
@@ -2753,10 +2733,10 @@
       <metrics loc="11" ncloc="6" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Repositories/Interfaces/FundItemRepositoryInterface.php">
-      <metrics loc="18" ncloc="10" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <metrics loc="16" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Repositories/Interfaces/FundRepositoryInterface.php">
-      <metrics loc="33" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      <metrics loc="10" ncloc="6" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <file name="/home/vagrant/Code/gfccm/api-gfccm-systems/app/Repositories/Interfaces/IncomeServiceMemberFundRepositoryInterface.php">
       <metrics loc="46" ncloc="14" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -2847,6 +2827,6 @@
         <metrics loc="17" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="8" coveredelements="0"/>
       </file>
     </package>
-    <metrics files="141" loc="6742" ncloc="4387" classes="128" methods="333" coveredmethods="46" conditionals="0" coveredconditionals="0" statements="1660" coveredstatements="158" elements="1993" coveredelements="204"/>
+    <metrics files="141" loc="6752" ncloc="4408" classes="128" methods="335" coveredmethods="62" conditionals="0" coveredconditionals="0" statements="1638" coveredstatements="198" elements="1973" coveredelements="260"/>
   </project>
 </coverage>

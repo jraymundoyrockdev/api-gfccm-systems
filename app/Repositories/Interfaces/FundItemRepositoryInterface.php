@@ -1,14 +1,12 @@
 <?php namespace ApiGfccm\Repositories\Interfaces;
 
-use ApiGfccm\Models\Fund;
-
 interface FundItemRepositoryInterface
 {
     /**
-     * @param Fund|null $fundId
+     * @param $fundId
      * @return mixed
      */
-    public function findByFundId(Fund $fundId);
+    public function findByFundId($fundId);
 
     /**
      * Get all Active Fund Items

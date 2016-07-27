@@ -79,15 +79,20 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
     /**
      * @param array $keys
      * @param $expected
-     * @param $actualObject
+     * @param $actual
      */
-    protected function attributeValuesEqualsToExpected($keys = [], $expected, $actualObject)
+    protected function attributeValuesEqualsToExpected($keys = [], $expected, $actual)
     {
-        if(is_object($expected)){
+        if (is_object($expected)) {
             $expected = json_decode(json_encode($expected), true);
         }
-        foreach ($keys as $key){
-            $this->assertEquals($expected[$key], $actualObject->{$key});
+
+        if (is_object($actual)) {
+            $actual = json_decode(json_encode($actual), true);
+        }
+
+        foreach ($keys as $key) {
+            $this->assertEquals($expected[$key], $actual[$key]);
         }
     }
 

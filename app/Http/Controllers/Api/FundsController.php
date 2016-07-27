@@ -9,6 +9,7 @@ use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Repositories\Interfaces\FundItemRepositoryInterface;
 use ApiGfccm\Repositories\Interfaces\FundRepositoryInterface;
+use Illuminate\Http\Response;
 
 class FundsController extends Controller
 {
@@ -18,11 +19,18 @@ class FundsController extends Controller
     protected $fund;
 
     /**
-     * @param FundRepositoryInterface $fund
+     * @var FundItemRepositoryInterface
      */
-    public function __construct(FundRepositoryInterface $fund)
+    protected $fundItem;
+
+    /**
+     * @param FundRepositoryInterface $fund
+     * @param FundItemRepositoryInterface $fundItem
+     */
+    public function __construct(FundRepositoryInterface $fund, FundItemRepositoryInterface $fundItem)
     {
         $this->fund = $fund;
+        $this->fundItem = $fundItem;
     }
 
     /**
@@ -45,7 +53,7 @@ class FundsController extends Controller
     {
         $input = array_filter($request->request->all());
 
-        return (new ItemResponse($this->fund->save($input)));
+        return (new ItemResponse($this->fund->create($input)));
     }
 
     /**
@@ -56,7 +64,13 @@ class FundsController extends Controller
      */
     public function show($id)
     {
-        return (new ItemResponse($this->fund->show($id)));
+        $fund = $this->fund->findById($id);
+
+        if (!$fund) {
+            return (new Response())->setStatusCode(404);
+        }
+
+        return (new ItemResponse($fund));
     }
 
     /**
@@ -68,9 +82,13 @@ class FundsController extends Controller
      */
     public function update(FundRequest $request, $id)
     {
-        $input = array_filter($request->request->all());
+        $fund = $this->fund->findById($id);
 
-        return (new ItemResponse($this->fund->save($input, $id)));
+        if (!$fund) {
+            return (new Response())->setStatusCode(404);
+        }
+
+        return (new ItemResponse($this->fund->update($id, $request->request->all())));
     }
 
     /**
@@ -82,7 +100,13 @@ class FundsController extends Controller
      */
     public function showItems($fundId, FundItemRepositoryInterface $fundItem)
     {
-        return (new CollectionResponse($fundItem->all($fundId)))->asType('FundItem');
+        $fund = $this->fund->findById($fundId);
+
+        if (!$fund) {
+            return (new Response())->setStatusCode(404);
+        }
+
+        return (new CollectionResponse($fundItem->findByFundId($fundId)))->asType('FundItem');
     }
 
 }

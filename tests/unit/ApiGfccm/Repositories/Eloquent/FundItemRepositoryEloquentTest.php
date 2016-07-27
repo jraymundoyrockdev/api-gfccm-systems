@@ -15,7 +15,7 @@ class FundItemRepositoryEloquentTest extends ApiTestCase
     /** @test */
     public function it_returns_fund_items()
     {
-        $fund = $this->createNewFund();
+        $fund = $this->createFund();
         $this->createFundItem(10, ['fund_id' => $fund->id]);
 
         $repository = $this->app->make(FundItemRepositoryEloquent::class);
@@ -36,7 +36,7 @@ class FundItemRepositoryEloquentTest extends ApiTestCase
     /** @test */
     public function it_returns_a_fund_item_when_fetched_by_id()
     {
-        $fund = $this->createNewFund();
+        $fund = $this->createFund();
         $fundItem = $this->createFundItem(1, ['fund_id' => $fund->id]);
 
         $repository = $this->app->make(FundItemRepositoryEloquent::class);
@@ -59,12 +59,12 @@ class FundItemRepositoryEloquentTest extends ApiTestCase
     /** @test */
     public function it_returns_fund_items_which_belonged_to_a_fund()
     {
-        $fund = $this->createNewFund();
+        $fund = $this->createFund();
         $this->createFundItem(5, ['fund_id' => $fund->id]);
 
         $repository = $this->app->make(FundItemRepositoryEloquent::class);
 
-        $result = $repository->findByFundId($fund);
+        $result = $repository->findByFundId($fund->id);
 
         $this->assertEquals($fund->id, $result[0]->fund_id);
         $this->assertEquals(5, count($result));
@@ -81,7 +81,7 @@ class FundItemRepositoryEloquentTest extends ApiTestCase
     /** @test */
     public function it_returns_a_fund_item_when_created()
     {
-        $fund = $this->createNewFund();
+        $fund = $this->createFund();
         $input = factory(FundItem::class)->make(['fund_id' => $fund->id]);
 
         $repository = $this->app->make(FundItemRepositoryEloquent::class);
@@ -102,8 +102,8 @@ class FundItemRepositoryEloquentTest extends ApiTestCase
     {
         $faker = (new Faker)->create();
 
-        $fund = $this->createNewFund();
-        $updatedFund = $this->createNewFund();
+        $fund = $this->createFund();
+        $updatedFund = $this->createFund();
         $fundItem = $this->createFundItem(1, ['fund_id' => $fund->id]);
 
         $repository = $this->app->make(FundItemRepositoryEloquent::class);
@@ -138,7 +138,7 @@ class FundItemRepositoryEloquentTest extends ApiTestCase
     /** @test */
     public function it_returns_active_fund_items()
     {
-        $fund = $this->createNewFund();
+        $fund = $this->createFund();
         $this->createFundItem(10, ['fund_id' => $fund->id]);
 
         $repository = $this->app->make(FundItemRepositoryEloquent::class);

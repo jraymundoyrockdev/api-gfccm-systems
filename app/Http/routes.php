@@ -25,8 +25,6 @@ Route::group(
         Route::resource('funds', 'FundsController');
         Route::get('funds/{fundId}/items', 'FundsController@showItems');
         Route::resource('fund-items', 'FundItemsController', ['only' => ['store', 'update', 'show']]);
-        Route::get('funds/{fundId}/items', 'FundsController@showItems');
-
         /**
          * Income Services
          */

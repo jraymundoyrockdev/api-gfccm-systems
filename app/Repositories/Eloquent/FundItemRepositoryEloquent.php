@@ -46,12 +46,12 @@ class FundItemRepositoryEloquent implements AbstractApiInterface, FundItemReposi
     }
 
     /**
-     * @param Fund|null $fundId
+     * @param $fundId
      * @return mixed
      */
-    public function findByFundId(Fund $fundId)
+    public function findByFundId($fundId)
     {
-        return $this->fundItem->where('fund_id', '=', $fundId->id)->get();
+        return $this->fundItem->where('fund_id', '=', $fundId)->get();
     }
 
     /**
