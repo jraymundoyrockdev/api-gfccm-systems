@@ -2,10 +2,10 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
-use ApiGfccm\Http\Requests;
-use ApiGfccm\Repositories\Interfaces\RoleRepositoryInterface;
-use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Http\Responses\CollectionResponse;
+use ApiGfccm\Http\Responses\ItemResponse;
+use ApiGfccm\Repositories\Interfaces\RoleRepositoryInterface;
+use Illuminate\Http\Response;
 
 class RolesController extends ApiController
 {
@@ -15,6 +15,7 @@ class RolesController extends ApiController
     protected $roles;
 
     /**
+     * RolesController constructor.
      * @param RoleRepositoryInterface $roles
      */
     public function __construct(RoleRepositoryInterface $roles)
@@ -23,23 +24,25 @@ class RolesController extends ApiController
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return Response
+     * @return CollectionResponse
      */
     public function index()
     {
-        return (new CollectionResponse($this->roles->getAllRoles()));
+        return (new CollectionResponse($this->roles->all()))->asType('Role');
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return Response
+     * @param $id
+     * @return ItemResponse
      */
     public function show($id)
     {
-        return new ItemResponse($this->roles->getById($id));
+        $role = $this->roles->findById($id);
+
+        if (!$role) {
+            return (new Response())->setStatusCode(404);
+        }
+
+        return (new ItemResponse($role))->asType('Role');
     }
 }

@@ -1,38 +1,44 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
-use ApiGfccm\Repositories\Interfaces\RoleRepositoryInterface;
 use ApiGfccm\Models\Role;
+use ApiGfccm\Repositories\Interfaces\RoleRepositoryInterface;
 
 class RoleRepositoryEloquent implements RoleRepositoryInterface
 {
     /**
-     * @var UserRole
+     * @var Role
      */
-    protected $userRole;
+    protected $role;
 
+    /**
+     * RoleRepositoryEloquent constructor.
+     * @param Role $role
+     */
     public function __construct(Role $role)
     {
-        $this->userRole = $role;
+        $this->role = $role;
     }
 
     /**
-     * Returns all Role
-     *
-     * @return User|null
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
-    public function getAllRoles()
+    public function all()
     {
-        return $this->userRole->all();
+        return $this->role->all();
     }
 
     /**
-     * Get a certain user_role
-     *
-     * @return User|null
+     * @param $id
+     * @return null
      */
-    public function getById($id)
+    public function findById($id)
     {
-        return $this->userRole->where('id', $id)->first();
-    }
+        $role = $this->role->where('id', $id)->first();
 
+        if (!$role) {
+            return null;
+        }
+
+        return $role;
+    }
 }

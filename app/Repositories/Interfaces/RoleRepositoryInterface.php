@@ -3,17 +3,14 @@
 interface RoleRepositoryInterface
 {
     /**
-     * Returns all user roles
-     *
-     * @return Collection|null
+     * @return mixed
      */
-    public function getAllRoles();
+    public function all();
 
     /**
-     * Get a certain user roles
-     *
-     * @return Collection|null
+     * @param $id
+     * @return mixed
      */
-    public function getById($id);
+    public function findById($id);
 
 }

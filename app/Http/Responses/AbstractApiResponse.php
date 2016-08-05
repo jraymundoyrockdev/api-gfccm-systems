@@ -65,7 +65,6 @@ abstract class AbstractApiResponse extends Response
      */
     public function __invoke()
     {
-       // echo $this->getTypeName(); die;
         $transformer = 'ApiGfccm\Http\Controllers\Api\Transformers\\' . $this->getTypeName() . 'Transformer';
         $resource = $this->getResourceInstance(new $transformer);
         foreach ($this->meta as $key => $value) {
