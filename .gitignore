@@ -13,3 +13,4 @@ composer.lock
 build/*
 build/
 build
+build/coverage/html/*

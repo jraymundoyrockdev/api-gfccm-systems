@@ -84,7 +84,7 @@ class ServicesController extends ApiController
     /**
      * Return service as list
      *
-     * @return mixed
+     * @return array
      */
     public function asList()
     {

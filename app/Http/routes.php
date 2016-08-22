@@ -16,8 +16,8 @@ Route::group(
     Route::group(['middleware' => ['resource', 'format.json', 'APIJWT.auth']], function () {
         Route::resource('users', 'UsersController');
         Route::resource('roles', 'RolesController');
-        Route::get('ministry/list', 'MinistryController@asList');
-        Route::resource('ministry', 'MinistryController');
+        Route::get('ministries/list', 'MinistriesController@asList');
+        Route::resource('ministries', 'MinistriesController');
         Route::resource('denominations', 'DenominationsController', ['only' => ['index', 'store', 'show', 'update']]);
         Route::get('services/list', 'ServicesController@asList');
         Route::resource('services', 'ServicesController', ['only' => ['index', 'store', 'show', 'update']]);

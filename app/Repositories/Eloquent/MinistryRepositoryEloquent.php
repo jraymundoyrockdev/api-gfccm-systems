@@ -1,9 +1,10 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
-use ApiGfccm\Repositories\Interfaces\MinistryRepositoryInterface;
 use ApiGfccm\Models\Ministry;
+use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
+use ApiGfccm\Repositories\Interfaces\MinistryRepositoryInterface;
 
-class MinistryRepositoryEloquent implements MinistryRepositoryInterface
+class MinistryRepositoryEloquent implements AbstractApiInterface, MinistryRepositoryInterface
 {
     /**
      * @var Ministry
@@ -20,7 +21,7 @@ class MinistryRepositoryEloquent implements MinistryRepositoryInterface
      *
      * @return Ministry|null
      */
-    public function getAllMinistry()
+    public function all()
     {
         return $this->ministry->all();
     }
@@ -30,16 +31,16 @@ class MinistryRepositoryEloquent implements MinistryRepositoryInterface
      *
      * @return Ministry|null
      */
-    public function getById($id)
+    public function findById($id)
     {
         return $this->ministry->find($id);
     }
 
     /**
-     * @param $payload
-     * @return static
+     * @param array $payload
+     * @return Ministry
      */
-    public function createNewMinistry($payload)
+    public function create($payload = [])
     {
         return $this->ministry->create($payload);
     }
@@ -49,17 +50,27 @@ class MinistryRepositoryEloquent implements MinistryRepositoryInterface
      * @param $payload
      * @return Ministry|null
      */
-    public function updateMinistry($id, $payload)
+    public function update($id, $payload = [])
     {
-        $ministry = $this->getById($id);
+        $ministry = $this->ministry->find($id);
+
+        if (!$ministry) {
+            return null;
+        }
+
         $ministry->fill($payload)->save();
 
         return $ministry;
     }
 
-    public function getAllMinistryAsList($value, $key)
+    /**
+     * @param $value
+     * @param $key
+     * @return array
+     */
+    public function getAllAsList($value, $key)
     {
-        return $this->getAllMinistry()->lists($value, $key);
+        return $this->ministry->all()->lists($value, $key);
     }
 
 }
