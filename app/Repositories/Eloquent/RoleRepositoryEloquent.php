@@ -33,12 +33,6 @@ class RoleRepositoryEloquent implements RoleRepositoryInterface
      */
     public function findById($id)
     {
-        $role = $this->role->where('id', $id)->first();
-
-        if (!$role) {
-            return null;
-        }
-
-        return $role;
+        return $this->role->find($id);
     }
 }

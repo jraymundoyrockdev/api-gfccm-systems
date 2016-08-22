@@ -1,15 +1,20 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
-use ApiGfccm\Repositories\Interfaces\ServiceRepositoryInterface;
 use ApiGfccm\Models\Service;
+use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
+use ApiGfccm\Repositories\Interfaces\ServiceRepositoryInterface;
 
-class ServiceRepositoryEloquent implements ServiceRepositoryInterface
+class ServiceRepositoryEloquent implements AbstractApiInterface, ServiceRepositoryInterface
 {
     /**
      * @var Service
      */
     protected $service;
 
+    /**
+     * ServiceRepositoryEloquent constructor.
+     * @param Service $service
+     */
     public function __construct(Service $service)
     {
         $this->service = $service;
@@ -20,7 +25,7 @@ class ServiceRepositoryEloquent implements ServiceRepositoryInterface
      *
      * @return Service|null
      */
-    public function getAllServices()
+    public function all()
     {
         return $this->service->all();
     }
@@ -30,7 +35,7 @@ class ServiceRepositoryEloquent implements ServiceRepositoryInterface
      *
      * @return Service|null
      */
-    public function getById($id)
+    public function findById($id)
     {
         return $this->service->find($id);
     }
@@ -39,9 +44,9 @@ class ServiceRepositoryEloquent implements ServiceRepositoryInterface
      * Create new Service
      *
      * @param array $payload
-     * @return static
+     * @return Service
      */
-    public function createNewService($payload)
+    public function create($payload = [])
     {
         return $this->service->create($payload);
     }
@@ -51,9 +56,14 @@ class ServiceRepositoryEloquent implements ServiceRepositoryInterface
      * @param array $payload
      * @return Service|null
      */
-    public function updateService($id, $payload)
+    public function update($id, $payload = [])
     {
-        $service = $this->getById($id);
+        $service = $this->service->find($id);
+
+        if (!$service) {
+            return null;
+        }
+
         $service->fill($payload)->save();
 
         return $service;
@@ -64,11 +74,11 @@ class ServiceRepositoryEloquent implements ServiceRepositoryInterface
      *
      * @param string $value
      * @param string $key
-     * @return mixed
+     * @return Service|null
      */
-    public function getAllServicesAsList($value, $key)
+    public function getAllAsList($value, $key)
     {
-        return $this->getAllServices()->lists($value, $key);
+        return $this->service->all()->lists($value, $key);
     }
 
 }

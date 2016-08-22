@@ -6,8 +6,8 @@
 
 $factory->define(\ApiGfccm\Models\FundItem::class, function (\Faker\Generator $faker) {
     return [
-        'id' => $faker->numberBetween(1, 10000),
-        'fund_id' => $faker->numberBetween(1, 10000),
+        'id' => $faker->numberBetween(1, 100000),
+        'fund_id' => $faker->numberBetween(1, 100000),
         'name' => $faker->word,
         'status' => $faker->randomElement(['active', 'inactive'])
     ];

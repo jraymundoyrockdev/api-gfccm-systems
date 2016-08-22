@@ -36,13 +36,7 @@ class FundRepositoryEloquent implements AbstractApiInterface, FundRepositoryInte
      */
     public function findById($id)
     {
-        $fund = $this->fund->with('item')->find($id);
-
-        if (!$fund) {
-            return null;
-        }
-
-        return $fund;
+        return $this->fund->with('item')->find($id);
     }
 
     /**

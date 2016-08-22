@@ -2,11 +2,11 @@
 
 namespace ApiGfccm\Http\Controllers\Api;
 
-use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Requests\ServiceRequest;
 use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Repositories\Interfaces\ServiceRepositoryInterface;
+use Illuminate\Http\Response;
 
 class ServicesController extends ApiController
 {
@@ -26,35 +26,39 @@ class ServicesController extends ApiController
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return CollectionResponse
      */
     public function index()
     {
-        return (new CollectionResponse($this->service->getAllServices()))->asType('Service');
+        return (new CollectionResponse($this->service->all()))->asType('Service');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  ServiceRequest $request
-     * @return Response
+     * @return ItemResponse
      */
     public function store(ServiceRequest $request)
     {
-        $input = array_filter($request->request->all());
-
-        return (new ItemResponse($this->service->createNewService($input)))->asType('Service');
+        return (new ItemResponse($this->service->create($request->all())))->asType('Service');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int $id
-     * @return Response
+     * @return ItemResponse|Response
      */
     public function show($id)
     {
-        return new ItemResponse($this->service->getById($id));
+        $service = $this->service->findById($id);
+
+        if (!$service) {
+            return (new Response())->setStatusCode(404);
+        }
+
+        return new ItemResponse($service);
     }
 
     /**
@@ -62,13 +66,19 @@ class ServicesController extends ApiController
      *
      * @param  ServiceRequest $request
      * @param  int $id
-     * @return Response
+     * @return ItemResponse|Response
      */
     public function update(ServiceRequest $request, $id)
     {
         $input = array_filter($request->request->all());
 
-        return (new ItemResponse($this->service->updateService($id, $input)))->asType('Service');
+        $service = $this->service->update($id, $input);
+
+        if (!$service) {
+            return (new Response())->setStatusCode(404);
+        }
+
+        return (new ItemResponse($service))->asType('Service');
     }
 
     /**
@@ -78,7 +88,7 @@ class ServicesController extends ApiController
      */
     public function asList()
     {
-        return $this->service->getAllServicesAsList('name', 'id');
+        return $this->service->getAllAsList('name', 'id');
     }
 
 }

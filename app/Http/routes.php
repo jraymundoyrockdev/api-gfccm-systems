@@ -20,7 +20,7 @@ Route::group(
         Route::resource('ministry', 'MinistryController');
         Route::resource('denominations', 'DenominationsController', ['only' => ['index', 'store', 'show', 'update']]);
         Route::get('services/list', 'ServicesController@asList');
-        Route::resource('services', 'ServicesController');
+        Route::resource('services', 'ServicesController', ['only' => ['index', 'store', 'show', 'update']]);
         Route::resource('members', 'MembersController');
         Route::resource('funds', 'FundsController');
         Route::get('funds/{fundId}/items', 'FundsController@showItems');

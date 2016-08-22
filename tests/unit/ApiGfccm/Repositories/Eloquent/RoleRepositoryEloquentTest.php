@@ -51,7 +51,7 @@ class RoleRepositoryEloquentTest extends TestCase
     }
 
     /** @test */
-    public function it_returns_null_when_role_does_not_exists()
+    public function it_returns_null_when_role_does_not_exist()
     {
         $result = $this->repository->findById('unknownId');
 
