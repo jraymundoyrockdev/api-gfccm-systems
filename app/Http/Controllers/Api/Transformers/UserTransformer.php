@@ -16,18 +16,19 @@ class UserTransformer extends TransformerAbstract
         $role = new RoleTransformer();
         $roles = [];
 
-        foreach ($user->roles as $urole) {
+        foreach ($user->role as $urole) {
             if (!is_null($urole->pivot)) {
                 $roles[] = $role->transform($urole);
             }
         }
 
         return [
-            'id' => $user->id,
+            'id' => (int) $user->id,
             'username' => $user->username,
             'status' => $user->status,
+            'avatar' => $user->avatar,
             'member' => $member->transform($user->member),
-            'user_role' => $roles
+            'role' => $roles
         ];
     }
 }

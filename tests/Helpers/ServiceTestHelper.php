@@ -6,7 +6,7 @@ use Faker\Factory as Faker;
 trait ServiceTestHelper
 {
     /**
-     * Invalid Denomination Create Input
+     * Invalid Service Create Input
      *
      * @return array
      */

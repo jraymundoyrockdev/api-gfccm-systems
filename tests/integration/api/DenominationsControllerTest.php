@@ -76,7 +76,7 @@ class DenominationsControllerTest extends ApiTestCase
     }
 
     /** @test */
-    public function it_returns_empty_when_no_denomination_is_empty()
+    public function it_returns_an_empty_collection_when_denomination_does_not_exist()
     {
         $this->get('api/denominations');
 

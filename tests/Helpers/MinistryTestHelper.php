@@ -6,7 +6,7 @@ use Faker\Factory as Faker;
 trait MinistryTestHelper
 {
     /**
-     * Invalid Denomination Create Input
+     * Invalid Ministry Create Input
      *
      * @return array
      */

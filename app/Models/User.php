@@ -28,7 +28,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         'member_id',
         'username',
         'password',
-        'status'
+        'status',
+        'avatar'
     ];
 
     /**
@@ -49,7 +50,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     /**
      * The roles that belong to the user.
      */
-    public function roles()
+    public function role()
     {
         return $this->belongsToMany(Role::class, 'user_roles');
     }
