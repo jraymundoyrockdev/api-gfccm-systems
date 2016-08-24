@@ -22,11 +22,17 @@ class Member extends Model
 
     protected $appends = ['full_name', 'full_name_with_apellation'];
 
+    /**
+     * @return string
+     */
     public function getFullNameAttribute()
     {
         return ucwords($this->attributes['firstname']) . ' ' . ucwords($this->attributes['lastname']);
     }
 
+    /**
+     * @return string
+     */
     public function getFullNameWithApellationAttribute()
     {
         $apellation = (!empty($this->attributes['apellation']) ? $this->attributes['apellation'] : '');

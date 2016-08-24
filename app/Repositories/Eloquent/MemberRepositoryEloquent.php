@@ -1,10 +1,12 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
+use ApiGfccm\Models\Member;
+use ApiGfccm\Models\User;
+use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
 use ApiGfccm\Repositories\Interfaces\MemberRepositoryInterface;
 use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
-use ApiGfccm\Models\Member;
 
-class MemberRepositoryEloquent implements MemberRepositoryInterface
+class MemberRepositoryEloquent implements AbstractApiInterface, MemberRepositoryInterface
 {
     /**
      * @var Member
@@ -16,6 +18,11 @@ class MemberRepositoryEloquent implements MemberRepositoryInterface
      */
     protected $user;
 
+    /**
+     * MemberRepositoryEloquent constructor.
+     * @param Member $member
+     * @param UserRepositoryInterface $user
+     */
     public function __construct(Member $member, UserRepositoryInterface $user)
     {
         $this->member = $member;
@@ -23,42 +30,47 @@ class MemberRepositoryEloquent implements MemberRepositoryInterface
     }
 
     /**
-     * Returns all Services
-     *
-     * @return Service|null
+     * @return Member|null
      */
-    public function getAllMembers()
+    public function all()
     {
         return $this->member->all();
     }
 
     /**
-     * Get a certain service
-     *
-     * @return Service|null
+     * @param int $id
+     * @return Member|null
      */
-    public function getById($id)
+    public function findById($id)
     {
         return $this->member->find($id);
     }
 
     /**
-     * @param $payload
-     * @return static
+     * @param array $payload
+     * @return Member
      */
-    public function create($payload)
+    public function create($payload = [])
     {
-        return $test =  $this->member->create($payload);
+        return empty($payload) ? null : $this->member->create($payload);
     }
 
     /**
-     * @param $id
-     * @param $payload
-     * @return Service|null
+     * @param int $id
+     * @param array $payload
+     * @return Member|null
      */
-    public function updateMember($id, $payload)
+    public function update($id, $payload = [])
     {
+        $member = $this->member->find($id);
 
+        if(! $member){
+            return null;
+        }
+
+        $member->fill($payload)->save();
+
+        return $member;
     }
 
 }
