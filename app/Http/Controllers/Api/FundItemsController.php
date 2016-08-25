@@ -65,7 +65,7 @@ class FundItemsController extends Controller
             return (new Response())->setStatusCode(404);
         }
 
-        return (new ItemResponse($this->fundItem->update($id, $request->request->all())))->asType('FundItem');
+        return (new ItemResponse($this->fundItem->update($request->request->all(), $id)))->asType('FundItem');
     }
 
 }

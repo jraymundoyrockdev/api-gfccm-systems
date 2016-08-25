@@ -1,10 +1,10 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Models\Fund;
-use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
 use ApiGfccm\Repositories\Interfaces\FundRepositoryInterface;
+use ApiGfccm\Repositories\Interfaces\RepositoryInterface;
 
-class FundRepositoryEloquent implements AbstractApiInterface, FundRepositoryInterface
+class FundRepositoryEloquent implements RepositoryInterface, FundRepositoryInterface
 {
     /**
      * @var Fund
@@ -30,8 +30,7 @@ class FundRepositoryEloquent implements AbstractApiInterface, FundRepositoryInte
     }
 
     /**
-     * Get a certain fund
-     *
+     * @param int $id
      * @return Fund|null
      */
     public function findById($id)
@@ -40,20 +39,20 @@ class FundRepositoryEloquent implements AbstractApiInterface, FundRepositoryInte
     }
 
     /**
-     * @param $payload
-     * @return static
+     * @param array $payload
+     * @return Fund
      */
-    public function create($payload = [])
+    public function create(array $payload)
     {
         return $this->fund->create($payload);
     }
 
     /**
-     * @param $id
      * @param array $payload
-     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|null
+     * @param int $id
+     * @return Fund|null
      */
-    public function update($id, $payload = [])
+    public function update(array $payload, $id)
     {
         $fund = $this->fund->with('item')->find($id);
 

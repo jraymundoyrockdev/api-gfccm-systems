@@ -72,7 +72,7 @@ class MinistriesController extends ApiController
     {
         $input = array_filter($request->request->all());
 
-        $ministry = $this->ministry->update($id, $input);
+        $ministry = $this->ministry->update($input, $id);
 
         if (!$ministry) {
             return (new Response())->setStatusCode(404);

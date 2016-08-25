@@ -43,8 +43,7 @@ class FundItemRepositoryEloquentTest extends ApiTestCase
 
         $result = $repository->findById($fundItem->id);
 
-        $this->assertArrayHasOnlyKeys($result->toArray(),
-            ['id', 'fund_id', 'name', 'status', 'created_at', 'updated_at']);
+        $this->assertArrayHasOnlyKeys($result->toArray(), ['id', 'fund_id', 'name', 'status', 'created_at', 'updated_at']);
         $this->attributeValuesEqualsToExpected(['id', 'fund_id', 'name', 'status'], $fundItem, $result);
         $this->assertInstanceOf(FundItem::class, $result);
     }
@@ -114,7 +113,7 @@ class FundItemRepositoryEloquentTest extends ApiTestCase
             'status' => $faker->randomElement(['active', 'inactive'])
         ];
 
-        $result = $repository->update($fundItem->id, $updatedInput);
+        $result = $repository->update($updatedInput, $fundItem->id);
 
         $this->seeInDatabase('fund_items', [
             'fund_id' => $updatedInput['fund_id'],
@@ -130,7 +129,7 @@ class FundItemRepositoryEloquentTest extends ApiTestCase
     public function it_returns_empty_on_update_when_fund_item_does_not_exists()
     {
         $repository = $this->app->make(FundItemRepositoryEloquent::class);
-        $result = $repository->update(0, []);
+        $result = $repository->update([], self::UNKNOWN_ID);
 
         $this->assertEquals(null, $result);
     }

@@ -1,6 +1,10 @@
 <?php namespace ApiGfccm\Repositories\Interfaces;
 
-interface AbstractApiInterface
+/**
+ * Interface RepositoryInterface
+ * @package ApiGfccm\Repositories\Interfaces
+ */
+interface RepositoryInterface
 {
     /**
      * Returns all
@@ -23,15 +27,15 @@ interface AbstractApiInterface
      * @param array $payload
      * @return mixed
      */
-    public function create($payload = []);
+    public function create(array $payload);
 
     /**
-     * Update certain data
+     * Update data
      *
-     * @param int $id
      * @param array $payload
+     * @param int $id
      * @return mixed
      */
-    public function update($id, $payload = []);
+    public function update(array $payload, $id);
 
 }

@@ -66,7 +66,7 @@ class DenominationsController extends ApiController
      */
     public function update(DenominationRequest $request, $id)
     {
-        $denomination = $this->denomination->update($id, $request->request->all());
+        $denomination = $this->denomination->update($request->request->all(), $id);
 
         if (!$denomination) {
             return (new Response())->setStatusCode(404);

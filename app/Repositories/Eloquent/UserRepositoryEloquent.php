@@ -1,10 +1,10 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Models\User;
-use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
+use ApiGfccm\Repositories\Interfaces\RepositoryInterface;
 use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
 
-class UserRepositoryEloquent implements AbstractApiInterface, UserRepositoryInterface
+class UserRepositoryEloquent implements RepositoryInterface, UserRepositoryInterface
 {
     /**
      * @var User
@@ -52,17 +52,17 @@ class UserRepositoryEloquent implements AbstractApiInterface, UserRepositoryInte
      * @param array $payload
      * @return User
      */
-    public function create($payload = [])
+    public function create(array $payload)
     {
         return $this->user->create($payload);
     }
 
     /**
-     * @param int $id
      * @param array $payload
+     * @param int $id
      * @return User|null
      */
-    public function update($id, $payload = [])
+    public function update(array $payload, $id)
     {
         $user = $this->user->find($id);
 

@@ -5,9 +5,8 @@
  */
 class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
-    /**
-     *
-     */
+
+    const UNKNOWN_ID = 0;
     const UNEXPECTED_KEYS = 'The array should only contain the specified keys found %s unexpected keys';
 
     /**

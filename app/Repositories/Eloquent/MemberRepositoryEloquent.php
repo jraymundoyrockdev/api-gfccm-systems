@@ -2,11 +2,11 @@
 
 use ApiGfccm\Models\Member;
 use ApiGfccm\Models\User;
-use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
 use ApiGfccm\Repositories\Interfaces\MemberRepositoryInterface;
+use ApiGfccm\Repositories\Interfaces\RepositoryInterface;
 use ApiGfccm\Repositories\Interfaces\UserRepositoryInterface;
 
-class MemberRepositoryEloquent implements AbstractApiInterface, MemberRepositoryInterface
+class MemberRepositoryEloquent implements RepositoryInterface, MemberRepositoryInterface
 {
     /**
      * @var Member
@@ -50,17 +50,17 @@ class MemberRepositoryEloquent implements AbstractApiInterface, MemberRepository
      * @param array $payload
      * @return Member
      */
-    public function create($payload = [])
+    public function create(array $payload)
     {
-        return empty($payload) ? null : $this->member->create($payload);
+        return $this->member->create($payload);
     }
 
     /**
-     * @param int $id
      * @param array $payload
+     * @param int $id
      * @return Member|null
      */
-    public function update($id, $payload = [])
+    public function update(array $payload, $id)
     {
         $member = $this->member->find($id);
 

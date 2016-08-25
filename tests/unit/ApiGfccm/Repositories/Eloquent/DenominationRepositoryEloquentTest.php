@@ -19,7 +19,7 @@ class DenominationRepositoryEloquentTest extends TestCase
         foreach ($denominations as $denomination) {
             $newDenominations[$denomination->amount] = $denomination;
         }
-        
+
         krsort($newDenominations);
 
         $repository = $this->app->make(DenominationRepositoryEloquent::class);
@@ -77,19 +77,16 @@ class DenominationRepositoryEloquentTest extends TestCase
         $faker = (new Faker)->create();
         $denomination = $this->createDenomination();
 
+        $inputForUpdate = ['amount' => $faker->numberBetween(1, 1000), 'description' => $faker->sentence];
+
         $repository = $this->app->make(DenominationRepositoryEloquent::class);
 
-        $denomination = $repository->update($denomination->id, [
-            'amount' => $faker->numberBetween(1, 1000),
-            'description' => $faker->sentence
-        ]);
+        $result = $repository->update($inputForUpdate, $denomination->id);
 
-        $this->seeInDatabase('denominations', [
-            'amount' => $denomination->amount,
-            'description' => $denomination->description
-        ]);
+        $this->seeInDatabase('denominations', ['amount' => $result->amount, 'description' => $result->description]);
 
-        $this->assertInstanceOf(Denomination::class, $denomination);
+        $this->attributeValuesEqualsToExpected(['amount', 'description'], $inputForUpdate, $result);
+        $this->assertInstanceOf(Denomination::class, $result);
     }
 
     /** @test */
@@ -99,10 +96,7 @@ class DenominationRepositoryEloquentTest extends TestCase
 
         $repository = $this->app->make(DenominationRepositoryEloquent::class);
 
-        $result = $repository->update(0, [
-            'amount' => $faker->numberBetween(1, 1000),
-            'description' => $faker->sentence
-        ]);
+        $result = $repository->update(['amount' => $faker->numberBetween(1, 1000), 'description' => $faker->sentence], self::UNKNOWN_ID);
 
         $this->assertEquals(null, $result);
     }
@@ -112,13 +106,11 @@ class DenominationRepositoryEloquentTest extends TestCase
     {
         $input = factory(Denomination::class)->make();
         $repository = $this->app->make(DenominationRepositoryEloquent::class);
-        $denomination = $repository->create($input->toArray());
+        $result = $repository->create($input->toArray());
 
-        $this->seeInDatabase('denominations', [
-            'amount' => $denomination->amount,
-            'description' => $denomination->description
-        ]);
+        $this->seeInDatabase('denominations', ['amount' => $result->amount, 'description' => $result->description]);
 
-        $this->assertInstanceOf(Denomination::class, $denomination);
+        $this->attributeValuesEqualsToExpected(['amount', 'description'], $input, $result);
+        $this->assertInstanceOf(Denomination::class, $result);
     }
 }

@@ -1,10 +1,10 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Models\Ministry;
-use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
 use ApiGfccm\Repositories\Interfaces\MinistryRepositoryInterface;
+use ApiGfccm\Repositories\Interfaces\RepositoryInterface;
 
-class MinistryRepositoryEloquent implements AbstractApiInterface, MinistryRepositoryInterface
+class MinistryRepositoryEloquent implements RepositoryInterface, MinistryRepositoryInterface
 {
     /**
      * @var Ministry
@@ -40,17 +40,17 @@ class MinistryRepositoryEloquent implements AbstractApiInterface, MinistryReposi
      * @param array $payload
      * @return Ministry
      */
-    public function create($payload = [])
+    public function create(array $payload)
     {
         return $this->ministry->create($payload);
     }
 
     /**
-     * @param $id
-     * @param $payload
+     * @param array $payload
+     * @param int $id
      * @return Ministry|null
      */
-    public function update($id, $payload = [])
+    public function update(array $payload, $id)
     {
         $ministry = $this->ministry->find($id);
 

@@ -20,7 +20,7 @@ class RoleRepositoryEloquent implements RoleRepositoryInterface
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return Role|null
      */
     public function all()
     {
@@ -28,8 +28,8 @@ class RoleRepositoryEloquent implements RoleRepositoryInterface
     }
 
     /**
-     * @param $id
-     * @return null
+     * @param int $id
+     * @return Role|null
      */
     public function findById($id)
     {

@@ -106,6 +106,12 @@ class UserRepositoryEloquentTest extends TestCase
 
         $this->assertInstanceOf(User::class, $result);
         $this->attributeValuesEqualsToExpected(['member_id', 'username', 'status', 'avatar'], $input, $result);
+        $this->seeInDatabase('users', [
+            'member_id' => $input['member_id'],
+            'username' => $input['username'],
+            'status' => $input['status'],
+            'avatar' => $input['avatar']
+        ]);
     }
 
     /** @test */
@@ -116,11 +122,16 @@ class UserRepositoryEloquentTest extends TestCase
 
         $editedInput = ['username' => 'someUsername', 'status' => 'inactive', 'avatar' => 'test.png'];
 
-        $result = $this->repository->update($user->id, $editedInput);
+        $result = $this->repository->update($editedInput, $user->id);
 
         $this->assertInstanceOf(User::class, $result);
         $this->attributeValuesEqualsToExpected(['username', 'status', 'avatar'], $editedInput, $result);
         $this->assertEquals($result->id, $user->id);
+        $this->seeInDatabase('users', [
+            'username' => $editedInput['username'],
+            'status' => $editedInput['status'],
+            'avatar' => $editedInput['avatar']
+        ]);
 
     }
 
@@ -132,7 +143,7 @@ class UserRepositoryEloquentTest extends TestCase
 
         $editedInput = ['member_id' => 'someMemberId'];
 
-        $result = $this->repository->update($user->id, $editedInput);
+        $result = $this->repository->update($editedInput, $user->id);
 
         $this->assertNull($result);
     }
@@ -140,7 +151,7 @@ class UserRepositoryEloquentTest extends TestCase
     /** @test */
     public function it_returns_null_on_update_when_user_does_not_exist()
     {
-        $result = $this->repository->update('unknownId', []);
+        $result = $this->repository->update([], self::UNKNOWN_ID);
 
         $this->assertNull($result);
     }

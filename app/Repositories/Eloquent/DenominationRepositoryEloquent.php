@@ -1,10 +1,10 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Models\Denomination;
-use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
+use ApiGfccm\Repositories\Interfaces\RepositoryInterface;
 use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
 
-class DenominationRepositoryEloquent implements AbstractApiInterface, DenominationRepositoryInterface
+class DenominationRepositoryEloquent implements RepositoryInterface, DenominationRepositoryInterface
 {
     /**
      * @var Denomination
@@ -21,7 +21,7 @@ class DenominationRepositoryEloquent implements AbstractApiInterface, Denominati
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return Denomination|null
      */
     public function all()
     {
@@ -30,7 +30,7 @@ class DenominationRepositoryEloquent implements AbstractApiInterface, Denominati
 
     /**
      * @param int $id
-     * @return mixed
+     * @return Denomination|null
      */
     public function findById($id)
     {
@@ -39,19 +39,19 @@ class DenominationRepositoryEloquent implements AbstractApiInterface, Denominati
 
     /**
      * @param array $payload
-     * @return static
+     * @return Denomination|null
      */
-    public function create($payload = [])
+    public function create(array $payload)
     {
         return $this->denomination->create($payload);
     }
 
     /**
-     * @param int $id
      * @param array $payload
+     * @param int $id
      * @return Denomination|null
      */
-    public function update($id, $payload = [])
+    public function update(array $payload, $id)
     {
         $denomination = $this->denomination->find($id);
 

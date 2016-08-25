@@ -1,11 +1,10 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
-use ApiGfccm\Models\Fund;
 use ApiGfccm\Models\FundItem;
-use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
 use ApiGfccm\Repositories\Interfaces\FundItemRepositoryInterface;
+use ApiGfccm\Repositories\Interfaces\RepositoryInterface;
 
-class FundItemRepositoryEloquent implements AbstractApiInterface, FundItemRepositoryInterface
+class FundItemRepositoryEloquent implements RepositoryInterface, FundItemRepositoryInterface
 {
     /**
      * @var FundItem
@@ -21,7 +20,7 @@ class FundItemRepositoryEloquent implements AbstractApiInterface, FundItemReposi
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     * @return FundItem|null
      */
     public function all()
     {
@@ -32,7 +31,7 @@ class FundItemRepositoryEloquent implements AbstractApiInterface, FundItemReposi
      * Get a certain fund
      *
      * @param int $id
-     * @return mixed
+     * @return FundItem|null
      */
     public function findById($id)
     {
@@ -47,7 +46,7 @@ class FundItemRepositoryEloquent implements AbstractApiInterface, FundItemReposi
 
     /**
      * @param $fundId
-     * @return mixed
+     * @return FundItem|null
      */
     public function findByFundId($fundId)
     {
@@ -56,19 +55,19 @@ class FundItemRepositoryEloquent implements AbstractApiInterface, FundItemReposi
 
     /**
      * @param array $payload
-     * @return static
+     * @return FundItem
      */
-    public function create($payload = [])
+    public function create(array $payload)
     {
         return $this->fundItem->create($payload);
     }
 
     /**
-     * @param int $id
      * @param array $payload
+     * @param int $id
      * @return FundItem|null
      */
-    public function update($id, $payload = [])
+    public function update(array $payload, $id)
     {
         $fundItem = $this->fundItem->find($id);
 
@@ -83,7 +82,7 @@ class FundItemRepositoryEloquent implements AbstractApiInterface, FundItemReposi
 
     /**
      * Get all Active Fund Items
-     * @return mixed
+     * @return array
      */
     public function getActive()
     {

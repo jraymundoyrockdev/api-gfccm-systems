@@ -75,6 +75,7 @@ class FundRepositoryEloquentTest extends ApiTestCase
             'status' => $input['status']
         ]);
 
+        $this->attributeValuesEqualsToExpected(['name', 'description', 'category', 'status'], $input, $result);
         $this->assertInstanceOf(Fund::class, $result);
     }
 
@@ -94,8 +95,14 @@ class FundRepositoryEloquentTest extends ApiTestCase
             'status' => 'inactive'
         ];
 
-        $result = $repository->update($fund->id, $updateInput);
+        $result = $repository->update($updateInput, $fund->id);
 
+        $this->seeInDatabase('funds', [
+            'name' => $updateInput['name'],
+            'description' => $updateInput['description'],
+            'category' => $updateInput['category'],
+            'status' => $updateInput['status']
+        ]);
         $this->assertEquals($fund->id, $result->id);
         $this->attributeValuesEqualsToExpected(['name', 'description', 'category', 'status'], $updateInput, $result);
         $this->assertInstanceOf(Fund::class, $result);
@@ -106,7 +113,7 @@ class FundRepositoryEloquentTest extends ApiTestCase
     {
         $repository = $this->app->make(FundRepositoryEloquent::class);
 
-        $result = $repository->update(0, []);
+        $result = $repository->update([], self::UNKNOWN_ID);
 
         $this->assertNull($result);
     }

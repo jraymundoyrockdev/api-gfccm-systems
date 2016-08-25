@@ -76,17 +76,21 @@ class MemberRepositoryEloquentTest extends TestCase
             'email'
         ], $input, $result);
 
+        $this->seeInDatabase('members', [
+            'apellation' => $input->apellation,
+            'firstname' => $input->firstname,
+            'lastname' => $input->lastname,
+            'middlename' => $input->middlename,
+            'gender' => $input->gender,
+            'birthdate' => $input->birthdate,
+            'address' => $input->address,
+            'phone_mobile' => $input->phone_mobile,
+            'email' => $input->email
+        ]);
+
         $this->assertEquals($input->firstname . ' ' . $input->lastname, $result->full_name);
         $this->assertEquals($input->firstname . ' ' . $input->lastname . ' (' . ucwords($input->apellation) . ')', $result->full_name_with_apellation);
         $this->assertInstanceOf(Member::class, $result);
-    }
-
-    /** @test */
-    public function it_returns_empty_on_create_when_payload_is_invalied()
-    {
-        $result = $this->repository->create([]);
-
-        $this->assertNull($result);
     }
 
     /** @test */
@@ -96,19 +100,20 @@ class MemberRepositoryEloquentTest extends TestCase
 
         $updateInput = ['apellation' => 'testApellation', 'firstname' => 'NewFirstname', 'lastname' => 'NewLastName'];
 
-        $result = $this->repository->update($member->id, $updateInput);
+        $result = $this->repository->update($updateInput, $member->id);
 
         $this->assertInstanceOf(Member::class, $result);
         $this->attributeValuesEqualsToExpected(['apellation', 'firstname', 'lastname'], $updateInput, $result);
         $this->assertEquals($member->id, $result->id);
         $this->assertEquals($updateInput['firstname'] . ' ' . $updateInput['lastname'], $result['full_name']);
         $this->assertEquals($updateInput['firstname'] . ' ' . $updateInput['lastname'] . ' (' . ucwords($updateInput['apellation']) . ')', $result->full_name_with_apellation);
+        $this->seeInDatabase('members', ['apellation' => $updateInput['apellation'], 'firstname' => $updateInput['firstname'], 'lastname' => $updateInput['lastname']]);
     }
 
     /** @test */
     public function it_returns_null_on_update_when_member_does_not_exist()
     {
-        $result = $this->repository->update('uknownId',[]);
+        $result = $this->repository->update([], self::UNKNOWN_ID);
 
         $this->assertNull($result);
     }

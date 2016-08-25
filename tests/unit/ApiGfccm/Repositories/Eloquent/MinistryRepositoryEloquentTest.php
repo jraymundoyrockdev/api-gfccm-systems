@@ -66,6 +66,7 @@ class MinistryRepositoryEloquentTest extends TestCase
 
         $this->assertInstanceOf(Ministry::class, $result);
         $this->attributeValuesEqualsToExpected(['name', 'description'], $input, $result);
+        $this->seeInDatabase('ministries', ['name' => $input->name, 'description' => $input->description]);
 
     }
 
@@ -76,18 +77,18 @@ class MinistryRepositoryEloquentTest extends TestCase
 
         $editedInput = factory(Ministry::class)->make();
 
-        $result = $this->repository->update($ministry->id, $editedInput->toArray());
+        $result = $this->repository->update($editedInput->toArray(), $ministry->id);
 
         $this->assertInstanceOf(Ministry::class, $result);
         $this->attributeValuesEqualsToExpected(['name', 'description'], $editedInput, $result);
         $this->assertEquals($result->id, $ministry->id);
-
+        $this->seeInDatabase('ministries', ['name' => $editedInput->name, 'description' => $editedInput->description]);
     }
 
     /** @test */
     public function it_returns_null_on_update_when_ministry_does_not_exist()
     {
-        $result = $this->repository->update('unknownId', []);
+        $result = $this->repository->update([], self::UNKNOWN_ID);
 
         $this->assertNull($result);
     }

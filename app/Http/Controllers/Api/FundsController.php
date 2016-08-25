@@ -88,7 +88,7 @@ class FundsController extends Controller
             return (new Response())->setStatusCode(404);
         }
 
-        return (new ItemResponse($this->fund->update($id, $request->request->all())));
+        return (new ItemResponse($this->fund->update($request->request->all(), $id)));
     }
 
     /**

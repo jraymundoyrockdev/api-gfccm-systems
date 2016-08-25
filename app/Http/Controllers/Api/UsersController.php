@@ -55,7 +55,7 @@ class UsersController extends ApiController
     {
         $input = array_filter($request->request->all());
 
-        $user = $this->user->update($id, $input);
+        $user = $this->user->update($input, $id);
 
         if (!$user) {
             return (new Response())->setStatusCode(404);

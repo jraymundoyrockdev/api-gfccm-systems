@@ -66,7 +66,12 @@ class ServiceRepositoryEloquentTest extends TestCase
 
         $this->assertInstanceOf(Service::class, $result);
         $this->attributeValuesEqualsToExpected(['name', 'start_time', 'end_time', 'description'], $input, $result);
-
+        $this->seeInDatabase('services', [
+            'name' => $input->name,
+            'start_time' => $input->start_time,
+            'end_time' => $input->end_time,
+            'description' => $input->description
+        ]);
     }
 
     /** @test */
@@ -76,18 +81,23 @@ class ServiceRepositoryEloquentTest extends TestCase
 
         $editedInput = factory(Service::class)->make();
 
-        $result = $this->repository->update($service->id, $editedInput->toArray());
+        $result = $this->repository->update($editedInput->toArray(), $service->id);
 
         $this->assertInstanceOf(Service::class, $result);
         $this->attributeValuesEqualsToExpected(['name', 'start_time', 'end_time', 'description'], $editedInput, $result);
         $this->assertEquals($result->id, $service->id);
-
+        $this->seeInDatabase('services', [
+            'name' => $editedInput->name,
+            'start_time' => $editedInput->start_time,
+            'end_time' => $editedInput->end_time,
+            'description' => $editedInput->description
+        ]);
     }
 
     /** @test */
     public function it_returns_null_on_update_when_service_does_not_exist()
     {
-        $result = $this->repository->update('unknownId', []);
+        $result = $this->repository->update([], self::UNKNOWN_ID);
 
         $this->assertNull($result);
     }

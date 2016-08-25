@@ -10,6 +10,7 @@ use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Repositories\Interfaces\MemberRepositoryInterface;
 use Illuminate\Http\Request;
+use League\Fractal\Resource\Collection;
 
 class MembersController extends Controller
 {
@@ -29,7 +30,7 @@ class MembersController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return CollectionResponse
      */
     public function index()
     {

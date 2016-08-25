@@ -1,10 +1,10 @@
 <?php namespace ApiGfccm\Repositories\Eloquent;
 
 use ApiGfccm\Models\Service;
-use ApiGfccm\Repositories\Interfaces\AbstractApiInterface;
+use ApiGfccm\Repositories\Interfaces\RepositoryInterface;
 use ApiGfccm\Repositories\Interfaces\ServiceRepositoryInterface;
 
-class ServiceRepositoryEloquent implements AbstractApiInterface, ServiceRepositoryInterface
+class ServiceRepositoryEloquent implements RepositoryInterface, ServiceRepositoryInterface
 {
     /**
      * @var Service
@@ -46,17 +46,17 @@ class ServiceRepositoryEloquent implements AbstractApiInterface, ServiceReposito
      * @param array $payload
      * @return Service
      */
-    public function create($payload = [])
+    public function create(array $payload)
     {
         return $this->service->create($payload);
     }
 
     /**
-     * @param int $id
      * @param array $payload
+     * @param int $id
      * @return Service|null
      */
-    public function update($id, $payload = [])
+    public function update(array $payload, $id)
     {
         $service = $this->service->find($id);
 
@@ -74,7 +74,7 @@ class ServiceRepositoryEloquent implements AbstractApiInterface, ServiceReposito
      *
      * @param string $value
      * @param string $key
-     * @return Service|null
+     * @return array
      */
     public function getAllAsList($value, $key)
     {

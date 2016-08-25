@@ -72,7 +72,7 @@ class ServicesController extends ApiController
     {
         $input = array_filter($request->request->all());
 
-        $service = $this->service->update($id, $input);
+        $service = $this->service->update($input, $id);
 
         if (!$service) {
             return (new Response())->setStatusCode(404);
