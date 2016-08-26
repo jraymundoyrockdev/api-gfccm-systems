@@ -5,10 +5,11 @@ use ApiGfccm\Models\IncomeServiceDenomination;
 use ApiGfccm\Models\IncomeServiceFundItemStructure;
 use ApiGfccm\Models\IncomeServiceFundStructure;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceRepositoryInterface;
+use ApiGfccm\Repositories\Interfaces\RepositoryInterface;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\DB;
 
-class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterface
+class IncomeServiceRepositoryEloquent implements RepositoryInterface, IncomeServiceRepositoryInterface
 {
     /**
      * @var IncomeService
@@ -58,112 +59,91 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
     }
 
     /**
-     * Extra validation layer
-     *
-     * @param array $with
-     * @return mixed
-     */
-    protected function make(array $with = [])
-    {
-        $income = $this->incomeService->with($with);
-        return $income->whereIn('role_access', $this->grantedRoles());
-    }
-
-    /**
      * Returns all Income Services
      *
      * @return IncomeService
      */
     public function all()
     {
-        return $this->make()->get();
+        return $this->incomeService->all();
     }
 
     /**
      * Returns an Income Service
      *
      * @param int $id
-     * @return IncomeService
+     * @return IncomeService|null
      */
-    public function show($id)
+    public function findById($id)
     {
-        return $this->make()->where('id', $id)->first();
+        return $this->incomeService->find($id);
     }
 
     /**
-     * Create|Update Income Service
-     *
      * @param array $payload
-     * @param int|null $id
      * @return IncomeService
      */
-    public function save($payload, $id = null)
+    public function create(array $payload)
     {
-        if ($id) {
-            $incomeService = $this->show($id);
-            $incomeService->fill($payload)->save();
-            return $incomeService;
-        }
         return $this->incomeService->create($payload);
     }
 
     /**
-     * Create a bulk of Structural Fund
-     *
      * @param array $payload
-     * @return mixed
-     */
-    public function createFundStructure(array $payload)
-    {
-        return $this->fundStructure->insert($payload);
-    }
-
-    /**
-     * Create a bulk of Structural Fund Item
-     * @param array $payload
-     * @return mixed
-     */
-    public function createFundItemStructure(array $payload)
-    {
-        return $this->fundItemStructure->insert($payload);
-    }
-
-    /**
-     * Create a bulk of Denomination Structural Fund
-     *
-     * @param array $payload
-     * @return mixed
-     */
-    public function createDenominationStructure(array $payload)
-    {
-        return $this->denominationStructure->insert($payload);
-    }
-
-    /**
-     * Updates funds amount
-     *
      * @param int $id
-     * @param array $payload
-     * @param string $method
-     * @return mixed
+     * @return IncomeService|null
      */
-    public function updateFunds($id, $payload, $method = 'addition')
+    public function update(array $payload, $id)
     {
         $incomeService = $this->incomeService->find($id);
 
-        if ($method == 'addition') {
-            foreach ($payload as $field => $value) {
-                $incomeService->$field += $value;
-            }
+        if (!$incomeService) {
+            return null;
         }
 
-        if ($method == 'subtraction') {
-            foreach ($payload as $field => $value) {
-                $incomeService->$field -= $value;
-            }
+        $incomeService->fill($payload)->save();
+
+        return $incomeService;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function updateFunds($payload, $incomeServiceId)
+    {
+        $incomeService = $this->incomeService->find($incomeServiceId);
+
+        if (!$incomeService) {
+            return null;
         }
 
-        return $incomeService->save();
+        collect($payload)->each(function ($value, $field) use ($incomeService) {
+            $incomeService->{$field} += $value;
+        });
+
+        $incomeService->save();
+
+        return $incomeService;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function deleteFunds($payload, $incomeServiceId)
+    {
+        $incomeService = $this->incomeService->find($incomeServiceId);
+
+        if (!$incomeService) {
+            return null;
+        }
+
+        collect($payload)->each(function ($value, $field) use ($incomeService) {
+            $incomeService->{$field} -= $value;
+        });
+
+        $incomeService->save();
+
+        return $incomeService;
     }
 
     /**
@@ -172,13 +152,17 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
      * @param array $payload
      * @return array
      */
-    public function updateDenomination($payload)
+    public function updateDenomination(array $payload)
     {
+        if (!$payload) {
+            return null;
+        }
+
         foreach ($payload as $denomination) {
-            $this->denominationStructure->find($denomination['id'])->fill([
-                'piece' => $denomination['piece'],
-                'total' => $denomination['total']
-            ])->save();
+            $this->denominationStructure
+                ->find($denomination['id'])
+                ->fill(['piece' => $denomination['piece'], 'total' => $denomination['total']])
+                ->save();
         }
 
         return $payload;
@@ -217,10 +201,13 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
      *
      * @param int $year
      * @param int $month
-     * @return mixed
+     * @return IncomeService
      */
-    public function getAllServices($year, $month)
+    public function findByYearAndMonth($year = null, $month = null)
     {
+        $year = $year ?: date('Y');
+        $month = $month ?: date('m');
+
         return $this->incomeService
             ->whereYear('service_date', '=', $year)
             ->whereMonth('service_date', '=', $month)
@@ -229,15 +216,35 @@ class IncomeServiceRepositoryEloquent implements IncomeServiceRepositoryInterfac
     }
 
     /**
-     * Get all roles of the current user
-     * @return array
+     * Create a bulk of Structural Fund
+     *
+     * @param array $payload
+     * @return bool
      */
-    private function grantedRoles()
+    public function createFundStructure(array $payload)
     {
-        $userRoles = $this->guard->user()->roles->toArray();
-
-        return array_map(function ($roles) {
-            return $roles['pivot']['role_id'];
-        }, $userRoles);
+        return $this->fundStructure->insert($payload);
     }
+
+    /**;
+     * Create a bulk of Structural Fund Item
+     * @param array $payload
+     * @return bool
+     */
+    public function createFundItemStructure(array $payload)
+    {
+        return $this->fundItemStructure->insert($payload);
+    }
+
+    /**
+     * Create a bulk of Denomination Structural Fund
+     *
+     * @param array $payload
+     * @return bool
+     */
+    public function createDenominationStructure(array $payload)
+    {
+        return $this->denominationStructure->insert($payload);
+    }
+
 }

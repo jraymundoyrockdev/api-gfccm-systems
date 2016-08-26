@@ -6,7 +6,6 @@ use Illuminate\Contracts\Http\Kernel as KernelContract;
 
 class ApiTestCase extends TestCase
 {
-
     /**
      * Creates the application.
      *
@@ -23,6 +22,10 @@ class ApiTestCase extends TestCase
         return $app;
     }
 
+    /**
+     * @param null $model
+     * @return mixed|string
+     */
     public function getContent($model = null)
     {
         $content = $this->response->getContent();
@@ -35,5 +38,13 @@ class ApiTestCase extends TestCase
 
         return (is_null($model)) ? $content : $content->{$model};
     }
-    
+
+    /**
+     * void function
+     */
+    protected function debugContent()
+    {
+        print_r($this->response->getContent());
+        die('end of debug');
+    }
 }

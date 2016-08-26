@@ -14,8 +14,7 @@ class IncomeService extends Model
         'total',
         'service_date',
         'status',
-        'created_by',
-        'role_access'
+        'created_by'
     ];
 
     /**
