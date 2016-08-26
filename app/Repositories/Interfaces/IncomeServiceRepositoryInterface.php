@@ -2,29 +2,13 @@
 
 interface IncomeServiceRepositoryInterface
 {
-    /**
-     * Returns all Income Services
-     *
-     * @return mixed
-     */
-    public function all();
 
     /**
-     * Returns an Income Services
-     *
-     * @param int $id
+     * @param null $year
+     * @param null $month
      * @return mixed
      */
-    public function show($id);
-
-    /**
-     * Create|Update Income Service
-     *
-     * @param array $payload
-     * @param int|null $id
-     * @return mixed
-     */
-    public function save($payload, $id = null);
+    public function findByYearAndMonth($year = null, $month = null);
 
     /**
      * Create a bulk of Structural Fund

@@ -3,17 +3,16 @@
 /**
  * @var $factory Illuminate\Database\Eloquent\Factory
  */
-
 $factory->define(\ApiGfccm\Models\IncomeService::class, function (\Faker\Generator $faker) {
     return [
-        'id' => $faker->randomDigit,
-        'service_id' => $faker->randomDigit,
+        'id' => $faker->numberBetween(1, 100000),
+        'service_id' => $faker->numberBetween(1, 100000),
         'tithes' => $faker->randomFloat(),
-        'offering' => $faker->randomFloat,
-        'other_fund' => $faker->randomFloat,
-        'service_date' => $faker->dateTime,
+        'offering' => $faker->randomFloat(),
+        'other_fund' => $faker->randomFloat(),
+        'service_date' => $faker->date(),
+        'total' => $faker->randomFloat,
         'status' => $faker->randomElement(['active', 'inactive']),
-        'created_by' => $faker->randomDigit,
-        'role_access' => $faker->randomDigit,
+        'created_by' => $faker->randomDigit
     ];
 });

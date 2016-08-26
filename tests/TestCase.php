@@ -96,6 +96,21 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
     }
 
     /**
+     * @param string $table
+     * @param array $expected|object
+     */
+    protected function seeInDatabaseMultiple(string $table, $expected)
+    {
+        if (is_object($expected)) {
+            $expected = json_decode(json_encode($expected), true);
+        }
+
+        foreach($expected as $expect){
+            $this->seeInDatabase($table,$expect);
+        }
+    }
+
+    /**
      * @param $data
      * @return array
      */

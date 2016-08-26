@@ -22,7 +22,6 @@ class CreateTableIncomeServices extends Migration
             $table->date('service_date');
             $table->string('status')->default('active');
             $table->integer('created_by');
-            $table->integer('role_access');
             $table->timestamps();
         });
     }
