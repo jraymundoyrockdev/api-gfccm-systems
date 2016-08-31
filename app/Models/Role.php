@@ -20,10 +20,10 @@ class Role extends Model
     ];
 
     /**
-     * The users that belong to the role.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'user_roles');
     }
 }

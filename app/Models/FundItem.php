@@ -4,10 +4,6 @@ namespace ApiGfccm\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class FundItem
- * @package ApiGfccm\Models
- */
 class FundItem extends Model
 {
     /**

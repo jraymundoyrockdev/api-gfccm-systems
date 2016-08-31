@@ -1,21 +1,21 @@
 <?php namespace ApiGfccm\Http\Controllers\Api\Transformers;
 
-use League\Fractal\TransformerAbstract;
 use ApiGfccm\Models\Member;
+use Illuminate\Database\Eloquent\Collection;
+use League\Fractal\TransformerAbstract;
 
 class MemberTransformer extends TransformerAbstract
 {
+    /**
+     * @param Member $member
+     * @return array
+     */
     public function transform(Member $member)
     {
-        $ministry = new MinistryTransformer();
-        $memMinistry = [];
-
-        foreach ($member->member_ministry as $memMin) {
-            $memMinistry[] = $ministry->transform($memMin->ministry);
-        }
+        $ministries = $this->transformMinistry($member->ministries);
 
         return [
-            'id' => (int) $member->id,
+            'id' => (int)$member->id,
             'firstname' => $member->firstname,
             'lastname' => $member->lastname,
             'fullname' => $member->full_name,
@@ -27,7 +27,25 @@ class MemberTransformer extends TransformerAbstract
             'address' => $member->address,
             'phone_mobile' => $member->phone_mobile,
             'email' => $member->email,
-            'ministry' => $memMinistry
+            'ministries' => $ministries
         ];
+    }
+
+    /**
+     * @param Collection $ministries
+     * @return array
+     */
+    private function transformMinistry(Collection $ministries)
+    {
+        if (empty($ministries)) {
+            return [];
+        }
+
+        foreach ($ministries as $ministry) {
+            return [
+                'name' => $ministry->name,
+                'description' => $ministry->description
+            ];
+        }
     }
 }

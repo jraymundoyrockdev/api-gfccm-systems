@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class MinistryTransaction extends Model
 {
+    /**
+     * @var string
+     */
     protected $table = 'ministry_transactions';
 
+    /**
+     * @var array
+     */
     protected $fillable = [
         'ministry_id',
         'type',

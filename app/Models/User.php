@@ -44,13 +44,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function member()
     {
-        return $this->hasOne(Member::class, 'id', 'member_id');
+        return $this->belongsTo(Member::class);
     }
 
     /**
-     * The roles that belong to the user.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function role()
+    public function roles()
     {
         return $this->belongsToMany(Role::class, 'user_roles');
     }

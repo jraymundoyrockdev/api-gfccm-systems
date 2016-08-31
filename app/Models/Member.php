@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
+    /**
+     * @var string
+     */
     protected $table = 'members';
 
+    /**
+     * @var array
+     */
     protected $fillable = [
         'apellation',
         'firstname',
@@ -20,6 +26,9 @@ class Member extends Model
         'email'
     ];
 
+    /**
+     * @var array
+     */
     protected $appends = ['full_name', 'full_name_with_apellation'];
 
     /**
@@ -49,10 +58,18 @@ class Member extends Model
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function ministries()
+    {
+        return $this->belongsToMany(Ministry::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function member_ministry()
+    public function income_service_member_fund_total()
     {
-        return $this->hasMany(MemberMinistry::class, 'member_id', 'id');
+        return $this->hasMany(IncomeServiceMemberFundTotal::class);
     }
 }
