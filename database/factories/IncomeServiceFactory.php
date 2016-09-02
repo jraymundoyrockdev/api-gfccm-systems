@@ -11,7 +11,7 @@ $factory->define(\ApiGfccm\Models\IncomeService::class, function (\Faker\Generat
         'offering' => $faker->randomFloat(),
         'other_fund' => $faker->randomFloat(),
         'service_date' => $faker->date(),
-        'total' => $faker->randomFloat,
+        'total' => $faker->randomFloat(),
         'status' => $faker->randomElement(['active', 'inactive']),
         'created_by' => $faker->randomDigit
     ];
