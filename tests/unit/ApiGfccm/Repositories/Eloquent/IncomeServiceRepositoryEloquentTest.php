@@ -209,7 +209,7 @@ class IncomeServiceRepositoryEloquentTest extends ApiTestCase
     {
         $incomeService = $this->prepareIncomeService();
         $denominationStructure = $this->buildDenominationStructure($incomeService->id);
-        
+
         $this->repository->createDenominationStructure($denominationStructure);
 
         $savedDenomination = (new IncomeServiceDenomination)->where('income_service_id',$incomeService->id)->where('denomination_id', $denominationStructure[0]['denomination_id'])->first();

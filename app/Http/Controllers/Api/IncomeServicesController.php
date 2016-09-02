@@ -1,7 +1,6 @@
 <?php namespace ApiGfccm\Http\Controllers\Api;
 
 use ApiGfccm\Commands\CreateIncomeServiceCommand;
-use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Requests\IncomeServiceRequest;
 use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;

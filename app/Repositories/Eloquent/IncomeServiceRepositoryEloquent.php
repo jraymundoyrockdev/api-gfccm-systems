@@ -171,6 +171,8 @@ class IncomeServiceRepositoryEloquent implements RepositoryInterface, IncomeServ
     /**
      * Compute totals of all Income Services
      *
+     * @codeCoverageIgnore
+     *
      * @param int $year
      * @param null $month
      * @return mixed
