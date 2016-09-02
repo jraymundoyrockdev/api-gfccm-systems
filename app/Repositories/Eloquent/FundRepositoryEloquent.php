@@ -26,7 +26,7 @@ class FundRepositoryEloquent implements RepositoryInterface, FundRepositoryInter
      */
     public function all()
     {
-        return $this->fund->with('item')->get();
+        return $this->fund->with('items')->get();
     }
 
     /**
@@ -35,7 +35,7 @@ class FundRepositoryEloquent implements RepositoryInterface, FundRepositoryInter
      */
     public function findById($id)
     {
-        return $this->fund->with('item')->find($id);
+        return $this->fund->with('items')->find($id);
     }
 
     /**
@@ -54,7 +54,7 @@ class FundRepositoryEloquent implements RepositoryInterface, FundRepositoryInter
      */
     public function update(array $payload, $id)
     {
-        $fund = $this->fund->with('item')->find($id);
+        $fund = $this->fund->with('items')->find($id);
 
         if (!$fund) {
             return null;

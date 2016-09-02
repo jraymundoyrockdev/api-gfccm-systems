@@ -21,9 +21,9 @@ class FundRepositoryEloquentTest extends ApiTestCase
         $result = $repository->all();
 
         $this->assertEquals(5, count($result));
-        $this->assertEquals(5, count($result[0]->item));
+        $this->assertEquals(5, count($result[0]->items));
         $this->assertInstanceOf(Fund::class, $result[0]);
-        $this->assertInstanceOf(FundItem::class, $result[0]->item[0]);
+        $this->assertInstanceOf(FundItem::class, $result[0]->items[0]);
     }
 
     /** @test */

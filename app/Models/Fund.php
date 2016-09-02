@@ -4,10 +4,6 @@ namespace ApiGfccm\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class Fund
- * @package ApiGfccm\Models
- */
 class Fund extends Model
 {
     /**
@@ -28,7 +24,7 @@ class Fund extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function item()
+    public function items()
     {
         return $this->hasMany(FundItem::class);
     }

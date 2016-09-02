@@ -34,7 +34,7 @@ class MembersController extends Controller
      */
     public function index()
     {
-        return (new CollectionResponse($this->member->getAllMembers()))->asType('Member');
+        return (new CollectionResponse($this->member->all()))->asType('Member');
     }
 
     /**

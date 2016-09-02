@@ -7,11 +7,11 @@ $factory->define(\ApiGfccm\Models\IncomeService::class, function (\Faker\Generat
     return [
         'id' => $faker->numberBetween(1, 100000),
         'service_id' => $faker->numberBetween(1, 100000),
-        'tithes' => $faker->numberBetween(500, 100000),
-        'offering' => $faker->numberBetween(500, 100000),
-        'other_fund' => $faker->numberBetween(500, 100000),
+        'tithes' => $faker->randomFloat(),
+        'offering' => $faker->randomFloat(),
+        'other_fund' => $faker->randomFloat(),
         'service_date' => $faker->date(),
-        'total' => $faker->numberBetween(500, 100000),
+        'total' => $faker->randomFloat,
         'status' => $faker->randomElement(['active', 'inactive']),
         'created_by' => $faker->randomDigit
     ];

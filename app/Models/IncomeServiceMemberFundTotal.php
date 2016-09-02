@@ -4,8 +4,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class IncomeServiceMemberFundTotal extends Model
 {
+    /**
+     * @var string
+     */
     protected $table = 'income_service_member_fund_totals';
 
+    /**
+     * @var array
+     */
     protected $fillable = [
         'income_service_id',
         'member_id',
@@ -16,11 +22,11 @@ class IncomeServiceMemberFundTotal extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function income_service()
     {
-        return $this->hasOne(IncomeService::class, 'id', 'service_id');
+        return $this->belongsTo(IncomeService::class);
     }
 
     /**

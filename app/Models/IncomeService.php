@@ -4,8 +4,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class IncomeService extends Model
 {
+    /**
+     * @var string
+     */
     protected $table = 'income_services';
 
+    /**
+     * @var array
+     */
     protected $fillable = [
         'service_id',
         'tithes',
@@ -18,7 +24,7 @@ class IncomeService extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function service()
     {
@@ -34,25 +40,25 @@ class IncomeService extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function fund_structure()
+    public function fund_structures()
     {
         return $this->hasMany(IncomeServiceFundStructure::class);
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function denomination_structure()
+    public function denomination_structures()
     {
         return $this->hasMany(IncomeServiceDenomination::class);
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function member_fund_total()
+    public function member_fund_totals()
     {
         return $this->hasMany(IncomeServiceMemberFundTotal::class);
     }

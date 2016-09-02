@@ -27,7 +27,7 @@ class UserRepositoryEloquent implements RepositoryInterface, UserRepositoryInter
      */
     public function all()
     {
-        return $this->user->with(['member', 'role'])->get();
+        return $this->user->with(['member', 'roles'])->get();
     }
 
     /**
@@ -36,7 +36,7 @@ class UserRepositoryEloquent implements RepositoryInterface, UserRepositoryInter
      */
     public function findById($id)
     {
-        return $this->user->with(['member', 'role'])->where('id', $id)->first();
+        return $this->user->with(['member', 'roles'])->where('id', $id)->first();
     }
 
     /**
