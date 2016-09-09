@@ -7,15 +7,15 @@ class CreateMemberCommand extends Command
     /**
      * @var
      */
-    public $member;
+    public $memberInput;
 
     /**
      * Create a new command instance.
      *
-     * @param $member
+     * @param $input
      */
-    public function __construct($member)
+    public function __construct(array $input)
     {
-        $this->member = $member;
+        $this->memberInput = $input;
     }
 }

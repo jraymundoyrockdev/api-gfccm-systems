@@ -3,15 +3,18 @@
 class UpdateIncomeServiceMemberFund extends Command
 {
 
-    public $memberFund;
+    /**
+     * @var array
+     */
+    public $incomeServiceMemberFund;
 
     /**
      * Create a new command instance.
      *
-     * @param $memberFund
+     * @param array $input
      */
-    public function __construct($memberFund)
+    public function __construct(array $input)
     {
-        $this->memberFund = $memberFund;
+        $this->incomeServiceMemberFund = $input;
     }
 }

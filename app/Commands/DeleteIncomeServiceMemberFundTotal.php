@@ -5,7 +5,7 @@ class DeleteIncomeServiceMemberFundTotal extends Command
     /**
      * @var int
      */
-    public $incomerServiceId;
+    public $incomeServiceId;
 
     /**
      * @var int
@@ -13,19 +13,14 @@ class DeleteIncomeServiceMemberFundTotal extends Command
     public $memberId;
 
     /**
-     * @var string
-     */
-    public $arithmeticOperatorName = 'subtraction';
-
-    /**
      * Create a new command instance.
      *
-     * @param $incomerServiceId
+     * @param $incomeServiceId
      * @param $memberId
      */
-    public function __construct($incomerServiceId, $memberId)
+    public function __construct($incomeServiceId, $memberId)
     {
-        $this->incomeServiceId = $incomerServiceId;
+        $this->incomeServiceId = $incomeServiceId;
         $this->memberId = $memberId;
     }
 }
