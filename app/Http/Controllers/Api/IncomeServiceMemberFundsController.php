@@ -3,7 +3,6 @@
 use ApiGfccm\Commands\DeleteIncomeServiceMemberFundTotal;
 use ApiGfccm\Commands\UpdateIncomeServiceMemberFund;
 use ApiGfccm\Http\Controllers\Controller;
-use ApiGfccm\Http\Requests;
 use ApiGfccm\Models\IncomeServiceMemberFund;
 use ApiGfccm\Repositories\Interfaces\IncomeServiceMemberFundRepositoryInterface;
 use Illuminate\Contracts\Auth\Access\Gate;
@@ -18,8 +17,8 @@ class IncomeServiceMemberFundsController extends Controller
     protected $incomeService;
 
     /**
+     * IncomeServiceMemberFundsController constructor.
      * @param IncomeServiceMemberFundRepositoryInterface $incomeService
-     * @internal param $IncomeServiceMemberFundRepositoryInterface $
      */
     public function __construct(IncomeServiceMemberFundRepositoryInterface $incomeService)
     {

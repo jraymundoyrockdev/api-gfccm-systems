@@ -24,7 +24,7 @@ class RolesController extends ApiController
     }
 
     /**
-     * @return CollectionResponse
+     * @return CollectionResponse|null
      */
     public function index()
     {
@@ -32,8 +32,8 @@ class RolesController extends ApiController
     }
 
     /**
-     * @param $id
-     * @return ItemResponse
+     * @param int $id
+     * @return ItemResponse|Response
      */
     public function show($id)
     {

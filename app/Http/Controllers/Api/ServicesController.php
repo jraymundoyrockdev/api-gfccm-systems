@@ -26,7 +26,7 @@ class ServicesController extends ApiController
     /**
      * Display a listing of the resource.
      *
-     * @return CollectionResponse
+     * @return CollectionResponse|null
      */
     public function index()
     {

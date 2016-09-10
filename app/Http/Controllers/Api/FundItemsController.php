@@ -6,7 +6,7 @@ use ApiGfccm\Http\Controllers\Controller;
 use ApiGfccm\Http\Requests\FundItemRequest;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Repositories\Interfaces\FundItemRepositoryInterface;
-use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\Response;
 
 class FundItemsController extends Controller
 {
@@ -31,16 +31,14 @@ class FundItemsController extends Controller
      */
     public function store(FundItemRequest $request)
     {
-        $input = array_filter($request->request->all());
-
-        return (new ItemResponse($this->fundItem->create($input)))->asType('FundItem');
+        return (new ItemResponse($this->fundItem->create($request->request->all())))->asType('FundItem');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int $id
-     * @return ItemResponse
+     * @return ItemResponse|Response
      */
     public function show($id)
     {
@@ -56,16 +54,18 @@ class FundItemsController extends Controller
      *
      * @param FundItemRequest $request
      * @param int $id
-     * @return ItemResponse
+     * @return ItemResponse|Response
      */
     public function update(FundItemRequest $request, $id)
     {
+        $input = array_filter($request->request->all());
+
         $fundItem = $this->fundItem->findById($id);
         if (!$fundItem) {
             return (new Response())->setStatusCode(404);
         }
 
-        return (new ItemResponse($this->fundItem->update($request->request->all(), $id)))->asType('FundItem');
+        return (new ItemResponse($this->fundItem->update($input, $id)))->asType('FundItem');
     }
 
 }

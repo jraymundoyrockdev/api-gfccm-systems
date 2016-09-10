@@ -4,13 +4,11 @@ namespace ApiGfccm\Http\Controllers\Api;
 
 use ApiGfccm\Commands\CreateMemberCommand;
 use ApiGfccm\Http\Controllers\Controller;
-use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Requests\MemberRequest;
 use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Repositories\Interfaces\MemberRepositoryInterface;
 use Illuminate\Http\Request;
-use League\Fractal\Resource\Collection;
 
 class MembersController extends Controller
 {
@@ -30,7 +28,7 @@ class MembersController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return CollectionResponse
+     * @return CollectionResponse|null
      */
     public function index()
     {
@@ -41,14 +39,12 @@ class MembersController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  MemberRequest $request
-     * @return Response
+     * @return ItemResponse
      */
     public function store(MemberRequest $request)
     {
-        $input = array_filter($request->request->all());
-
         return (new ItemResponse($this->dispatch(
-            new CreateMemberCommand($input)
+            new CreateMemberCommand($request->request->all())
         )));
     }
 

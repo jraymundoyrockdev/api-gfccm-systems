@@ -6,5 +6,5 @@ use ApiGfccm\Http\Controllers\Controller;
 
 class ApiController extends Controller
 {
-   
+   //
 }

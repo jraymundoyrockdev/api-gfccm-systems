@@ -7,7 +7,6 @@ use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
 use Illuminate\Http\Response;
-use League\Fractal\Resource\Item;
 
 class DenominationsController extends ApiController
 {
@@ -40,9 +39,7 @@ class DenominationsController extends ApiController
      */
     public function store(DenominationRequest $request)
     {
-        $input = $request->request->all();
-
-        return (new ItemResponse($this->denomination->create($input)))->asType('Denomination');
+        return (new ItemResponse($this->denomination->create($request->request->all())))->asType('Denomination');
     }
 
     /**

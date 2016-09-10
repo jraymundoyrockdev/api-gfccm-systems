@@ -3,7 +3,6 @@
 namespace ApiGfccm\Http\Controllers\Api;
 
 use ApiGfccm\Http\Controllers\Controller;
-use ApiGfccm\Http\Requests;
 use ApiGfccm\Http\Requests\FundRequest;
 use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;
@@ -34,9 +33,7 @@ class FundsController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return CollectionResponse|null
      */
     public function index()
     {
@@ -51,16 +48,12 @@ class FundsController extends Controller
      */
     public function store(FundRequest $request)
     {
-        $input = array_filter($request->request->all());
-
-        return (new ItemResponse($this->fund->create($input)));
+        return (new ItemResponse($this->fund->create($request->request->all())));
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return ItemResponse|Response
      */
     public function show($id)
     {
@@ -74,11 +67,9 @@ class FundsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
      * @param FundRequest $request
-     * @param int $id
-     * @return ItemResponse
+     * @param $id
+     * @return ItemResponse|Response
      */
     public function update(FundRequest $request, $id)
     {
@@ -96,7 +87,7 @@ class FundsController extends Controller
      *
      * @param int $fundId
      * @param FundItemRepositoryInterface $fundItem
-     * @return $this
+     * @return CollectionResponse|Response
      */
     public function showItems($fundId, FundItemRepositoryInterface $fundItem)
     {
