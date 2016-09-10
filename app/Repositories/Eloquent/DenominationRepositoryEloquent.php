@@ -65,10 +65,10 @@ class DenominationRepositoryEloquent implements RepositoryInterface, Denominatio
     }
 
     /**
-     * @return mixed
+     * @return Denomination
      */
-    public function allOrderByAmount()
+    public function allActiveOrderByAmount()
     {
-        return $this->denomination->orderBy('amount')->get();
+        return $this->denomination->where('status', 'active')->orderBy('amount')->get();
     }
 }

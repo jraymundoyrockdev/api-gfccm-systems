@@ -36,9 +36,9 @@ class BuildIncomeServiceFundItemStructureData
      */
     public function handle(IncomeServiceWasCreated $event)
     {
-        $incomeService = $this->incomeService->show($event->incomeServiceId);
+        $incomeService = $this->incomeService->findById($event->incomeServiceId);
 
-        foreach ($incomeService->fund_structure as $fundStructure) {
+        foreach ($incomeService->fund_structures as $fundStructure) {
             $this->incomeService->createFundItemStructure(
                 $this->buildStructure(
                     $event->incomeServiceId,

@@ -38,7 +38,7 @@ class BuildIncomeServiceDenominationStructureData
     public function handle(IncomeServiceWasCreated $event)
     {
         $this->incomeService->createDenominationStructure(
-            $this->buildStructure($event->incomeServiceId, $this->denomination->getActive()->toArray()));
+            $this->buildStructure($event->incomeServiceId, $this->denomination->allActiveOrderByAmount()->toArray()));
     }
 
     /**

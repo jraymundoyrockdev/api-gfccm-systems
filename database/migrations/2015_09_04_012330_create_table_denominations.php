@@ -17,6 +17,7 @@ class CreateTableDenominations extends Migration
                 $table->increments('id');
                 $table->integer('amount')->unique();
                 $table->string('description');
+                $table->string('status')->default('active');
                 $table->timestamps();
             });
         }

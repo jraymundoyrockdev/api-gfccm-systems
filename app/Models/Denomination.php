@@ -16,7 +16,8 @@ class Denomination extends Model
      */
     protected $fillable = [
         'amount',
-        'description'
+        'description',
+        'status'
     ];
 
 }

@@ -7,6 +7,7 @@ use ApiGfccm\Http\Responses\CollectionResponse;
 use ApiGfccm\Http\Responses\ItemResponse;
 use ApiGfccm\Repositories\Interfaces\DenominationRepositoryInterface;
 use Illuminate\Http\Response;
+use League\Fractal\Resource\Item;
 
 class DenominationsController extends ApiController
 {
@@ -26,11 +27,11 @@ class DenominationsController extends ApiController
     /**
      * Display a listing of the resource.
      *
-     * @return $this
+     * @return CollectionResponse|null
      */
     public function index()
     {
-        return (new CollectionResponse($this->denomination->allOrderByAmount()))->asType('Denomination');
+        return (new CollectionResponse($this->denomination->all()))->asType('Denomination');
     }
 
     /**
@@ -45,8 +46,8 @@ class DenominationsController extends ApiController
     }
 
     /**
-     * @param $id
-     * @return ItemResponse
+     * @param int $id
+     * @return ItemResponse|Response
      */
     public function show($id)
     {
@@ -61,8 +62,8 @@ class DenominationsController extends ApiController
 
     /**
      * @param DenominationRequest $request
-     * @param $id
-     * @return $this
+     * @param int $id
+     * @return ItemResponse|Response
      */
     public function update(DenominationRequest $request, $id)
     {

@@ -14,6 +14,7 @@ class DenominationRepositoryEloquentTest extends TestCase
     public function it_returns_denominations_order_by_amount()
     {
         $denominations = $this->createDenomination(10);
+        $inactiveDenominations = $this->createDenomination(3, ['status' => 'inactive']);
         $newDenominations = [];
 
         foreach ($denominations as $denomination) {
@@ -24,7 +25,7 @@ class DenominationRepositoryEloquentTest extends TestCase
 
         $repository = $this->app->make(DenominationRepositoryEloquent::class);
 
-        $result = $repository->allOrderByAmount();
+        $result = $repository->allActiveOrderByAmount();
 
         $lastDenominationAmount = end($newDenominations);
 
@@ -57,7 +58,7 @@ class DenominationRepositoryEloquentTest extends TestCase
         $this->assertEquals($denomination->id, $result->id);
         $this->assertEquals($denomination->amount, $result->amount);
         $this->assertEquals($denomination->description, $result->description);
-        $this->assertArrayHasOnlyKeys($result->toArray(), ['id', 'amount', 'description', 'created_at', 'updated_at']);
+        $this->assertArrayHasOnlyKeys($result->toArray(), ['id', 'amount', 'description', 'status', 'created_at', 'updated_at']);
         $this->assertInstanceOf(Denomination::class, $result);
     }
 

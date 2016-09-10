@@ -2,48 +2,40 @@
 
 use ApiGfccm\Commands\CreateIncomeServiceCommand;
 use ApiGfccm\Events\IncomeServiceWasCreated;
-use ApiGfccm\Models\IncomeServiceFundStructure;
+use ApiGfccm\Models\IncomeService;
 use ApiGfccm\Repositories\Eloquent\IncomeServiceRepositoryEloquent;
 use Illuminate\Contracts\Events\Dispatcher;
 
 class CreateIncomeServiceCommandHandler
 {
+    const INITIAL_AMOUNTS = ['tithes' => 0,'offering' => 0, 'other_fund' => 0, 'total' => 0];
     /**
      * @var IncomeServiceRepositoryEloquent
      */
     private $incomeService;
+
     /**
      * @var Dispatcher
      */
     private $dispatcher;
-    /**
-     * @var IncomeServiceFundStructure
-     */
-    private $structuralFund;
 
     /**
      * Create the command handler.
      *
      * @param IncomeServiceRepositoryEloquent $incomeService
      * @param Dispatcher $dispatcher
-     * @param IncomeServiceFundStructure $structuralFund
      */
-    public function __construct(
-        IncomeServiceRepositoryEloquent $incomeService,
-        Dispatcher $dispatcher,
-        IncomeServiceFundStructure $structuralFund
-    )
+    public function __construct(IncomeServiceRepositoryEloquent $incomeService, Dispatcher $dispatcher)
     {
         $this->incomeService = $incomeService;
         $this->dispatcher = $dispatcher;
-        $this->structuralFund = $structuralFund;
     }
 
     /**
      * Handle the command.
      *
      * @param CreateIncomeServiceCommand $command
-     * @return void
+     * @return IncomeService
      */
     public function handle(CreateIncomeServiceCommand $command)
     {
@@ -51,11 +43,14 @@ class CreateIncomeServiceCommandHandler
             'service_id' => $command->serviceId,
             'service_date' => $command->serviceDate,
             'created_by' => $command->userId,
-            'role_access' => $command->roleAccess,
             'status' => $command->status
         ];
 
-        $incomeService = $this->incomeService->save($input);
+        $input = array_merge($input, self::INITIAL_AMOUNTS);
+
+
+        $incomeService = $this->incomeService->create($input);
+
         $this->dispatcher->fire(new IncomeServiceWasCreated($incomeService->id));
 
         return $incomeService;

@@ -3,9 +3,9 @@
 interface DenominationRepositoryInterface
 {
     /**
-     * Returns all and ordered by amount
+     * Returns all active and ordered by amount
      * 
      * @return mixed
      */
-    public function allOrderByAmount();
+    public function allActiveOrderByAmount();
 }
