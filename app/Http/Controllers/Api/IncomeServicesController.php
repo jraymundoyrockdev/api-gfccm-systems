@@ -57,7 +57,7 @@ class IncomeServicesController extends ApiController
      */
     public function show($id)
     {
-        $incomeService = $this->incomeService->show($id);
+        $incomeService = $this->incomeService->findById($id);
 
         return (new ItemResponse($incomeService))->asType('IncomeService');
     }

@@ -3,6 +3,11 @@
 use League\Fractal\TransformerAbstract;
 use ApiGfccm\Models\MemberMinistry;
 
+/**
+ * Class MemberMinistryTransformer
+ * @package ApiGfccm\Http\Controllers\Api\Transformers
+ * @codeCoverageIgnore
+ */
 class MemberMinistryTransformer extends TransformerAbstract
 {
     public function transform(MemberMinistry $memMinistry)

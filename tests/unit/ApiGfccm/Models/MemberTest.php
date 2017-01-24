@@ -28,7 +28,8 @@ class MemberTest extends TestCase
     public function it_belongs_to_many_member_ministries()
     {
         $model = Mockery::mock('ApiGfccm\Models\Member[belongsToMany]');
-        $model->shouldReceive('belongsToMany')->with(Ministry::class)->andReturn(true);
+        $model->shouldReceive('belongsToMany')->with(Ministry::class, 'member_ministries')->andReturnSelf();
+        $model->shouldReceive('withTimestamps')->andReturn(true);
 
         $this->assertTrue($model->ministries());
     }

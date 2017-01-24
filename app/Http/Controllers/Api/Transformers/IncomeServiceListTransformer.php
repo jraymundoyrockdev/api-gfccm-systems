@@ -31,11 +31,10 @@ class IncomeServiceListTransformer extends TransformerAbstract
     }
 
     /**
-     * Filter date and time
-     *
      * @param $date
-     * @param string $filter
-     * @return bool|string
+     * @param string $format
+     *
+     * @return false|string
      */
     private function reformatDateTime($date, $format = 'Y-m-d')
     {

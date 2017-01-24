@@ -13,6 +13,7 @@ class IncomeServiceDenominationTransformer extends TransformerAbstract
     {
         return [
             'id' => (int) $denominationStructure->id,
+            'income_service_id' => (int) $denominationStructure->income_service_id,
             'denomination_id' => (int) $denominationStructure->denomination_id,
             'description' => $denominationStructure->description,
             'amount' => $denominationStructure->amount,

@@ -14,12 +14,13 @@ class IncomeServiceFundStructureTransformer extends TransformerAbstract
         $itemTransformer = new IncomeServiceFundItemStructureTransformer();
         $items = [];
 
-        foreach ($fundStructure->item_structure as $structure) {
+        foreach ($fundStructure->item_structures as $structure) {
             $items[] = $itemTransformer->transform($structure);
         }
 
         return [
             'id' => (int) $fundStructure->id,
+            'income_service_id' => (int) $fundStructure->income_service_id,
             'fund_id' => (int) $fundStructure->fund_id,
             'name' => $fundStructure->name,
             'item' => $items

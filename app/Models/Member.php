@@ -62,7 +62,7 @@ class Member extends Model
      */
     public function ministries()
     {
-        return $this->belongsToMany(Ministry::class);
+        return $this->belongsToMany(Ministry::class, 'member_ministries')->withTimestamps();
     }
 
     /**

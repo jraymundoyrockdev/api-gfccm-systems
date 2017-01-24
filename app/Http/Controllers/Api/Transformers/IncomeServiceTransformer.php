@@ -1,7 +1,6 @@
 <?php namespace ApiGfccm\Http\Controllers\Api\Transformers;
 
 use ApiGfccm\Models\IncomeService;
-use ApiGfccm\Models\IncomeServiceMemberFundTotal;
 use League\Fractal\TransformerAbstract;
 
 class IncomeServiceTransformer extends TransformerAbstract
@@ -12,9 +11,11 @@ class IncomeServiceTransformer extends TransformerAbstract
      */
     public function transform(IncomeService $incomeService)
     {
+        $result = $this->getFundTotal($incomeService->member_fund_totals);
+
         return [
-            'id' => (int) $incomeService->id,
-            'service_id' => (int) $incomeService->service_id,
+            'id' => (int)$incomeService->id,
+            'service_id' => (int)$incomeService->service_id,
             'tithes' => $incomeService->tithes,
             'offering' => $incomeService->offering,
             'other_fund' => $incomeService->other_fund,
@@ -26,12 +27,14 @@ class IncomeServiceTransformer extends TransformerAbstract
             'service' => $incomeService->service->name,
             'user' => $incomeService->user->username,
             'funds_structure' => $this->getStructure(
-                $incomeService->fund_structure,
-                new IncomeServiceFundStructureTransformer()),
+                $incomeService->fund_structures,
+                new IncomeServiceFundStructureTransformer()
+            ),
             'denominations_structure' => $this->getStructure(
-                $incomeService->denomination_structure,
-                new IncomeServiceDenominationTransformer()),
-            'member_fund_total' => $this->getFundTotal($incomeService->member_fund_total)
+                $incomeService->denomination_structures,
+                new IncomeServiceDenominationTransformer()
+            ),
+            'member_fund_total' => $this->getFundTotal($incomeService->member_fund_totals)
         ];
     }
 
@@ -54,18 +57,18 @@ class IncomeServiceTransformer extends TransformerAbstract
     }
 
     /**
-     * Get Fund Structure
+     * @param $memberFundTotals
      *
-     * @param $incomeService
+     * @codeCoverageIgnore
      * @return array
      */
-    private function getFundTotal($incomeService)
+    private function getFundTotal($memberFundTotals)
     {
         $memberFundTotal = [];
         $memberFundTotalTransformer = new IncomeServiceMemberFundTotalTransformer();
 
-        foreach ($incomeService as $memberTotal) {
-            $memberFundTotal[] = $memberFundTotalTransformer->transform($memberTotal);
+        foreach ($memberFundTotals as $memberFundTotal) {
+            $memberFundTotal[] = $memberFundTotalTransformer->transform($memberFundTotal);
         }
 
         return $memberFundTotal;

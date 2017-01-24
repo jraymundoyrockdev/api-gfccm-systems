@@ -13,6 +13,7 @@ class IncomeServiceFundStructure extends Model
      * @var array
      */
     protected $fillable = [
+        'id',
         'income_service_id',
         'fund_id',
         'name'

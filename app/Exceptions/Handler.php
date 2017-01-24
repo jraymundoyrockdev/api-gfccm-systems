@@ -6,6 +6,9 @@ use Exception;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+/**
+ * @codeCoverageIgnore
+ */
 class Handler extends ExceptionHandler
 {
     /**

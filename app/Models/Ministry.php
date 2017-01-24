@@ -24,6 +24,6 @@ class Ministry extends Model
      */
     public function members()
     {
-        return $this->belongsToMany(Member::class);
+        return $this->belongsToMany(Member::class, 'member_ministries')->withTimestamps();
     }
 }

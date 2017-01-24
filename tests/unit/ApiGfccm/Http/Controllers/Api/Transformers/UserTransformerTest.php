@@ -2,6 +2,7 @@
 
 use ApiGfccm\Http\Controllers\Api\Transformers\UserTransformer;
 use ApiGfccm\Models\Member;
+use ApiGfccm\Models\Role;
 use ApiGfccm\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -19,6 +20,9 @@ class UserTransformerTest extends TestCase
     {
         $member = factory(Member::class)->create();
         $user = factory(User::class)->make(['member_id' => $member->id]);
+        $role = factory(Role::class)->create();
+
+        $user->roles()->attach($role);
 
         $expectedKeys = ['id', 'username', 'avatar', 'status', 'member', 'role'];
 

@@ -13,6 +13,7 @@ class IncomeServiceFundItemStructureTransformer extends TransformerAbstract
     {
         return [
             'id' => (int) $fundItemStructure->id,
+            'fund_structure_id' => (int) $fundItemStructure->fund_structure_id,
             'fund_item_id' => (int) $fundItemStructure->fund_item_id,
             'name' => $fundItemStructure->name
         ];
