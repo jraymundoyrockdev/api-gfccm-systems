@@ -22,6 +22,7 @@ class FundTransformerTest extends TestCase
 
         $expectedKeys = ['id', 'name', 'description', 'category', 'status'];
 
+
         $result = (new FundTransformer())->transform($fund);
 
         $this->assertArrayHasKeys($result, $expectedKeys);

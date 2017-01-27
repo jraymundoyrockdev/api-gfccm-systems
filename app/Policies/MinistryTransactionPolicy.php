@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Config;
 
 class MinistryTransactionPolicy extends AbstractPolicy
 {
+    /**
+     * @var array
+     */
     protected $ministryMap = [
         4 => 1,
         5 => 2,
