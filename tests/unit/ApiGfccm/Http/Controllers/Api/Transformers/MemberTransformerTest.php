@@ -17,9 +17,9 @@ class MemberTransformerTest extends TestCase
     public function it_transforms_a_member_with_ministry_into_an_api_payload()
     {
         $ministry = factory(Ministry::class)->create();
-        $member = factory(Member::class)->make();
+        $member = factory(Member::class)->create();
 
-        $ministry->members()->attach($member->id);
+        $member->ministries()->attach($ministry->id);
 
         $expectedKeys = [
             'id',

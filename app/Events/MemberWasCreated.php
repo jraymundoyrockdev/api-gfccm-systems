@@ -8,34 +8,32 @@ class MemberWasCreated extends Event
 {
     use SerializesModels;
 
+    /**
+     * @var int
+     */
     public $id;
 
+    /**
+     * @var string
+     */
     public $firstName;
 
+    /**
+     * @var string
+     */
     public $lastName;
 
     /**
-     * Create a new event instance.
-     *
      * MemberWasCreated constructor.
-     * @param $id
-     * @param $firstName
-     * @param $lastName
+     *
+     * @param int $id
+     * @param string $firstName
+     * @param string $lastName
      */
     public function __construct($id, $firstName, $lastName)
     {
         $this->id = $id;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
-    }
-
-    /**
-     * Get the channels the event should be broadcast on.
-     *
-     * @return array
-     */
-    public function broadcastOn()
-    {
-        return [];
     }
 }

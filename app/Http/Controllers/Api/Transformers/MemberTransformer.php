@@ -8,6 +8,7 @@ class MemberTransformer extends TransformerAbstract
 {
     /**
      * @param Member $member
+     *
      * @return array
      */
     public function transform(Member $member)
@@ -33,19 +34,24 @@ class MemberTransformer extends TransformerAbstract
 
     /**
      * @param Collection $ministries
+     *
      * @return array
      */
     private function transformMinistry(Collection $ministries)
     {
-        if (empty($ministries)) {
-            return [];
+        $memberMinistries = [];
+
+        if (! count($ministries)) {
+            return $memberMinistries;
         }
 
         foreach ($ministries as $ministry) {
-            return [
+            $memberMinistries[] = [
                 'name' => $ministry->name,
                 'description' => $ministry->description
             ];
         }
+
+        return $memberMinistries;
     }
 }

@@ -6,18 +6,39 @@ class IncomeServiceMemberFundWasUpdated extends Event
 {
     use SerializesModels;
 
+    /**
+     * @var int
+     */
     public $funds;
 
+    /**
+     * @var int
+     */
     public $incomeServiceId;
 
+    /**
+     * @var int
+     */
     public $memberId;
 
+    /**
+     * @var int
+     */
     public $tithes = 0;
 
+    /**
+     * @var int
+     */
     public $offering = 0;
 
+    /**
+     * @var int
+     */
     public $others = 0;
 
+    /**
+     * @var int
+     */
     public $total = 0;
 
     /**
@@ -25,7 +46,7 @@ class IncomeServiceMemberFundWasUpdated extends Event
      *
      * @param array $funds
      */
-    public function __construct(Array $funds = [])
+    public function __construct($funds = [])
     {
         $this->getIncomeServiceAndMemberId($funds);
         $this->getFundAmounts($funds);
@@ -33,21 +54,12 @@ class IncomeServiceMemberFundWasUpdated extends Event
     }
 
     /**
-     * Get the channels the event should be broadcast on.
-     *
-     * @return array
-     */
-    public function broadcastOn()
-    {
-        return [];
-    }
-
-    /**
-     * @param $funds
+     * @param array $funds
      */
     private function getIncomeServiceAndMemberId($funds)
     {
         $funds = array_shift($funds);
+
         $this->memberId = $funds['member_id'];
         $this->incomeServiceId = $funds['income_service_id'];
     }
@@ -55,7 +67,7 @@ class IncomeServiceMemberFundWasUpdated extends Event
     /**
      * Get Fund Amounts
      *
-     * @param $funds
+     * @param array $funds
      */
     private function getFundAmounts($funds)
     {
@@ -67,8 +79,9 @@ class IncomeServiceMemberFundWasUpdated extends Event
     /**
      * Compute Amounts
      *
-     * @param $fundItemId
-     * @param $amount
+     * @param int $fundItemId
+     * @param int $amount
+     *
      * @return bool
      */
     private function computeAmounts($fundItemId, $amount)
@@ -83,7 +96,7 @@ class IncomeServiceMemberFundWasUpdated extends Event
                 break;
             }
             default: {
-                $this->others+= $amount;
+                $this->others += $amount;
                 break;
             }
         }

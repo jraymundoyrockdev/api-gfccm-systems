@@ -27,7 +27,8 @@ class UserTest extends TestCase
     public function it_belongs_to_many_roles()
     {
         $model = Mockery::mock('ApiGfccm\Models\User[belongsToMany]');
-        $model->shouldReceive('belongsToMany')->with(Role::class, 'user_roles')->andReturn(true);
+        $model->shouldReceive('belongsToMany')->with(Role::class, 'user_roles')->andReturnSelf();
+        $model->shouldReceive('withTimestamps')->andReturn(true);
 
         $this->assertTrue($model->roles());
     }

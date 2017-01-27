@@ -7,44 +7,44 @@ class IncomeServiceMemberFundTotalWasDeleted extends Event
     use SerializesModels;
 
     /**
-     * @var
+     * @var integer
      */
     public $incomeServiceId;
 
     /**
-     * @var
+     * @var integer
      */
     public $memberId;
 
     /**
-     * @var
+     * @var integer
      */
     public $tithes;
 
     /**
-     * @var
+     * @var integer
      */
     public $offering;
 
     /**
-     * @var
+     * @var integer
      */
     public $others;
 
     /**
-     * @var
+     * @var integer
      */
     public $total;
 
     /**
      * Create a new event instance.
      *
-     * @param $incomeServiceId
-     * @param $memberId
-     * @param $tithes
-     * @param $offering
-     * @param $others
-     * @param $total
+     * @param integer $incomeServiceId
+     * @param integer $memberId
+     * @param integer $tithes
+     * @param integer $offering
+     * @param integer $others
+     * @param integer $total
      */
     public function __construct($incomeServiceId, $memberId, $tithes, $offering, $others, $total)
     {
@@ -54,15 +54,5 @@ class IncomeServiceMemberFundTotalWasDeleted extends Event
         $this->offering = $offering;
         $this->others = $others;
         $this->total = $total;
-    }
-
-    /**
-     * Get the channels the event should be broadcast on.
-     *
-     * @return array
-     */
-    public function broadcastOn()
-    {
-        return [];
     }
 }
